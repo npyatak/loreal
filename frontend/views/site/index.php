@@ -68,7 +68,7 @@ if(isset($results[$res])) {
                         <div class="description"><?=$product->description;?></div>
                         <div class="title"><?=$product->title;?></div>
                         <div class="buy">
-                            <a href="<?=$product->url;?>" target="_blank">Купить +</a>
+                            <a href="<?=$product->url_1;?>" target="_blank">Купить +</a>
                         </div>
                     </div>
                 </div>
@@ -129,7 +129,6 @@ $this->registerJs($script, yii\web\View::POS_HEAD);
 $script = "
     function updateShare(result) {
         var url = '".Url::toRoute(['site/index'], true)."?res='+result.id;
-        console.log(url);
         $('.share').attr('data-url', url);
         $('.share').attr('data-title', result.title);
         $('.share').attr('data-image', result.image);
