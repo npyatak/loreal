@@ -53,50 +53,50 @@ AppAsset::register($this);
                 </div>
             </footer>
         </div>
-    </div>
 
-    <?php if(Yii::$app->controller->action->id == 'index'):?>
-    <div id="test">
-        <div class="test__close">
-            <img src="/images/test__close-010fb6bdbf.png" alt="">
+        <?php if(Yii::$app->controller->action->id == 'index'):?>
+        <div id="test">
+            <div class="test__close">
+                <img src="/images/test__close-010fb6bdbf.png" alt="">
+            </div>
+            <div class="test__content">
+                <div class="question-template">
+                    <div class="qt__title">Стробинг<br>или майнинг?</div>
+                    <div class="qt__subtitle">кто ты в мире мейкаперов</div>
+                    <div class="qt__qnumber"></div>
+                    <div class="qt__q"></div>
+                    <div class="qt__qimg"></div>
+                    <div class="qt__variant-answers">
+                    </div>
+                </div>
+                <!-- question-template -->
+                <div class="next-template">
+                    <div class="n__title">Стробинг<br>или майнинг?</div>
+                    <div class="n__subtitle">кто ты в мире мейкаперов</div>
+                    <div class="n__qnumber"></div>
+                    <div class="n__res1"></div>
+                    <div class="n__qbtn"><span></span></div>
+                </div>
+                <!-- next-template -->
+                <div class="result-template">
+                    <div class="r__banner">
+                        <img src="/images/r__banner-03792c0888.jpg" alt="">
+                    </div>
+                    <div class="r__status-title"></div>
+                    <div class="r__status-desc">
+                    </div>
+                    <div class="r__lessons">
+                        <a href="#">смотри наши уроки от L’ORÉAL PARIS</a>
+                    </div>
+                    <div class="r__share-title">Поделиться</div>
+                    <div class="share-icon">
+                        <?=\frontend\widgets\share\ShareWidget::widget(['share' => $this->params['share']]);?>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="test__content">
-            <div class="question-template">
-                <div class="qt__title">Стробинг<br>или майнинг?</div>
-                <div class="qt__subtitle">кто ты в мире мейкаперов</div>
-                <div class="qt__qnumber"></div>
-                <div class="qt__q"></div>
-                <div class="qt__qimg"></div>
-                <div class="qt__variant-answers">
-                </div>
-            </div>
-            <!-- question-template -->
-            <div class="next-template">
-                <div class="n__title">Стробинг<br>или майнинг?</div>
-                <div class="n__subtitle">кто ты в мире мейкаперов</div>
-                <div class="n__qnumber"></div>
-                <div class="n__res1"></div>
-                <div class="n__qbtn"><span></span></div>
-            </div>
-            <!-- next-template -->
-            <div class="result-template">
-                <div class="r__banner">
-                    <img src="/images/r__banner-03792c0888.jpg" alt="">
-                </div>
-                <div class="r__status-title"></div>
-                <div class="r__status-desc">
-                </div>
-                <div class="r__lessons">
-                    <a href="#">смотри наши уроки от L’ORÉAL PARIS</a>
-                </div>
-                <div class="r__share-title">Поделиться</div>
-                <div class="share-icon">
-                    <?=\frontend\widgets\share\ShareWidget::widget(['share' => $this->params['share']]);?>
-                </div>
-            </div>
-        </div>
+        <?php endif;?>
     </div>
-    <?php endif;?>
 
     <div id="overlay">&nbsp;</div>
     <div id="preloader">

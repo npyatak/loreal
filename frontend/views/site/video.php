@@ -42,7 +42,7 @@ $this->params['bodyClass'] = 'page-video';
 		</div>
 
 		<div class="video-gallery video-gallery-2" id="backstage">
-			<div class="vg__title vg2__title">Смотри бекстейджи от</div>
+			<div class="vg__title vg2__title">Смотри бекстейджи<br class="mobile-only" /> от</div>
 			<div class="vg__lp vg2__lp">
 				<a href=""><img src="/images/video/vg2__lp-5535d71715.svg" alt=""></a>
 			</div>

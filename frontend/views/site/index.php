@@ -15,6 +15,7 @@ if(isset($results[$res])) {
 ?>
 
 <div class="screen-1">
+    <div class="s1__bg-woman">&nbsp;</div>
     <div class="container s1__container">
         <div class="s1__makeup">
             <a href=""><img src="/images/s1-new/s1__makeup-7d501bd791.jpg" alt=""></a>
@@ -27,11 +28,11 @@ if(isset($results[$res])) {
                     <a href="#">Вдохновись и<br>Покажи, на что<br>ты способен!<br>старт 8 марта</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">смотреть тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
                 </div>
-                <div class="tc1-block3">
+                <!-- <div class="tc1-block3">
                     <a href="<?=Url::toRoute(['site/video', '#' => 'backstage']);?>">смотреть бекстейджи</a>
-                </div>
+                </div> -->
             </div>
             <div class="s1__tc-2">
                 <div class="tc2-block1">
@@ -86,6 +87,7 @@ if(isset($results[$res])) {
             <div class="sm sm-1">
                 <div class="sm1-title">Стробинг<br>или майнинг?</div>
                 <div class="sm1-subtitle">кто ты в мире мейкаперов</div>
+                <div class="sm1-img-mob"><img src="/images/s3__sm.png" alt=""></div>
                 <div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области<br>современных косметических средств, или твоя женская суперсила<br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим<br>рекомендациям? Давай узнаем!</div>
                 <div class="go-test">
                     <a href="<?=Url::toRoute(['site/test']);?>" class="test-link">Пройти тест</a>
@@ -102,7 +104,7 @@ if(isset($results[$res])) {
             </div>
             <div class="v__img">
                 <img src="/images/s3__v__video-bg-e2f8d2cf2e.jpg" alt="">
-                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/7maJOI3QMu0?rel=0&amp;autoplay=1&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
+                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/zFw3lUtfU5g?rel=0&amp;autoplay=1&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
             <div class="see-all">
                 <a href="#">Смотреть все</a>

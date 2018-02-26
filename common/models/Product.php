@@ -34,7 +34,7 @@ class Product extends \yii\db\ActiveRecord
             [['title'], 'required'],
             [['description'], 'string'],
             [['show_on_main', 'test'], 'integer'],
-            [['title', 'image', 'url'], 'string', 'max' => 255],
+            [['title', 'image', 'url_1', 'url_2', 'url_3'], 'string', 'max' => 255],
         ];
     }
 
@@ -47,7 +47,9 @@ class Product extends \yii\db\ActiveRecord
             'id' => 'ID',
             'title' => 'Заголовок',
             'image' => 'Изображение',
-            'url' => 'Ссылка',
+            'url_1' => 'Ссылка 1',
+            'url_2' => 'Ссылка 2',
+            'url_3' => 'Ссылка 3',
             'description' => 'Описание',
             'show_on_main' => 'Показать на главной',
             'test' => 'Задание',

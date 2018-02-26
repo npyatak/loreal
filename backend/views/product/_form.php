@@ -9,20 +9,26 @@ use common\components\ElfinderInput;
     <?php $form = ActiveForm::begin();?>
 
     <div class="row">
-        <div class="col-sm-6">
+        <div class="col-sm-5">
             <?= $form->field($model, 'title')->textInput();?>
         </div>
-        <div class="col-md-6">
-            <?= $form->field($model, 'url')->textInput();?>
+        <div class="col-sm-5">
+            <?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
+        </div>
+        <div class="col-sm-2">
+            <?= $form->field($model, 'show_on_main')->checkbox();?>
         </div>
     </div>
 
     <div class="row">
-        <div class="col-sm-6">
-            <?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
+        <div class="col-md-4">
+            <?= $form->field($model, 'url_1')->textInput();?>
         </div>
-        <div class="col-sm-6">
-            <?= $form->field($model, 'show_on_main')->checkbox();?>
+        <div class="col-md-4">
+            <?= $form->field($model, 'url_2')->textInput();?>
+        </div>
+        <div class="col-md-4">
+            <?= $form->field($model, 'url_3')->textInput();?>
         </div>
     </div>
 
