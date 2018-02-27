@@ -15,7 +15,7 @@ $this->params['bodyClass'] = 'page-video';
 		<div class="vs__subtitle">#lorealparis_мейкаперы</div>
 		<div class="vs__intro">Вдохновляйся и Покажи, на что<br>ты способен!</div>
 		<div class="video-gallery video-gallery-1" id="tutorial">
-			<div class="vg__title vg1__title">Смотри тьюториалы мейкапа от</div>
+			<div class="vg__title vg1__title">Смотри тьюториалы от</div>
 			<div class="vg__lp vg1__lp">
 				<a href=""><img src="/images/video/vg1__lp-5535d71715.svg" alt=""></a>
 			</div>
@@ -27,7 +27,7 @@ $this->params['bodyClass'] = 'page-video';
 					<a class="play-btn" href="<?=$videosTop[0]->key;?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 				</div>
 				<?php endif;?>
-				<div class="vg__thumbnail-union vg1__thumbnail-union scroll-pane horizontal-only">
+				<div class="vg__thumbnail-union vg1__thumbnail-union">
 					<div class="vg__thumbnails vg1__thumbnails">
 					<?php foreach ($videosTop as $key => $video):?>
 						<?php if($key != 0):?>
@@ -72,6 +72,7 @@ $this->params['bodyClass'] = 'page-video';
 			<div class="sm sm-1">
 				<div class="sm1-title">Стробинг<br>или майнинг?</div>
 				<div class="sm1-subtitle">кто ты в мире мейкаперов</div>
+				<div class="sm1-img-mob"><img src="/images/s3__sm.png" alt=""></div>
 				<div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области<br>современных косметических средств, или твоя женская суперсила<br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим<br>рекомендациям? Давай узнаем!</div>
 				<div class="go-test">
 					<a href="#test" class="test-link">Пройти тест</a>

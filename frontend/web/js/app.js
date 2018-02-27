@@ -17,12 +17,12 @@ function mainMenu() {
 function videoGallery() {
     //Расчет ширины галерей
     $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails').each(function () {
-        var countThumbnail = $(this).children().length,
+        /*var countThumbnail = $(this).children().length,
             widthElem = $(this).find('> .vg__thumbnail:first-child').width(),
             marginElem = $(this).find('> .vg__thumbnail:first-child').outerWidth(true) - $(this).find('> .vg__thumbnail:first-child').width();
 
         $(this).width( (countThumbnail * widthElem) + (marginElem * (countThumbnail - 1) ) );
-
+        */
     });
 
     $('.video-gallery .vg__union .vg__big-video .play-btn').on('click', function (e) {
