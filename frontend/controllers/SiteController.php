@@ -57,7 +57,7 @@ class SiteController extends Controller
 
     public function actionIndex($res = 1)
     {
-        $products = Product::find()->where(['show_on_main' => 1])->all();
+        $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
 
         $results = [];
         $questions = [];

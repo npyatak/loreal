@@ -68,7 +68,7 @@ if(isset($results[$res])) {
                         <div class="description"><?=$product->description;?></div>
                         <div class="title"><?=$product->title;?></div>
                         <div class="buy">
-                            <a href="<?=$product->url_1;?>" target="_blank">Купить +</a>
+                            <a href="#" target="_blank">Купить +</a>
                         </div>
                     </div>
                 </div>
