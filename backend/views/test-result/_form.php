@@ -10,18 +10,21 @@ use common\components\ElfinderInput;
     <?php $form = ActiveForm::begin();?>
 
     <div class="row">
+        <div class="col-sm-5">
+            <?= $form->field($model, 'title')->textInput() ?>
+        </div>
         <div class="col-md-1">
             <?= $form->field($model, 'range_start')->textInput();?>
         </div>
         <div class="col-sm-1">
             <?= $form->field($model, 'range_end')->textInput() ?>
         </div>
-        <div class="col-sm-10">
+        <div class="col-sm-5">
             <?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
         </div>
     </div>
 
-    <?= $form->field($model, 'title')->widget(CKEditor::className(), [
+    <?= $form->field($model, 'description')->widget(CKEditor::className(), [
         'editorOptions' => \mihaildev\elfinder\ElFinder::ckeditorOptions('elfinder', [
             'allowedContent' => true,
             'preset' => 'textEditor'

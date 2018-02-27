@@ -25,7 +25,7 @@ AppAsset::register($this);
             <header id="header">
                 <div class="container h__container">
                     <div class="h__friday">
-                        <a href="#"><img src="/images/h__friday-322f38062c.png" alt=""></a>
+                        <a href="https://www.youtube.com/playlist?list=PLAs8KRg1jwLXAxmI-f805wg_8fuNDOPIq" target="_blank"><img src="/images/h__friday-322f38062c.png" alt=""></a>
                     </div>
                     <div class="h__burger">&nbsp;</div>
                     <div class="h__lp">
@@ -52,7 +52,18 @@ AppAsset::register($this);
                 <div class="container f__container">
                     <div class="copyright">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></div>
                 </div>
-            </footer>
+            </footer>       
+
+            <div id="buy-popup">
+                <div class="bp__close"><img src="images/test__close.png" alt=""></div>
+                <div class="bp__content">
+                    <div class="bp__title">Купить у наших<br/> партнеров</div>
+                    <div class="bp__links"></div>
+                </div>
+            </div>
+
+            <div id="overlay-buypopup" class="overlay">&nbsp;</div>
+            <div id="overlay" class="overlay">&nbsp;</div>
         </div>
 
         <?php if(Yii::$app->controller->action->id == 'index'):?>
@@ -99,7 +110,6 @@ AppAsset::register($this);
         <?php endif;?>
     </div>
 
-    <div id="overlay">&nbsp;</div>
     <div id="preloader">
         <div class="pl__wrapper">
             <div class="pl__dots">

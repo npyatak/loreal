@@ -55,7 +55,6 @@ if(isset($results[$res])) {
         <div class="s2__lp">
             <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
         </div>
-        <div class="s2__discount">Мы дарим тебе скидку 70% по промокоду 123456</div>
         <div class="product-union scroll-pane horizontal-only">
             <?php if($products):?>
             <div class="products">
@@ -67,9 +66,16 @@ if(isset($results[$res])) {
                     <div class="product-info">
                         <div class="description"><?=$product->description;?></div>
                         <div class="title"><?=$product->title;?></div>
+                        <?php if($product->productLinks):?>
                         <div class="buy">
                             <a href="#" target="_blank">Купить +</a>
+                            <div class="links">
+                                <?php foreach ($product->productLinks as $link):?>
+                                    <a href="<?=$link->url;?>" target="_blank"><?=$link->title;?></a>
+                                <?php endforeach;?>
+                            </div>
                         </div>
+                        <?php endif;?>
                     </div>
                 </div>
                 <?php endforeach;?>

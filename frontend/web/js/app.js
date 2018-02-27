@@ -103,11 +103,34 @@ function GenerateQuestion(data) {
 }
 /* end test*/
 
+function BuyProducts() {
+
+    $('.product-union .products .product .product-info .buy a').on('click',function (e) {
+        e.preventDefault();
+        $('#buy-popup').css('top',$('body,html').scrollTop());
+        $('#buy-popup').addClass('active');
+        $('#buy-popup .bp__links').html($(this).next().html());
+    });
+
+    $('#buy-popup .bp__close').on('click',function () {
+        $('#buy-popup').removeClass('active');
+        $('#buy-popup').removeAttr('style');
+        $('#buy-popup .bp__links').html('');
+    });
+}
+
+
 
 $(document).ready(function () {
 
     //Для работы меню
-    mainMenu();
+    mainMenu();    
+
+    //Покупка продуктов
+    if ($('.product-union .products').length != 0) {
+        BuyProducts();
+    }
+
 
     //Запуска видеогалереи
     if ($('body').hasClass('page-video')) {
