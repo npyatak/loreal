@@ -118,6 +118,9 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+.w40px {
+    width: 40px;
+}
 .w70px {
     width: 70px;
 }
@@ -126,4 +129,14 @@ a.desc:after {
 }
 .list-cell__image {
     max-width: 170px;
+}
+.tabular-input {
+    margin: 25px 0;
+    border: 1px solid #ccc;
+    padding: 20px;
+    background-color: #efefef;
+    border-radius: 5px;
+}
+.tabular-input .table-condensed > thead > tr > th {
+    padding: 5px 2px;
 }

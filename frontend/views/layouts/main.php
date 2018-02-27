@@ -18,6 +18,7 @@ AppAsset::register($this);
 </head>
 <body class="<?=$this->params['bodyClass'];?>">
 <?php $this->beginBody() ?>
+    <img src="https://4233289.fls.doubleclick.net/activityi;src=4233289;type=main;cat=ru_oa00a;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" style="width:0;height:0;position:absolute;visibility:hidden;" alt="">
 
     <div id="page-wrapper">
         <div id="all-wrapper">

@@ -3,6 +3,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\bootstrap\ActiveForm;
 use common\components\ElfinderInput;
+use unclead\multipleinput\TabularInput;
 ?>
 
 <div class="add-form">
@@ -20,19 +21,40 @@ use common\components\ElfinderInput;
         </div>
     </div>
 
-    <div class="row">
-        <div class="col-md-4">
-            <?= $form->field($model, 'url_1')->textInput();?>
-        </div>
-        <div class="col-md-4">
-            <?= $form->field($model, 'url_2')->textInput();?>
-        </div>
-        <div class="col-md-4">
-            <?= $form->field($model, 'url_3')->textInput();?>
-        </div>
-    </div>
-
     <?= $form->field($model, 'description')->textarea(['rows' => 4]) ?>
+
+    <div class="tabular-input">
+        <h4>Ссылки</h4>
+        <?= TabularInput::widget([
+            'min' => 0,
+            'rendererClass' => '\common\components\CustomTableRenderer',
+            'removeButtonOptions' => [
+                'label' => 'X',
+            ],
+            'addButtonOptions' => [
+                'label' => 'Добавить',
+                'class' => 'btn btn-primary'
+            ],
+            'addButtonPosition' => TabularInput::POS_FOOTER,
+            'models' => $productLinkModels,
+            'columns' => [
+                [
+                    'name'  => 'id',
+                    'type'  => 'hiddenInput',
+                ],
+                [
+                    'title' => 'Ссылка',
+                    'name' => 'url',
+                    'enableError' => true
+                ],
+                [
+                    'title' => 'Текст',
+                    'name' => 'title',
+                    'enableError' => true
+                ],
+            ],
+        ]) ?>
+    </div>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -6,6 +6,7 @@ use Yii;
 use yii\web\NotFoundHttpException;
 
 use common\models\Product;
+use common\models\ProductLink;
 use common\models\search\ProductSearch;
 
 /**
@@ -28,22 +29,26 @@ class ProductController extends CController
         ]);
     }
 
-    /**
-     * Creates a new Product model.
-     * If creation is successful, the browser will be redirected to the 'view' page.
-     * @return mixed
-     */
     public function actionCreate()
     {
         $model = new Product();
+        $productLinkModels = [new ProductLink, new ProductLink];
 
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            if(isset($post['ProductLink'])) {
+                $productLinkModels = $model->loadProductLinks($post['ProductLink']);
+            }
+
+            if($model->save()) {
+                return $this->redirect(['index']);
+            }
         }
+
+        return $this->render('create', [
+            'model' => $model,
+            'productLinkModels' => $productLinkModels,
+        ]);
     }
 
     /**
@@ -55,14 +60,26 @@ class ProductController extends CController
     public function actionUpdate($id)
     {
         $model = $this->findModel($id);
-
-        if ($model->load(Yii::$app->request->post()) && $model->save()) {
-            return $this->redirect(['index']);
-        } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+        $productLinkModels = $model->productLinks;
+        if(empty($productLinkModels)) {
+            $productLinkModels = [new ProductLink, new ProductLink];
         }
+
+        $post = Yii::$app->request->post();
+        if ($model->load($post)) {
+            if(isset($post['ProductLink'])) {
+                $productLinkModels = $model->loadProductLinks($post['ProductLink']);
+            }
+
+            if($model->save()) {
+                return $this->redirect(['index']);
+            }
+        }
+
+        return $this->render('update', [
+            'model' => $model,
+            'productLinkModels' => $productLinkModels,
+        ]);
     }
 
     /**
