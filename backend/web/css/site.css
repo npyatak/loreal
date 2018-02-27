@@ -124,11 +124,17 @@ a.desc:after {
 .w70px {
     width: 70px;
 }
+.w150px {
+    width: 170px;
+}
 .w200px {
     width: 200px;
 }
 .list-cell__image {
-    max-width: 170px;
+    max-width: 130px;
+}
+.list-cell__image input {
+    width: 130px;
 }
 .tabular-input {
     margin: 25px 0;

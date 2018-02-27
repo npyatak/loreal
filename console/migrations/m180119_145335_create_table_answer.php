@@ -16,6 +16,7 @@ class m180119_145335_create_table_answer extends Migration
             'question_id' => $this->integer()->notNull(),
             'title' => $this->string(255)->notNull(),
             'image' => $this->string(255),
+            'comment_title' => $this->string(255),
             'comment' => $this->string(255),
             'is_right' => $this->integer(1),
             'score' => $this->integer()->notNull()->defaultValue(1),

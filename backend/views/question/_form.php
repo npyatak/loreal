@@ -41,7 +41,10 @@ use common\components\ElfinderInput;
 		        [
 		        	'title' => 'Заголовок',
 		        	'name' => 'title',
-	                'enableError' => true
+	                'enableError' => true,
+		            'options' => [
+		            	'class' => 'w170px'
+		        	],
 		        ],
 		        [
 		        	'title' => 'Баллы',
@@ -51,21 +54,26 @@ use common\components\ElfinderInput;
 		            	'class' => 'w40px'
 		        	],
 		        ],
-		        [
-		        	'title' => 'Верный',
-		        	'name' => 'is_right',
-		            'type'  => 'checkbox',
-		            'options' => [
-		            	'class' => 'w40px'
-		        	],
-		        ],
+		        // [
+		        // 	'title' => 'Верный',
+		        // 	'name' => 'is_right',
+		        //     'type'  => 'checkbox',
+		        //     'options' => [
+		        //     	'class' => 'w40px'
+		        // 	],
+		        // ],
 		        [
 		        	'title' => 'Изображение',
 		            'name'  => 'image',
 		            'type'  => ElfinderInput::className(),
 		            'options' => [
-		            	'class' => 'w200px'
+		            	'class' => 'w200px',
+		            	'buttonName' => 'О',
 		        	],
+		        ],
+		        [
+		        	'title' => 'Заголовок комментария',
+		        	'name' => 'comment_title',
 		        ],
 		        [
 		        	'title' => 'Комментарий',

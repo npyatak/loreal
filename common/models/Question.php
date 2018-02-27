@@ -24,15 +24,15 @@ class Question extends \yii\db\ActiveRecord
             [['title'], 'required'],
             [['title', 'comment', 'image'], 'string'],
             ['answersArray', function($attribute, $params) {
-                if(count($this->answersArray) < 3) {
-                    $this->addError($attribute, 'Не менее трех вариантов ответов');
-                } elseif(count($this->answersArray) > 3) {
-                    $this->addError($attribute, 'Не более шести вариантов ответов');
+                if(count($this->answersArray) < 2) {
+                    $this->addError($attribute, 'Не менее двух вариантов ответов');
+                } elseif(count($this->answersArray) > 5) {
+                    $this->addError($attribute, 'Не более пяти вариантов ответов');
                 } else {
                     foreach ($this->answersArray as $item) {
                         $item->validate();
                         if($item->hasErrors()) {
-                            $this->addError($attribute, 'Необходимо варианты ответов');
+                            $this->addError($attribute, 'Необходимо заполнить варианты ответов');
                         }
                     }
                 }

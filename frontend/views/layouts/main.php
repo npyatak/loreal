@@ -37,7 +37,7 @@ AppAsset::register($this);
                     <li><a href="<?=Url::home();?>">На главную</a></li>
                     <li><a href="#">Кто ты в мире мейкаперов? Узнать</a></li>
                     <li><a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Смотреть тьюториалы</a></li>
-                    <li><a href="<?=Url::toRoute(['site/video', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li>
+                    <!-- <li><a href="<?=Url::toRoute(['site/video', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li> -->
                     <li><a href="https://makeupers.friday.ru/" target="_blank">Смотри шоу МЕЙКАПЕРЫ на Пятнице!</a></li>
                 </ul>
             </header>
@@ -55,7 +55,7 @@ AppAsset::register($this);
             </footer>       
 
             <div id="buy-popup">
-                <div class="bp__close"><img src="images/test__close.png" alt=""></div>
+                <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="bp__content">
                     <div class="bp__title">Купить у наших<br/> партнеров</div>
                     <div class="bp__links"></div>
