@@ -110,7 +110,7 @@ if(isset($results[$res])) {
             </div>
             <div class="v__img">
                 <img src="<?=$video->imageUrl;?>" alt="">
-                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;autoplay=1&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
+                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
             <div class="see-all">
                 <a href="<?=Url::toRoute(['site/video']);?>">Смотреть все</a>

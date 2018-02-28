@@ -15,6 +15,17 @@ AppAsset::register($this);
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
+
+    <?php if($_SERVER['HTTP_HOST'] !== 'loreal.local'):?>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114928625-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'UA-114928625-1');
+        </script>
+    <?php endif;?>
 </head>
 <body class="<?=$this->params['bodyClass'];?>">
 <?php $this->beginBody() ?>
