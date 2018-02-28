@@ -66,7 +66,7 @@ function GoFinal(data, results) {
 }
 //Обрабочик вызова след. вопроса
 function GoNext(data) {
-
+    console.log(data);
     var NextQ = Number($('#test .question-template').attr('data-q')) + 1;
 
     $('#test .question-template').hide();
@@ -75,7 +75,8 @@ function GoNext(data) {
     $('#test .next-template').attr('next-q',NextQ);
 
     $('#test .next-template .n__qnumber').html($('#test .question-template').attr('data-q'));
-    $('#test .next-template .n__res1').html(data);
+    html = data.comment_title + '<br><span>'+data.comment+'</title>';
+    $('#test .next-template .n__res1').html(html);
     $('#test .next-template .n__qbtn span').html(NextQ);
 
 }

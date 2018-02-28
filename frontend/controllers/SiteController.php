@@ -70,7 +70,7 @@ class SiteController extends Controller
             foreach ($q->answers as $a) {
                 $variants[] = $a->title;
                 $scores[$key][] = $a->score;
-                $comments[$key][] = $a->comment;
+                $comments[$key][] = ['comment' => $a->comment, 'comment_title' => $a->comment_title];
             }
             $questions[$key] = [
                 'number' => $key,
