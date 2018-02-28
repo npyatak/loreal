@@ -4,14 +4,6 @@ namespace common\models;
 
 use Yii;
 
-/**
- * This is the model class for table "test_result".
- *
- * @property int $id
- * @property int $range_start
- * @property int $range_end
- * @property string $title
- */
 class TestResult extends \yii\db\ActiveRecord
 {
     /**
@@ -32,6 +24,7 @@ class TestResult extends \yii\db\ActiveRecord
             [['range_start', 'range_end'], 'integer'],
             [['title'], 'safe'],
             [['image', 'image_2'], 'string', 'max' => 255],
+            ['description', 'safe'],
         ];
     }
 
@@ -47,6 +40,7 @@ class TestResult extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'image' => 'Изображение',
             'image_2' => 'Изображение 2',
+            'description' => 'Описание',
         ];
     }
 
