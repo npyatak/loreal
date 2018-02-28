@@ -47,6 +47,7 @@ AppAsset::register($this);
         ],
         ['label' => 'Видео', 'url' => ['/video']],
         ['label' => 'Товары', 'url' => ['/product']],
+        ['label' => 'Шеринги', 'url' => ['/share']],
     ];
     if (Yii::$app->user->isGuest) {
         $menuItems[] = ['label' => 'Войти', 'url' => ['/site/login']];

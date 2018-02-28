@@ -5,6 +5,7 @@ use frontend\assets\AppAsset;
 
 AppAsset::register($this);
 ?>
+
 <?php $this->beginPage() ?>
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
@@ -46,7 +47,7 @@ AppAsset::register($this);
 
                 <ul id="main-menu">
                     <li><a href="<?=Url::home();?>">На главную</a></li>
-                    <li><a href="#">Кто ты в мире мейкаперов? Узнать</a></li>
+                    <li><a href="<?=Url::toRoute(['site/index', '#' => 'screen-3']);?>">Кто ты в мире мейкаперов? Узнать</a></li>
                     <li><a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Смотреть тьюториалы</a></li>
                     <!-- <li><a href="<?=Url::toRoute(['site/video', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li> -->
                     <li><a href="https://makeupers.friday.ru/" target="_blank">Смотри шоу МЕЙКАПЕРЫ на Пятнице!</a></li>

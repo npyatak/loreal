@@ -2,16 +2,6 @@
 use yii\helpers\Url;
 
 $this->params['bodyClass'] = 'page-front';
-
-if(isset($results[$res])) {
-    $this->params['share']['title'] = $results[$res]['title'];
-    $this->params['share']['text'] = $results[$res]['description'];
-    $this->params['share']['image'] = $results[$res]['image'];
-} else {
-    $this->params['share']['title'] = Yii::$app->params['defaultShare']['title'];
-    $this->params['share']['text'] = Yii::$app->params['defaultShare']['text'];
-    $this->params['share']['image'] = Yii::$app->params['defaultShare']['image'];
-}
 ?>
 
 <div class="screen-1">

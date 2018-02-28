@@ -31,7 +31,7 @@ class TestResult extends \yii\db\ActiveRecord
             [['range_start', 'range_end', 'title'], 'required'],
             [['range_start', 'range_end'], 'integer'],
             [['title'], 'safe'],
-            [['image'], 'string', 'max' => 255],
+            [['image', 'image_2'], 'string', 'max' => 255],
         ];
     }
 
@@ -46,10 +46,15 @@ class TestResult extends \yii\db\ActiveRecord
             'range_end' => 'До',
             'title' => 'Заголовок',
             'image' => 'Изображение',
+            'image_2' => 'Изображение 2',
         ];
     }
 
     public function getImageUrl() {
         return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl($this->image);
+    }
+
+    public function getImage2Url() {
+        return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl($this->image_2);
     }
 }

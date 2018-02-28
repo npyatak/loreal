@@ -10,17 +10,23 @@ use common\components\ElfinderInput;
     <?php $form = ActiveForm::begin();?>
 
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-8">
             <?= $form->field($model, 'title')->textInput() ?>
         </div>
-        <div class="col-md-1">
+        <div class="col-md-2">
             <?= $form->field($model, 'range_start')->textInput();?>
         </div>
-        <div class="col-sm-1">
+        <div class="col-sm-2">
             <?= $form->field($model, 'range_end')->textInput() ?>
         </div>
-        <div class="col-sm-5">
+    </div>
+
+    <div class="row">
+        <div class="col-sm-6">
             <?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
+        </div>
+        <div class="col-sm-6">
+            <?= $form->field($model, 'image_2')->widget(ElfinderInput::className());?>
         </div>
     </div>
 

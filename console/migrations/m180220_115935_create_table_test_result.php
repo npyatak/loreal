@@ -19,6 +19,7 @@ class m180220_115935_create_table_test_result extends Migration
             'title' => $this->string(),
             'description' => $this->text(),
             'image' => $this->string(255),
+            'image_2' => $this->string(255),
         ], $tableOptions);
         
         $this->batchInsert('{{%test_result}}', ['range_start', 'range_end', 'title', 'description'], [

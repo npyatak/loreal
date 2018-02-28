@@ -12,6 +12,7 @@ use common\models\Question;
 use common\models\TestResult;
 use common\models\Product;
 use common\models\Video;
+use common\models\Share;
 
 /**
  * Site controller
@@ -55,6 +56,22 @@ class SiteController extends Controller
         ];
     }
 
+    public function beforeAction($action) {
+        if(Yii::$app->controller->action->id == 'candidate') {
+            return parent::beforeAction($action);
+        }
+
+        $share = Share::find()->where(['uri' => $_SERVER['REQUEST_URI']])->asArray()->one();
+        if($share === null) {
+            $share = Yii::$app->params['defaultShare'];
+        }
+
+        $view = $this->getView();
+        $view->params['share'] = $share;
+
+        return parent::beforeAction($action);
+    }
+
     public function actionIndex($res = 1)
     {
         $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
@@ -87,6 +104,7 @@ class SiteController extends Controller
                 'title' => $r->title,
                 'description' => $r->description,
                 'image' => $r->image,
+                'image_2' => $r->image_2,
                 'id' => $r->id,
             ];
         }
