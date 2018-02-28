@@ -109,7 +109,7 @@ if(isset($results[$res])) {
                 <a href="#"><img src="/images/s3__v__lp-502e83f397.svg" alt=""></a>
             </div>
             <div class="v__img">
-                <img src="<?=$video->image;?>" alt="">
+                <img src="<?=$video->imageUrl;?>" alt="">
                 <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;autoplay=1&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
             <div class="see-all">

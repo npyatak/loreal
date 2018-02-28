@@ -20,11 +20,11 @@ class m180220_120248_create_table_video extends Migration
             'status' => $this->integer(1)->notNull()->defaultValue(1),
             'key' => $this->string()->notNull(),
             'gallery' => $this->integer(1)->notNull()->defaultValue(1),
+            'image' => $this->string(),
         ], $tableOptions);
         
         $this->batchInsert('{{%video}}', ['key'], [
-            ['JyjkPMQLuIM'],
-            ['od08daZ79M4'],
+            ['zFw3lUtfU5g'],
         ]);
     }
 

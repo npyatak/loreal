@@ -24,7 +24,7 @@ class Video extends \yii\db\ActiveRecord
         return [
             [['status', 'gallery'], 'integer'],
             [['key'], 'required'],
-            [['key'], 'string', 'max' => 255],
+            [['key', 'image'], 'string', 'max' => 255],
         ];
     }
 
@@ -38,6 +38,7 @@ class Video extends \yii\db\ActiveRecord
             'status' => 'Статус',
             'key' => 'Id YouTube',
             'gallery' => 'Галерея',
+            'image' => 'Превью',
         ];
     }
 
@@ -48,9 +49,8 @@ class Video extends \yii\db\ActiveRecord
         ];
     }
 
-    public function getImage() {
-        //return 'https://img.youtube.com/vi/'.$this->key.'/hqdefault.jpg';
-        return 'https://img.youtube.com/vi/'.$this->key.'/maxresdefault.jpg';
+    public function getImageUrl() {
+        return $this->image ? $this->image : 'https://img.youtube.com/vi/'.$this->key.'/maxresdefault.jpg';
     }
 
     public function getGalleryArray() {

@@ -39,6 +39,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'gallery', Video::getGalleryArray(), ['prompt'=>''])
                 ],
+                [
+                    'attribute' => 'image',
+                    'header' => 'Изображение',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return Html::img($data->imageUrl, ['width' => '200']);
+                    },
+                ],
 
                 [
                     'class' => 'yii\grid\ActionColumn',

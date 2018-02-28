@@ -98,7 +98,7 @@ AppAsset::register($this);
                     <div class="r__status-desc">
                     </div>
                     <div class="r__lessons">
-                        <a href="#">смотри наши уроки от L’ORÉAL PARIS</a>
+                        <a href="<?=Url::toRoute(['site/video']);?>">смотри наши уроки от L’ORÉAL PARIS</a>
                     </div>
                     <div class="r__share-title">Поделиться</div>
                     <div class="share-icon">

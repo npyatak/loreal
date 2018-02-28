@@ -75,7 +75,8 @@ function GoNext(data) {
     $('#test .next-template').attr('next-q',NextQ);
 
     $('#test .next-template .n__qnumber').html($('#test .question-template').attr('data-q'));
-    html = data.comment_title + '<br><span>'+data.comment+'</title>';
+    html = data.comment_title ? data.comment_title + '<br>' : '';
+    html = html + '<span>'+data.comment+'</span>';
     $('#test .next-template .n__res1').html(html);
     $('#test .next-template .n__qbtn span').html(NextQ);
 
@@ -92,7 +93,7 @@ function GenerateQuestion(data) {
 
     $('#test .question-template .qt__qimg').html("");
     if ( data['image'] != "" ) {
-        $('#test .question-template .qt__qimg').html('<img src="images/' + data['image'] + '" alt="">');
+        $('#test .question-template .qt__qimg').html('<img src="' + data['image'] + '" alt="">');
     }
 
     $('#test .question-template .qt__variant-answers').html("");

@@ -9,7 +9,7 @@ $this->params['bodyClass'] = 'page-video';
 	<div class="video_glow-red">&nbsp;</div>
 	<div class="container vs__container">
 		<div class="vs__makeup">
-			<a href=""><img src="/images/video/vs__makeup-49a787f04a.jpg" alt=""></a>
+			<a href="https://makeupers.friday.ru/" target="_blank"><img src="/images/video/vs__makeup-49a787f04a.jpg" alt=""></a>
 		</div>
 		<div class="vs__title">БРОСЬ ВЫЗОВ МЕЙКАПЕРАМ!</div>
 		<div class="vs__subtitle">#lorealparis_мейкаперы</div>
@@ -23,7 +23,7 @@ $this->params['bodyClass'] = 'page-video';
 				<?php if(isset($videosTop[0])):?>
 				<div class="vg__big-video vg1__big-video">
 					<div class="close">X</div>
-					<img src="<?=$videosTop[0]->image;?>" alt="">
+					<img src="<?=$videosTop[0]->imageUrl;?>" alt="">
 					<a class="play-btn" href="<?=$videosTop[0]->key;?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 				</div>
 				<?php endif;?>
@@ -32,7 +32,7 @@ $this->params['bodyClass'] = 'page-video';
 					<?php foreach ($videosTop as $key => $video):?>
 						<?php if($key != 0):?>
 							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$video->key;?>">
-								<img src="<?=$video->image;?>" alt="">
+								<img src="<?=$video->imageUrl;?>" alt="">
 							</div>
 						<?php endif;?>
 					<?php endforeach;?>
@@ -50,7 +50,7 @@ $this->params['bodyClass'] = 'page-video';
 				<?php if(isset($videosBottom[0])):?>
 				<div class="vg__big-video vg2__big-video">
 					<div class="close">X</div>
-					<img src="<?=$videosBottom[0]->image;?>" alt="">
+					<img src="<?=$videosBottom[0]->imageUrl;?>" alt="">
 					<a class="play-btn" href="<?=$videosTop[0]->key;?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 				</div>
 				<?php endif;?>
@@ -59,7 +59,7 @@ $this->params['bodyClass'] = 'page-video';
 					<?php foreach ($videosBottom as $key => $video):?>
 						<?php if($key != 0):?>
 							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$video->key;?>">
-								<img src="<?=$video->image;?>" alt="">
+								<img src="<?=$video->imageUrl;?>" alt="">
 							</div>
 						<?php endif;?>
 					<?php endforeach;?>
