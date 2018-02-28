@@ -98,6 +98,7 @@ class SiteController extends Controller
             'scores' => $scores,
             'comments' => $comments,
             'res' => $res,
+            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
         ]);
     }
 

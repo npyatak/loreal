@@ -18,7 +18,7 @@ if(isset($results[$res])) {
     <div class="s1__bg-woman">&nbsp;</div>
     <div class="container s1__container">
         <div class="s1__makeup">
-            <a href=""><img src="/images/s1-new/s1__makeup-7d501bd791.jpg" alt=""></a>
+            <a href="https://makeupers.friday.ru/" target="_blank"><img src="/images/s1-new/s1__makeup-7d501bd791.jpg" alt=""></a>
         </div>
         <div class="s1__title">БРОСЬ ВЫЗОВ МЕЙКАПЕРАМ!</div>
         <div class="s1__subtitle">#lorealparis_мейкаперы</div>
@@ -109,11 +109,11 @@ if(isset($results[$res])) {
                 <a href="#"><img src="/images/s3__v__lp-502e83f397.svg" alt=""></a>
             </div>
             <div class="v__img">
-                <img src="/images/s3__v__video-bg-e2f8d2cf2e.jpg" alt="">
-                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/zFw3lUtfU5g?rel=0&amp;autoplay=1&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
+                <img src="<?=$video->image;?>" alt="">
+                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;autoplay=1&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
             <div class="see-all">
-                <a href="#">Смотреть все</a>
+                <a href="<?=Url::toRoute(['site/video']);?>">Смотреть все</a>
             </div>
         </div>
     </div>
