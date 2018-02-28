@@ -174,14 +174,21 @@ $(document).ready(function () {
     //$('.test-link').colorbox({width:"1170px",height:"531px",inline:true, href:$(this).attr('href')});
     var counter = 0;
 
-    var qParse = $.parseJSON(qParseJson);
+    var qParse = eval('(' + qParseJson + ')');
     var qCount = Object.keys(qParse).length;
+    var resParse = eval('(' + resParseJson + ')');
+    var pointParse = eval('(' + pointParseJson + ')');
+    var finalParse = eval('(' + finalParseJson + ')');
 
-    var resParse = $.parseJSON(resParseJson);
 
-    var pointParse = $.parseJSON(pointParseJson);
+    // var qParse = $.parseJSON(qParseJson);
+    // var qCount = Object.keys(qParse).length;
 
-    var finalParse = $.parseJSON(finalParseJson);
+    // var resParse = $.parseJSON(resParseJson);
+
+    // var pointParse = $.parseJSON(pointParseJson);
+
+    // var finalParse = $.parseJSON(finalParseJson);
 
     //Запуск теста
     $('.test-link').on('click',function (e) {
