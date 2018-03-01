@@ -220,7 +220,9 @@ $(document).ready(function () {
         GenerateQuestion(qParse['1']);
         $('#test').addClass('active');
         //$('#test').css('top',$('.screen-3').offset().top);
-        $('#test').css('top',$('body,html').scrollTop());
+        //$('#test').css('top',$('body,html').scrollTop());
+        window.scrollTo(0, 0);
+        $('#test').css('top', 0);
     });
 
     $('#test .test__close').on('click',function () {
