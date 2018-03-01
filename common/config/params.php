@@ -5,9 +5,9 @@ return [
     'user.passwordResetTokenExpire' => 3600,
     'postImageSize' => ['width' => 300, 'height' => 300],
     'defaultShare' => [
-        'title' => 'Лореаль', 
-        'text' => 'Текст поделиться', 
-        'image' => '',
+        'title' => 'БРОСЬ ВЫЗОВ МЕЙКАПЕРАМ!', 
+        'text' => 'Вдохновляйся и покажи на что ты способен', 
+        'image' => '/images/makeup_share.jpg',
         'twitter' => '',
     ],
 ];
