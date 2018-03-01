@@ -17,7 +17,7 @@ AppAsset::register($this);
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
 
-    <?php if($_SERVER['HTTP_HOST'] !== 'loreal.local'):?>
+    <?php //if($_SERVER['HTTP_HOST'] !== 'loreal.local'):?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114928625-1"></script>
         <script>
@@ -26,7 +26,7 @@ AppAsset::register($this);
             gtag('js', new Date());
             gtag('config', 'UA-114928625-1');
         </script>
-    <?php endif;?>
+    <?php //endif;?>
 </head>
 <body class="<?=$this->params['bodyClass'];?>">
 <?php $this->beginBody() ?>
@@ -105,7 +105,7 @@ AppAsset::register($this);
                     <div class="r__status-desc">
                     </div>
                     <div class="r__lessons">
-                        <a href="<?=Url::toRoute(['site/video']);?>">смотри наши уроки от L’ORÉAL PARIS</a>
+                        <a href="<?=Url::toRoute(['site/video']);?>" data-event="click" data-param="test-tutorials">смотри наши уроки от L’ORÉAL PARIS</a>
                     </div>
                     <div class="r__share-title">Поделиться</div>
                     <div class="share-icon">

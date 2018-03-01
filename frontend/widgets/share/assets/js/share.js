@@ -1,4 +1,8 @@
 $(document).on('click', 'a.share', function(e) {
+    if(typeof $(this).data('event') !== 'undefined') {
+        ga('send', 'event', $(this).data('event'), $(this).data('param'));
+    }
+    
     url = getShareUrl($(this));
     window.open(url,'','toolbar=0,status=0,width=626,height=436');
 

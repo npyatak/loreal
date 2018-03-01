@@ -50,6 +50,8 @@ class ShareWidget extends \yii\base\Widget
 	        'data-image' => $this->share['imageUrl'],
 	        'data-text' => $this->share['text'],
 	        'rel' => 'nofollow',
+	        'data-event' => 'click',
+	        'data-param' => 'test-share-fb'
 	    ]);
 	    echo Html::a('<img src="/images/vk-822654e0fc.png" alt="">', '', [
 	        'class' => 'share vk',
@@ -59,6 +61,8 @@ class ShareWidget extends \yii\base\Widget
 	        'data-image' => $this->share['imageUrl'],
 	        'data-text' => $this->share['text'],
 	        'rel' => 'nofollow',
+	        'data-event' => 'click',
+	        'data-param' => 'test-share-vk'
 	    ]);
 
 		echo Html::a('<img src="/images/od-fda9c61fea.png" alt="">', '', [
@@ -67,6 +71,8 @@ class ShareWidget extends \yii\base\Widget
 	        'data-url' => $this->share['url'],
 	        'data-text' => $this->share['text'],
 	        'rel' => 'nofollow',
+	        'data-event' => 'click',
+	        'data-param' => 'test-share-ok'
 		]);
     }
 
