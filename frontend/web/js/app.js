@@ -277,3 +277,9 @@ $(window).on('load', function () {
 
     $preloader.delay(timeLoad).fadeOut('slow');
 });
+
+$(document).on('click', 'a', function(e) {
+    if(typeof $(this).data('event') !== 'undefined') {
+        ga('send', 'event', $(this).data('event'), $(this).data('param'));
+    }
+});

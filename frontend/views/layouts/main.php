@@ -37,7 +37,7 @@ AppAsset::register($this);
             <header id="header">
                 <div class="container h__container">
                     <div class="h__friday">
-                        <a href="https://friday.ru/" target="_blank"><img src="/images/h__friday-322f38062c.png" alt=""></a>
+                        <a href="https://friday.ru/" target="_blank" data-event="click" data-param="loreal-logo"><img src="/images/h__friday-322f38062c.png" alt=""></a>
                     </div>
                     <div class="h__burger">&nbsp;</div>
                     <div class="h__lp">
