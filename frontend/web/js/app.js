@@ -53,7 +53,7 @@ function videoGallery() {
 
 /*test*/
 //Вызов результата
-function GoFinal(data, results) {
+function GoFinal(data) {
     $('#test .question-template').hide();
     $('#test .next-template').hide();
     $('#test .result-template').show();
@@ -65,8 +65,8 @@ function GoFinal(data, results) {
     $('#test .result-template .r__banner-bottom').html('<img src="'+ data[4] +'" alt="">');
     //$('#test .result-template .r__lessons').html(data[5]);
 
-    var result = results[Number(data[2])];
-    updateShare(result);
+    var res = Number(data[2]);
+    updateShare(res);
 }
 //Обрабочик вызова след. вопроса
 function GoNext(data) {
@@ -253,9 +253,7 @@ $(document).ready(function () {
                     //fin[5] = finalParse[x]['link'];
                 }
             }
-            console.log(fin);
-            console.log(finalParse);
-            GoFinal(fin, finalParse);
+            GoFinal(fin);
         } else {
             GenerateQuestion(qParse[$("#test .next-template").attr('next-q')]);
         }

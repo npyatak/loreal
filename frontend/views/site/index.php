@@ -125,19 +125,24 @@ $script = "
 $this->registerJs($script, yii\web\View::POS_HEAD);
 
 $script = "
-    function updateShare(result) {
-        var url = '".Url::toRoute(['site/index'], true)."?res='+result.id;
-        $('.share').attr('data-url', url);
-        $('.share').attr('data-title', result.title);
-        $('.share').attr('data-image', result.image);
-        $('.share').attr('data-text', result.description);
+    function updateShare(res) {   
+        $.ajax({
+            data: {res: res},
+            success: function(data) {
+                if(data) {
+                    console.log(data);
+                    $('.share').attr('data-url', data.uri);
+                    $('.share').attr('data-title', data.title);
+                    $('.share').attr('data-image', data.image);
+                    $('.share').attr('data-text', data.description);
 
-        $('meta[property=\"og:url\"]').attr('content', url);
-        $('meta[property=\"og:title\"]').attr('content', result.title);
-        $('meta[property=\"og:image\"]').attr('content', result.image);
-        $('meta[property=\"og:description\"]').attr('content', result.description);
-
-        window.history.pushState(null, '', url);
+                    $('meta[property=\"og:url\"]').attr('content', data.uri);
+                    $('meta[property=\"og:title\"]').attr('content', data.title);
+                    $('meta[property=\"og:image\"]').attr('content', data.image);
+                    $('meta[property=\"og:description\"]').attr('content', data.text);
+                }
+            }
+        });
     }
 ";
 

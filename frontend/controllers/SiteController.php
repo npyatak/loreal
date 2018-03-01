@@ -2,11 +2,13 @@
 namespace frontend\controllers;
 
 use Yii;
+use yii\helpers\Url;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
+use yii\web\Response;
 
 use common\models\Question;
 use common\models\TestResult;
@@ -74,6 +76,15 @@ class SiteController extends Controller
 
     public function actionIndex($res = 1)
     {
+        if (Yii::$app->request->isAjax && isset($_GET['res'])) {
+            $uri = Url::to(['site/index', 'res' => $_GET['res']]);
+            $share = Share::find()->where(['uri' => $uri])->asArray()->one();
+            $share['uri'] = Url::to($uri, $_SERVER['REQUEST_SCHEME']);
+            $share['image'] = $share['image'] ? Url::to($share['image'], $_SERVER['REQUEST_SCHEME']) : '';
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return $share;
+        }
+
         $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
 
         $results = [];
