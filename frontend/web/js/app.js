@@ -70,7 +70,6 @@ function GoFinal(data) {
 }
 //Обрабочик вызова след. вопроса
 function GoNext(data) {
-    //console.log(data);
     var NextQ = Number($('#test .question-template').attr('data-q')) + 1;
 
     $('#test .question-template').hide();

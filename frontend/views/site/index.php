@@ -130,7 +130,6 @@ $script = "
             data: {res: res},
             success: function(data) {
                 if(data) {
-                    console.log(data);
                     $('.share').attr('data-url', data.uri);
                     $('.share').attr('data-title', data.title);
                     $('.share').attr('data-image', data.image);
@@ -143,6 +142,8 @@ $script = "
                 }
             }
         });
+
+        window.history.pushState(null, '', '/res='+res);
     }
 ";
 
