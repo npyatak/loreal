@@ -15,7 +15,7 @@ $this->params['bodyClass'] = 'page-front';
         <div class="s1__two-col">
             <div class="s1__tc-1">
                 <div class="tc1-block1">
-                    <a href="#">Вдохновись и<br>Покажи, на что<br>ты способен!<br>старт 8 марта</a>
+                    <a href="#">Вдохновись и<br>Покажи, на что <br>ты способен!<br>старт 8 марта</a>
                 </div>
                 <div class="tc1-block2">
                     <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
@@ -84,7 +84,7 @@ $this->params['bodyClass'] = 'page-front';
                 <div class="sm1-title">Стробинг<br>или майнинг?</div>
                 <div class="sm1-subtitle">кто ты в мире мейкаперов</div>
                 <div class="sm1-img-mob"><img src="/images/s3__sm-a7c4007519.png" alt=""></div>
-                <div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области<br>современных косметических средств, или твоя женская суперсила<br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим<br>рекомендациям? Давай узнаем!</div>
+                <div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области <br>современных косметических средств, или твоя женская суперсила <br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим <br>рекомендациям? Давай узнаем!</div>
                 <div class="go-test">
                     <a href="<?=Url::toRoute(['site/test']);?>" class="test-link">Пройти тест</a>
                 </div>

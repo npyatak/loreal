@@ -15,7 +15,7 @@ $this->params['bodyClass'] = 'page-video';
 		</div>
 		<div class="vs__title">БРОСЬ ВЫЗОВ МЕЙКАПЕРАМ!</div>
 		<div class="vs__subtitle">#lorealparis_мейкаперы</div>
-		<div class="vs__intro">Вдохновляйся и Покажи, на что<br>ты способен!</div>
+		<div class="vs__intro">Вдохновляйся и Покажи, на что <br>ты способен!</div>
 		<div class="video-gallery video-gallery-1" id="tutorial">
 			<div class="vg__title vg1__title">Смотри тьюториалы от</div>
 			<div class="vg__lp vg1__lp">
@@ -77,7 +77,7 @@ $this->params['bodyClass'] = 'page-video';
 				<div class="sm1-title">Стробинг<br>или майнинг?</div>
 				<div class="sm1-subtitle">кто ты в мире мейкаперов</div>
 				<div class="sm1-img-mob"><img src="/images/s3__sm-a7c4007519.png" alt=""></div>
-				<div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области<br>современных косметических средств, или твоя женская суперсила<br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим<br>рекомендациям? Давай узнаем!</div>
+				<div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области <br>современных косметических средств, или твоя женская суперсила <br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим <br>рекомендациям? Давай узнаем!</div>
 				<div class="go-test">
 					<a href="<?=Url::toRoute(['site/video', '#' => 'test']);?>" class="test-link">Пройти тест</a>
 				</div>
