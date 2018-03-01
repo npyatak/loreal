@@ -143,7 +143,7 @@ $script = "
             }
         });
 
-        window.history.pushState(null, '', '/res='+res);
+        window.history.pushState(null, '', '/?res='+res);
     }
 ";
 
