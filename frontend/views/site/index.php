@@ -58,7 +58,7 @@ $this->params['bodyClass'] = 'page-front';
                         <div class="title"><?=$product->title;?></div>
                         <?php if($product->productLinks):?>
                         <div class="buy">
-                            <a href="#" target="_blank">Купить +</a>
+                            <a href="#" target="_blank">Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
                                     <a href="<?=$link->url;?>" target="_blank"><?=$link->title;?></a>
@@ -83,7 +83,7 @@ $this->params['bodyClass'] = 'page-front';
             <div class="sm sm-1">
                 <div class="sm1-title">Стробинг<br>или майнинг?</div>
                 <div class="sm1-subtitle">кто ты в мире мейкаперов</div>
-                <div class="sm1-img-mob"><img src="/images/s3__sm.png" alt=""></div>
+                <div class="sm1-img-mob"><img src="/images/s3__sm-a7c4007519.png" alt=""></div>
                 <div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области<br>современных косметических средств, или твоя женская суперсила<br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим<br>рекомендациям? Давай узнаем!</div>
                 <div class="go-test">
                     <a href="<?=Url::toRoute(['site/test']);?>" class="test-link">Пройти тест</a>
@@ -110,14 +110,16 @@ $this->params['bodyClass'] = 'page-front';
 </div>
 
 <?php
+
 $script = "
     var qParseJson = '".json_encode($questions)."';
-
-    var resParseJson = '".json_encode($comments)."';
 
     var pointParseJson = '".json_encode($scores)."';
 
     var finalParseJson = '".json_encode($results)."';
+    
+    var resParseJson = '".json_encode($comments)."';
+    
 ";
 
 $this->registerJs($script, yii\web\View::POS_HEAD);
