@@ -12,7 +12,7 @@ AppAsset::register($this);
 <head>
     <meta charset="<?= Yii::$app->charset ?>">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
@@ -62,7 +62,7 @@ AppAsset::register($this);
 
             <footer id="footer">
                 <div class="container f__container">
-                    <div class="copyright">&copy; <?= Html::encode(Yii::$app->name) ?> <?= date('Y') ?></div>
+                    <div class="copyright">&copy; friday.ru 2018</div>
                 </div>
             </footer>       
 
@@ -75,10 +75,7 @@ AppAsset::register($this);
             </div>
 
             <div id="overlay-buypopup" class="overlay">&nbsp;</div>
-            <div id="overlay" class="overlay">&nbsp;</div>
-        </div>
-
-        <?php if(Yii::$app->controller->action->id == 'index'):?>
+            <?php if(Yii::$app->controller->action->id == 'index'):?>
         <div id="test">
             <div class="test__close">
                 <img src="/images/test__close-010fb6bdbf.png" alt="">
@@ -103,9 +100,7 @@ AppAsset::register($this);
                 </div>
                 <!-- next-template -->
                 <div class="result-template">
-                    <div class="r__banner">
-                        <img src="/images/r__banner-03792c0888.jpg" alt="">
-                    </div>
+                    <div class="r__banner"></div>
                     <div class="r__status-title"></div>
                     <div class="r__status-desc">
                     </div>
@@ -116,10 +111,14 @@ AppAsset::register($this);
                     <div class="share-icon">
                         <?=\frontend\widgets\share\ShareWidget::widget(['share' => $this->params['share']]);?>
                     </div>
+                    <div class="r__banner-bottom"></div>
                 </div>
             </div>
         </div>
         <?php endif;?>
+            <div id="overlay" class="overlay">&nbsp;</div>
+        </div>
+
     </div>
 
     <div id="preloader">

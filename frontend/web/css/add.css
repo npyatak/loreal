@@ -1,4 +1,4 @@
-.screen-2 .product-union .products {
+/*.screen-2 .product-union .products {
 	width: 100%;
 }
 .screen-2 .product-union .products .product {
@@ -6,4 +6,87 @@
 }
 #test, #buy-popup {
 	background-color: #040208e6;
+}*/
+
+.strobing-maning .sm-1 .go-test{
+	width: 258px;
+    height: 143px;
+    background: url(../images/buy-3e02603af0.png) top no-repeat;
+}
+
+.strobing-maning .sm-1 .go-test:hover{
+	background: url(../images/buy-3e02603af0_hover.png) top no-repeat;
+}
+
+.screen-1 .s1__two-col .s1__tc-2 .go-test{
+	width: 360px;
+	height: 200px;
+    background: url(../images/buy-big-505e68bb51.png) top no-repeat;
+}
+
+.screen-1 .s1__two-col .s1__tc-2 .go-test:hover{
+    background: url(../images/buy-big-505e68bb51_hover.png) top no-repeat;
+}
+
+@media all and (max-width: 1279px){
+	.screen-1 .s1__two-col .s1__tc-2 .go-test{
+		width: 252px;
+		height: 139px;
+    	background: url(../images/buy-big-745a7c0a71.png) top no-repeat;
+	}
+	.screen-1 .s1__two-col .s1__tc-2 .go-test:hover{
+    	background: url(../images/buy-big-745a7c0a71_hover.png) top no-repeat;
+	}
+}
+
+.go-front {
+	margin: 0 auto 0 auto;
+    width: 278px;
+    height: 189px;
+    background: url(../images/main_from_tutors-29fcd2d413.png) center top no-repeat;
+}
+
+.go-front:hover{
+    background: url(../images/main_from_tutors-29fcd2d413_hover.png) center top no-repeat;
+}
+
+.go-front a{
+	display: block;
+    width: 100%;
+    height: 100%;
+    text-shadow: 2.3px -2px 3px rgba(0,0,0,.64);
+    color: #fff;
+    font-family: Intro;
+    font-size: 0;
+    text-indent: -9999px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+a{
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a:focus,
+a:hover{
+    outline: 0;
+    background-color: transparent;
+    -webkit-tap-highlight-color: transparent;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+a::selection {
+    background-color: transparent; /* Safari */
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+a::-moz-selection {
+    background-color: transparent; /* Firefox */
+    outline: 0;
+    -webkit-tap-highlight-color: transparent;
+     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }

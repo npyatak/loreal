@@ -61,12 +61,16 @@ function GoFinal(data, results) {
     $('#test .result-template .r__status-title').html(data[0]);
     $('#test .result-template .r__status-desc').html(data[1]);
 
+    $('#test .result-template .r__banner').html('<img src="'+ data[3] +'" alt="">');
+    $('#test .result-template .r__banner-bottom').html('<img src="'+ data[4] +'" alt="">');
+    //$('#test .result-template .r__lessons').html(data[5]);
+
     var result = results[Number(data[2])];
     updateShare(result);
 }
 //Обрабочик вызова след. вопроса
 function GoNext(data) {
-    console.log(data);
+    //console.log(data);
     var NextQ = Number($('#test .question-template').attr('data-q')) + 1;
 
     $('#test .question-template').hide();
@@ -122,6 +126,21 @@ function BuyProducts() {
 }
 
 
+function WidthProducts() {
+    var countProd = $('.screen-2 .product-union .products').children().length,
+        widthProd;
+
+    if ( $(window).width() <= 1279 ) {
+        widthProd = 285;
+        $('.screen-2 .product-union .products .product').width(widthProd);
+    } else {
+        widthProd = 277.5;
+        $('.screen-2 .product-union .products .product').width(widthProd);
+    }
+
+    $('.screen-2 .product-union .products').width( countProd * widthProd);
+
+}
 
 $(document).ready(function () {
 
@@ -159,11 +178,14 @@ $(document).ready(function () {
         $('body,html').animate({scrollTop: top}, 1500);
     });
 
+    //Просчет продуктов
+    WidthProducts();
+
     //Стидизация скролла
     $(function() {
         $('.scroll-pane').jScrollPane({
             showArrows: true,
-            //autoReinitialise: true,
+            autoReinitialise: true,
             horizontalDragMinWidth: 124,
             horizontalDragMaxWidth: 124,
             mouseWheelSpeed:50,
@@ -182,7 +204,6 @@ $(document).ready(function () {
     var pointParse = eval('(' + pointParseJson + ')');
     var finalParse = eval('(' + finalParseJson + ')');
 
-
     // var qParse = $.parseJSON(qParseJson);
     // var qCount = Object.keys(qParse).length;
 
@@ -198,7 +219,8 @@ $(document).ready(function () {
         //Первый вопрос
         GenerateQuestion(qParse['1']);
         $('#test').addClass('active');
-        $('#test').css('top',$('.screen-3').offset().top);
+        //$('#test').css('top',$('.screen-3').offset().top);
+        $('#test').css('top',$('body,html').scrollTop());
     });
 
     $('#test .test__close').on('click',function () {
@@ -226,13 +248,22 @@ $(document).ready(function () {
                     fin[0] = finalParse[x]['title'];
                     fin[1] = finalParse[x]['description'];
                     fin[2] = finalParse[x]['id'];
+                    fin[3] = finalParse[x]['image'];
+                    fin[4] = finalParse[x]['image_2'];
+                    //fin[5] = finalParse[x]['link'];
                 }
             }
+            console.log(fin);
+            console.log(finalParse);
             GoFinal(fin, finalParse);
         } else {
             GenerateQuestion(qParse[$("#test .next-template").attr('next-q')]);
         }
     });
+});
+
+$(window).resize(function(){
+    WidthProducts();
 });
 
 $(window).on('load', function () {
