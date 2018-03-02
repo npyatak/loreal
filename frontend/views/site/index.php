@@ -102,6 +102,12 @@ $this->params['bodyClass'] = 'page-front';
                 <img src="<?=$video->imageUrl;?>" alt="">
                 <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
+
+            <div class="after-video">
+                <div class="av__title">Курс молодого мейкапера - День Святого Валентина</div>
+                <div class="av__body">Смотри мастер-класс от официального визажиста L'Oréal Paris в России Милы Клименко и узнай, как создать чувственный макияж с акцентом на губы к Дню святого Валентина. Хочешь узнать больше мейкап-лайфхаков? Не пропусти шоу «Мейкаперы»!</div>
+            </div>
+
             <div class="see-all">
                 <a href="<?=Url::toRoute(['site/video']);?>">Смотреть все</a>
             </div>
