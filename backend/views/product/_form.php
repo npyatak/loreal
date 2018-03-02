@@ -51,6 +51,11 @@ use unclead\multipleinput\TabularInput;
                     'enableError' => true
                 ],
                 [
+                    'title' => 'Логотип',
+                    'name'  => 'logo',
+                    'type'  => ElfinderInput::className(),
+                ],
+                [
                     'title' => 'Текст',
                     'name' => 'title',
                     'enableError' => true

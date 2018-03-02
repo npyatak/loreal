@@ -21,7 +21,7 @@ class ProductLink extends \yii\db\ActiveRecord
     {
         return [
             [['product_id', 'url'], 'required'],
-            [['url', 'title', 'ga_param'], 'string'],
+            [['url', 'title', 'ga_param', 'logo'], 'string'],
             [['product_id'], 'integer'],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
@@ -38,6 +38,7 @@ class ProductLink extends \yii\db\ActiveRecord
             'url' => 'Url',
             'title' => 'Title',
             'ga_param' => 'GA параметр',
+            'logo' => 'Логотип',
         ];
     }
 
