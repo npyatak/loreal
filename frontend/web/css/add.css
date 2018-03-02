@@ -98,3 +98,17 @@ a::-moz-selection {
 .screen-1 .s1__two-col .s1__tc-1 .tc1-block2 a:hover{
     background: url(../images/s1-new/tc1-block2-10c2d12914_hover.png) 0 no-repeat;
 }
+
+@media all and (max-width: 1279px){
+    .screen-1 .s1__two-col .s1__tc-1 .tc1-block2 a:hover{
+        background-size: cover;
+    }
+}
+
+.screen-1 .s1__two-col .s1__tc-1 .tc1-block2 a,
+.screen-1 .s1__two-col .s1__tc-2 .go-test,
+.strobing-maning .sm-1 .go-test,
+.screen-3 .video .see-all,
+.go-front{
+    transition: all 0.3s linear;
+}

@@ -239,6 +239,8 @@ $(document).ready(function () {
         GoNext(resParse[$('#test .question-template').attr('data-q')][$('#test .question-template').attr('q-key')]);
 
         counter += pointParse[$('#test .question-template').attr('data-q')][$('#test .question-template').attr('q-key')];
+        //console.log(counter);
+        window.scrollTo(0, 0);
     });
 
     //Переход на след вопрос
@@ -258,8 +260,10 @@ $(document).ready(function () {
             }
             counter = 0;
             GoFinal(fin);
+            window.scrollTo(0, 0);
         } else {
             GenerateQuestion(qParse[$("#test .next-template").attr('next-q')]);
+            window.scrollTo(0, 0);
         }
     });
 });
