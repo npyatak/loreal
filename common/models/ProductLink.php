@@ -4,16 +4,6 @@ namespace common\models;
 
 use Yii;
 
-/**
- * This is the model class for table "{{%product_link}}".
- *
- * @property int $id
- * @property int $product_id
- * @property int $url
- * @property int $title
- *
- * @property Product $product
- */
 class ProductLink extends \yii\db\ActiveRecord
 {
     /**
@@ -31,7 +21,7 @@ class ProductLink extends \yii\db\ActiveRecord
     {
         return [
             [['product_id', 'url'], 'required'],
-            [['url', 'title'], 'string'],
+            [['url', 'title', 'ga_param'], 'string'],
             [['product_id'], 'integer'],
             [['product_id'], 'exist', 'skipOnError' => true, 'targetClass' => Product::className(), 'targetAttribute' => ['product_id' => 'id']],
         ];
@@ -47,6 +37,7 @@ class ProductLink extends \yii\db\ActiveRecord
             'product_id' => 'Product ID',
             'url' => 'Url',
             'title' => 'Title',
+            'ga_param' => 'GA параметр',
         ];
     }
 

@@ -61,7 +61,7 @@ $this->params['bodyClass'] = 'page-front';
                             <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank"><?=$link->title;?></a>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
                                 <?php endforeach;?>
                             </div>
                         </div>
