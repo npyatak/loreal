@@ -32,7 +32,7 @@ $this->params['bodyClass'] = 'page-front';
                     <a href="#">Кто ты в мире<br>мейкапа</a>
                 </div>
                 <div class="go-test">
-                    <a href="#s3-gotest" class="anchor-link">Пройти тест</a>
+                    <a href="#screen-3" class="anchor-link">Пройти тест</a>
                 </div>
             </div>
         </div>
@@ -61,9 +61,7 @@ $this->params['bodyClass'] = 'page-front';
                             <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
-                                        <?=$link->logo ? Html::img($link->logo, ['class' => '']) : $link->title;?>
-                                    </a>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
                                 <?php endforeach;?>
                             </div>
                         </div>
@@ -88,7 +86,7 @@ $this->params['bodyClass'] = 'page-front';
                 <div class="sm1-img-mob"><img src="/images/s3__sm-a7c4007519.png" alt=""></div>
                 <div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области <br>современных косметических средств, или твоя женская суперсила <br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим <br>рекомендациям? Давай узнаем!</div>
                 <div class="go-test">
-                    <a href="<?=Url::toRoute(['site/test']);?>" id="s3-gotest" class="test-link" data-event="click" data-param="start-test">Пройти тест</a>
+                    <a href="<?=Url::toRoute(['site/test']);?>" class="test-link" data-event="click" data-param="start-test">Пройти тест</a>
                 </div>
             </div>
             <div class="sm sm-2">
@@ -104,12 +102,6 @@ $this->params['bodyClass'] = 'page-front';
                 <img src="<?=$video->imageUrl;?>" alt="">
                 <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
-
-            <div class="after-video">
-                <div class="av__title">Курс молодого мейкапера - День Святого Валентина</div>
-                <div class="av__body">Смотри мастер-класс от официального визажиста L'Oréal Paris в России Милы Клименко и узнай, как создать чувственный макияж с акцентом на губы к Дню святого Валентина. Хочешь узнать больше мейкап-лайфхаков? Не пропусти шоу «Мейкаперы»!</div>
-            </div>
-
             <div class="see-all">
                 <a href="<?=Url::toRoute(['site/video']);?>">Смотреть все</a>
             </div>
