@@ -228,6 +228,7 @@ $(document).ready(function () {
 
     $('#test .test__close').on('click',function () {
         $(this).parent().removeClass('active');
+        window.history.pushState(null, '', '/');
     });
 
     //Обработчик на варианты ответа
