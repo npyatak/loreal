@@ -17,6 +17,7 @@ class m180227_155340_create_table_product_link extends Migration
             'url' => $this->string()->notNull(),
             'title' => $this->string(),
             'ga_param' => $this->string(255),
+            'logo' => $this->string(255),
         ], $tableOptions);
 
         $this->addForeignKey("{product_link}_product_id_fkey", '{{%product_link}}', 'product_id', '{{%product}}', 'id', 'CASCADE', 'CASCADE');
