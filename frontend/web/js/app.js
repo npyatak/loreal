@@ -241,6 +241,12 @@ $(document).ready(function () {
         counter += pointParse[$('#test .question-template').attr('data-q')][$('#test .question-template').attr('q-key')];
         //console.log(counter);
         window.scrollTo(0, 0);
+
+        if ( $('#test .question-template').attr('data-q') == qCount) {
+            $('#test .next-template .n__qbtn').addClass('last-q');
+        }
+        
+
     });
 
     //Переход на след вопрос

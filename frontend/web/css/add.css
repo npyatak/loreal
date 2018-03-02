@@ -134,3 +134,49 @@ a::-moz-selection {
     font-size: 20px;
     color: white;
 }
+
+#test .next-template .n__qbtn.last-q{
+    background: url(../images/n__qbtn_result.png);
+    width: 288px;
+    height: 220px;
+}
+
+#test .next-template .n__qbtn.last-q span{
+    display: none;
+}
+
+body.page-video .video-screen .video_bulbs{
+    height: 661px;
+    background: url(../images/video/bgr_1.png) center top no-repeat;
+    background-size: initial;
+}
+
+@media all and (max-width: 940px){
+    body.page-video .video-screen .video_bulbs{
+        top: 766px;
+    }
+    body.page-video .video-screen .video_glow-red{
+        top: 787px;
+    }
+}
+
+@media all and (max-width: 1279px){
+    #test .question-template .qt__q,
+    #test .question-template .qt__variant-answers>*,
+    #test .next-template .n__res1 span,
+    #buy-popup .bp__links>*{
+        font-size: 28px;
+    }
+}
+
+@media all and (min-width: 1280px){
+    .screen-1>.s1__container{
+        min-height: 947px;
+    }
+    .screen-1 .s1__bg-woman{
+        bottom: 0px;
+    }
+    .screen-2{
+        margin-top: -97px;
+    }
+}
