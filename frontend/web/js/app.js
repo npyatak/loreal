@@ -112,9 +112,11 @@ function BuyProducts() {
 
     $('.product-union .products .product .product-info .buy a').on('click',function (e) {
         e.preventDefault();
-        $('#buy-popup').css('top',$('body,html').scrollTop());
+        //$('#buy-popup').css('top',$('body,html').scrollTop());
         $('#buy-popup').addClass('active');
         $('#buy-popup .bp__links').html($(this).next().html());
+        window.scrollTo(0, 0);
+        $('#buy-popup').css('top', 0);
     });
 
     $('#buy-popup .bp__close').on('click',function () {
@@ -236,7 +238,6 @@ $(document).ready(function () {
         GoNext(resParse[$('#test .question-template').attr('data-q')][$('#test .question-template').attr('q-key')]);
 
         counter += pointParse[$('#test .question-template').attr('data-q')][$('#test .question-template').attr('q-key')];
-
     });
 
     //Переход на след вопрос
@@ -254,6 +255,7 @@ $(document).ready(function () {
                     //fin[5] = finalParse[x]['link'];
                 }
             }
+            counter = 0;
             GoFinal(fin);
         } else {
             GenerateQuestion(qParse[$("#test .next-template").attr('next-q')]);

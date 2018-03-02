@@ -22,6 +22,7 @@ class m180221_100248_create_table_product extends Migration
             'description' => $this->text(),
             'show_on_main' => $this->integer(1)->notNull()->defaultValue(1),
             'test' => $this->integer(),
+            'ga_param' => $this->string(255),
         ], $tableOptions);
         
         $this->batchInsert('{{%product}}', ['title', 'description', 'image'], [

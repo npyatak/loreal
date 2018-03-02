@@ -24,7 +24,7 @@ class Product extends \yii\db\ActiveRecord
             [['title'], 'required'],
             [['description'], 'string'],
             [['show_on_main', 'test'], 'integer'],
-            [['title', 'image'], 'string', 'max' => 255],
+            [['title', 'image', 'ga_param'], 'string', 'max' => 255],
         ];
     }
 
@@ -40,6 +40,7 @@ class Product extends \yii\db\ActiveRecord
             'description' => 'Описание',
             'show_on_main' => 'Показать на главной',
             'test' => 'Задание',
+            'ga_param' => 'GA параметр',
         ];
     }
 

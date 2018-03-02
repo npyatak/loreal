@@ -10,11 +10,14 @@ use unclead\multipleinput\TabularInput;
     <?php $form = ActiveForm::begin();?>
 
     <div class="row">
-        <div class="col-sm-5">
+        <div class="col-sm-4">
             <?= $form->field($model, 'title')->textInput();?>
         </div>
-        <div class="col-sm-5">
+        <div class="col-sm-4">
             <?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
+        </div>
+        <div class="col-sm-2">
+            <?= $form->field($model, 'ga_param')->textInput();?>
         </div>
         <div class="col-sm-2">
             <?= $form->field($model, 'show_on_main')->checkbox();?>
