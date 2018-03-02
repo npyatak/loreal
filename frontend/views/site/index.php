@@ -58,7 +58,7 @@ $this->params['bodyClass'] = 'page-front';
                         <div class="title"><?=$product->title;?></div>
                         <?php if($product->productLinks):?>
                         <div class="buy">
-                            <a href="#" target="_blank">Купить</a>
+                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
                                     <a href="<?=$link->url;?>" target="_blank"><?=$link->title;?></a>
