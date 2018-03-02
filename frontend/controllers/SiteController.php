@@ -142,6 +142,63 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionIndexNew($res = 1)
+    {
+        if (Yii::$app->request->isAjax && isset($_GET['res'])) {
+            $uri = Url::to(['site/index', 'res' => $_GET['res']]);
+            $share = Share::find()->where(['uri' => $uri])->asArray()->one();
+            $share['uri'] = Url::to($uri, $_SERVER['REQUEST_SCHEME']);
+            $share['image'] = $share['image'] ? Url::to($share['image'], $_SERVER['REQUEST_SCHEME']) : '';
+            Yii::$app->response->format = Response::FORMAT_JSON;
+            return $share;
+        }
+
+        $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
+
+        $results = [];
+        $questions = [];
+        $scores = [];
+        $comments = [];
+
+        foreach (Question::find()->with('answers')->all() as $key => $q) {
+            $key++;
+            $variants = [];
+            foreach ($q->answers as $a) {
+                $variants[] = $a->title;
+                $scores[$key][] = $a->score;
+                $comments[$key][] = ['comment' => $a->comment, 'comment_title' => $a->comment_title];
+            }
+            $questions[$key] = [
+                'number' => $key,
+                'vopros' => $q->title,
+                'image' => $q->image,
+                'variant' => $variants,
+            ];
+        }
+
+        foreach (TestResult::find()->all() as $r) {
+            $results[$r->id] = [
+                'min' => $r->range_start,
+                'max' => $r->range_end,
+                'title' => $r->title,
+                'description' => $r->description,
+                'image' => $r->image,
+                'image_2' => $r->image_2,
+                'id' => $r->id,
+            ];
+        }
+
+        return $this->render('index-new', [
+            'products' => $products,
+            'results' => $results,
+            'questions' => $questions,
+            'scores' => $scores,
+            'comments' => $comments,
+            'res' => $res,
+            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
+        ]);
+    }
+
     /**
      * Logs out the current user.
      *
