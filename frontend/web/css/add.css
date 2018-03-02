@@ -90,3 +90,11 @@ a::-moz-selection {
     -webkit-tap-highlight-color: transparent;
      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
+
+.screen-3 .video .see-all:hover{
+    background: url(../images/see-all-081db1e550_hover.png) top no-repeat;
+}
+
+.screen-1 .s1__two-col .s1__tc-1 .tc1-block2 a:hover{
+    background: url(../images/s1-new/tc1-block2-10c2d12914_hover.png) 0 no-repeat;
+}
