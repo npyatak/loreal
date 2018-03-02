@@ -6,7 +6,7 @@ use yii\widgets\Pjax;
 
 use common\models\Video;
 
-$this->title = 'Видео';
+$this->title = 'Товары';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 
