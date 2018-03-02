@@ -55,6 +55,11 @@ use unclead\multipleinput\TabularInput;
                     'name' => 'title',
                     'enableError' => true
                 ],
+                [
+                    'title' => 'GA параметр',
+                    'name' => 'ga_param',
+                    'enableError' => true
+                ],
             ],
         ]) ?>
     </div>
