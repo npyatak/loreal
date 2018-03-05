@@ -33,7 +33,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Вдохновляйся и<br/> покажи, на что<br/> ты способен!</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Тьюториалы</a>
                 </div>
             </div>
             <div class="s1__tc-2">
@@ -227,7 +227,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
             </div>
             <div class="see-all">
-                <a href="<?=Url::toRoute(['site/video']);?>">Смотреть все</a>
+                <a href="<?=Url::toRoute(['site/videos']);?>">Смотреть все</a>
             </div>
         </div>
     </div>

@@ -4,8 +4,8 @@ use yii\helpers\Html;
 use yii\bootstrap\Modal;
 
 Yii::$app->assetManager->bundles = [
-    //'yii\bootstrap\BootstrapPluginAsset' => false,
-    //'yii\bootstrap\BootstrapAsset' => false,
+    'yii\bootstrap\BootstrapPluginAsset' => false,
+    'yii\bootstrap\BootstrapAsset' => false,
 ];
 
 yii\bootstrap\Modal::begin([
