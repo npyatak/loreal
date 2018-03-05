@@ -193,6 +193,27 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     </div>
                 </div>
                 <?php endforeach;?>
+                <?php foreach ($products as $product):?>
+                <div class="product">
+                    <div class="product-img">
+                        <img src="<?=$product->image;?>" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="description"><?=$product->description;?></div>
+                        <div class="title"><?=$product->title;?></div>
+                        <?php if($product->productLinks):?>
+                        <div class="buy">
+                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
+                            <div class="links">
+                                <?php foreach ($product->productLinks as $link):?>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                        <?php endif;?>
+                    </div>
+                </div>
+                <?php endforeach;?>
             </div>
             <?php endif;?>
         </div>
@@ -231,10 +252,6 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             </div>
         </div>
     </div>
-</div>
-
-<div class="screen-3">
-    <?=$this->render('_posts', ['posts' => $posts]);?>
 </div>
 
 <?php
