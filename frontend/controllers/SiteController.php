@@ -15,6 +15,7 @@ use common\models\TestResult;
 use common\models\Product;
 use common\models\Video;
 use common\models\Share;
+use frontend\models\ContactForm;
 
 /**
  * Site controller
@@ -54,6 +55,10 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+            ], 
+            'captcha' => [
+                'class' => 'yii\captcha\CaptchaAction',
+                'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
     }
@@ -142,6 +147,23 @@ class SiteController extends Controller
         ]);
     }
 
+    public function actionContact()
+    {
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
+            if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
+                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+            } else {
+                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+            }
+            return $this->refresh();
+        } else {
+            return $this->render('contact', [
+                'model' => $model,
+            ]);
+        }
+    }
+
     public function actionIndexNew($res = 1)
     {
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
@@ -196,6 +218,22 @@ class SiteController extends Controller
             'comments' => $comments,
             'res' => $res,
             'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
+        ]);
+    }
+
+    public function actionVideoNew()
+    {
+        $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
+        $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
+
+        return $this->render('video-new', [
+            'videosTop' => $videosTop,
+            'videosBottom' => $videosBottom,
+        ]);
+    }
+
+    public function actionRules() {
+        return $this->render('rules', [
         ]);
     }
 
