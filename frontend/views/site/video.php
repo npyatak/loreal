@@ -29,8 +29,8 @@ $this->params['bodyClass'] = 'page-video';
 					<a class="play-btn" href="<?=$videosTop[0]->key;?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 				</div>
 				<?php endif;?>
-				<div class="vg__thumbnail-union vg1__thumbnail-union">
-					<div class="vg__thumbnails vg1__thumbnails">
+				<!--<div class="vg__thumbnail-union vg1__thumbnail-union">
+					<div class="vg__thumbnails vg1__thumbnails">-->
 					<?php foreach ($videosTop as $key => $video):?>
 						<?php if($key != 0):?>
 							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$video->key;?>">
@@ -38,9 +38,14 @@ $this->params['bodyClass'] = 'page-video';
 							</div>
 						<?php endif;?>
 					<?php endforeach;?>
-					</div>
-				</div>
+					<!--</div>
+				</div>-->
 			</div>
+		</div>
+		
+		<div class="after-video">
+		    <div class="av__title">Курс молодого мейкапера - День Святого Валентина</div>
+		    <div class="av__body">Смотри мастер-класс от официального визажиста L'Oréal Paris в России Милы Клименко и узнай, как создать чувственный макияж с акцентом на губы к Дню святого Валентина. Хочешь узнать больше мейкап-лайфхаков? Не пропусти шоу «Мейкаперы»!</div>
 		</div>
 
 		<!-- <div class="video-gallery video-gallery-2" id="backstage">

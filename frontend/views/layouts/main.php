@@ -38,8 +38,8 @@ AppAsset::register($this);
 </head>
 <body class="<?=isset($this->params['bodyClass']) ? $this->params['bodyClass'] : '';?>">
 <?php $this->beginBody() ?>
-    <img src="https://4233289.fls.doubleclick.net/activityi;src=4233289;type=main;cat=ru_oa00a;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" style="width:0;height:0;position:absolute;visibility:hidden;" alt="">
-    <img src="http://ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=bruwy&pfb=ficvq&pr=%random%&ptrc=b" alt="">
+    <img src="https://4233289.fls.doubleclick.net/activityi;src=4233289;type=main;cat=ru_oa00a;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" style="display:block;width:0;height:0;position:absolute;visibility:hidden;" alt="">
+    <img src="http://ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=bruwy&pfb=ficvq&pr=%random%&ptrc=b" alt="" style="display:block;">
     
     <div id="page-wrapper">
         <div id="all-wrapper">
