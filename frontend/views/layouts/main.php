@@ -57,8 +57,8 @@ AppAsset::register($this);
                 <ul id="main-menu">
                     <li><a href="<?=Url::home();?>">На главную</a></li>
                     <li><a href="<?=Url::toRoute(['site/index', '#' => 'screen-3']);?>">Кто ты в мире мейкаперов? Узнать</a></li>
-                    <li><a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Смотреть тьюториалы</a></li>
-                    <!-- <li><a href="<?=Url::toRoute(['site/video', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li> -->
+                    <li><a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Смотреть тьюториалы</a></li>
+                    <!-- <li><a href="<?=Url::toRoute(['site/videos', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li> -->
                     <li><a href="https://makeupers.friday.ru/" target="_blank">Смотри шоу МЕЙКАПЕРЫ на Пятнице!</a></li>
                 </ul>
             </header>
@@ -114,7 +114,7 @@ AppAsset::register($this);
                         <div class="r__status-desc">
                         </div>
                         <div class="r__lessons">
-                            <a href="<?=Url::toRoute(['site/video']);?>" data-event="click" data-param="test-tutorials">смотри наши уроки от L’ORÉAL PARIS</a>
+                            <a href="<?=Url::toRoute(['site/videos']);?>" data-event="click" data-param="test-tutorials">смотри наши уроки от L’ORÉAL PARIS</a>
                         </div>
                         <div class="r__share-title">Поделиться</div>
                         <div class="share-icon">
@@ -140,9 +140,9 @@ AppAsset::register($this);
         </div>
     </div>
 
-    <?php //if(Yii::$app->user->isGuest/* && in_array(Yii::$app->controller->action->id, ['vote', 'index', 'post'])*/) {
+    <?php if(false && Yii::$app->user->isGuest/* && in_array(Yii::$app->controller->action->id, ['vote', 'index', 'post'])*/) {
         echo $this->render('_login_modal');
-    //}?>
+    }?>
 
 <?php $this->endBody() ?>
 </body>
