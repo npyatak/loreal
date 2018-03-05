@@ -109,6 +109,10 @@ $this->params['bodyClass'] = 'page-front';
     </div>
 </div>
 
+<div class="screen-3">
+    <?=$this->render('_posts', ['posts' => $posts]);?>
+</div>
+
 <?php
 
 $script = "

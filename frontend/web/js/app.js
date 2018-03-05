@@ -286,3 +286,17 @@ $(document).on('click', 'a', function(e) {
         ga('send', 'event', $(this).data('event'), $(this).data('param'));
     }
 });
+
+$(document).on('click', '.login-modal-btn, .post-modal-btn', function() {
+    $('#modal-login').modal();
+    return false;
+});
+    
+$('.eauth-service-link').on('click', function (e) {
+    if(!$('#rules').is(':checked')) {
+        $('.site-login__second span.alert').html('Пожалуйста, подтвердите свое согласие с полными правилами и условиями обработки данных');
+        return false;
+    } else {
+        $('.site-login__second span.alert').html('');
+    }
+});

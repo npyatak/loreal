@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <?php Pjax::begin(); ?>    
+    <?php Pjax::begin(['id' => 'grid-pjax']); ?>  
         <?= GridView::widget([
             'dataProvider' => $dataProvider,
             'filterModel' => $searchModel,
@@ -104,3 +104,22 @@ $this->params['breadcrumbs'][] = $this->title;
         ]); ?>
     <?php Pjax::end(); ?>
 </div>
+
+<?php
+$script = "
+    $(document).on('click', '.status-toggle', function(e) {
+        var obj = $(this);
+
+        $.ajax({
+            url: obj.attr('href'),
+            type: 'POST',
+            success: function(result) {
+                $.pjax.reload({container:'#grid-pjax'});
+            }
+        });
+
+        return false;
+    });
+";
+
+$this->registerJs($script, yii\web\View::POS_END);?>

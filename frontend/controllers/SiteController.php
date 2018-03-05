@@ -6,15 +6,21 @@ use yii\helpers\Url;
 use yii\base\InvalidParamException;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
-use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use yii\web\Response;
+use yii\web\UploadedFile;
+use frontend\widgets\cropimage\helpers\Image;
+use yii\web\NotFoundHttpException;
 
+use common\models\User;
 use common\models\Question;
 use common\models\TestResult;
 use common\models\Product;
 use common\models\Video;
 use common\models\Share;
+use common\models\Post;
+use common\models\PostAction;
+use common\models\Week;
 use frontend\models\ContactForm;
 
 /**
@@ -22,23 +28,28 @@ use frontend\models\ContactForm;
  */
 class SiteController extends Controller
 {
+    public $currentWeek;
     /**
      * @inheritdoc
      */
     public function behaviors()
     {
         return [
+            'eauth' => [
+                // required to disable csrf validation on OpenID requests
+                'class' => \nodge\eauth\openid\ControllerBehavior::className(),
+                'only' => ['login'],
+            ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
+                'only' => ['login', 'logout', 'participate', 'user-action'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['login'],
                         'allow' => true,
-                        'roles' => ['?'],
                     ],
                     [
-                        'actions' => ['logout'],
+                        'actions' => ['logout', 'participate', 'user-action'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -61,6 +72,10 @@ class SiteController extends Controller
                 'fixedVerifyCode' => YII_ENV_TEST ? 'testme' : null,
             ],
         ];
+    }
+
+    public function init() {
+        $this->currentWeek = Week::getCurrent();
     }
 
     public function beforeAction($action) {
@@ -164,6 +179,175 @@ class SiteController extends Controller
         }
     }
 
+    public function actionParticipate() {
+        $model = new Post();
+
+        if(!Yii::$app->user->isGuest && $model->load(Yii::$app->request->post())) {
+            $model->is_from_ig = 0;
+            $model->user_id = Yii::$app->user->id;
+            $model->week_id = $this->currentWeek->id;
+
+            $model->imageFile = UploadedFile::getInstance($model, 'imageFile');
+
+            $model->image = md5('front'.time()).'.'.$model->imageFile->extension;
+
+            if($model->save()) {
+                $path = $model->imageSrcPath;
+                if(!file_exists($path)) {
+                    mkdir($path, 0775, true);
+                }
+                $model->imageFile->saveAs($path.$model->image);
+                
+                Image::cropImageSection($path.$model->image, $path.$model->image, [
+                    'width' => $model->front_w,
+                    'height' => $model->front_h,
+                    'y' => $model->front_y,
+                    'x' => $model->front_x,
+                    'scale' => $model->front_scale,
+                    'degrees' => $model->front_angle,
+                ]);
+
+                return $this->redirect(['participate']);
+            }
+        } 
+        
+        return $this->render('participate', [
+            'currentWeek' => $this->currentWeek,
+            'weeks' => Week::find()->all(),
+            'model' => $model,
+        ]);
+    }
+
+    public function actionLogin() {
+        $serviceName = Yii::$app->getRequest()->getQueryParam('service');
+        $ref = Yii::$app->getRequest()->getQueryParam('ref');
+        
+        if (isset($serviceName)) {
+            $eauth = Yii::$app->get('eauth')->getIdentity($serviceName);
+
+            if($ref !== '' && $ref != '/login') {
+                $eauth->setRedirectUrl(Url::toRoute($ref));
+            } else {
+                $eauth->setRedirectUrl(Url::toRoute('site/vote'));
+            }
+            $eauth->setCancelUrl(Url::toRoute('site/login'));
+
+            try {
+                if ($eauth->authenticate()) {
+                    $user = User::findByService($serviceName, $eauth->id);
+                    if(!$user) {
+                        $user = new User;
+                        $user->soc = $serviceName;
+                        $user->sid = $eauth->id;
+                        $user->name = $eauth->first_name;
+                        $user->surname = $eauth->last_name;
+                        if(isset($eauth->photo_url)) $user->image = $eauth->photo_url;
+                        if(isset($eauth->ig_id)) $user->ig_id = $eauth->ig_id;
+                        if(isset($eauth->ig_username)) $user->ig_username = $eauth->ig_username;
+                        
+                        $user->save();
+                    } elseif($user->status === User::STATUS_BANNED) {
+                        Yii::$app->getSession()->setFlash('error', 'Вы не можете войти. Ваш аккаунт заблокирован');
+                        
+                        $eauth->redirect($eauth->getCancelUrl());
+                    } elseif(!$user->name) {
+                        $user->name = $eauth->first_name;
+                        $user->surname = $eauth->last_name;
+                        if(isset($eauth->photo_url)) $user->image = $eauth->photo_url;
+                        if(isset($eauth->ig_id)) $user->ig_id = $eauth->ig_id;
+                        if(isset($eauth->ig_username)) $user->ig_username = $eauth->ig_username;
+
+                        $user->save();
+                    }
+
+                    $user->ip = $_SERVER['REMOTE_ADDR'];
+                    $user->browser = $_SERVER['HTTP_USER_AGENT'];
+                    $user->save(false, ['ip', 'browser']);
+
+                    Yii::$app->user->login($user);
+                    // special redirect with closing popup window
+                    $eauth->redirect();
+                } else {
+                    // close popup window and redirect to cancelUrl
+                    $eauth->cancel();
+                    $eauth->redirect($eauth->getCancelUrl());
+                }
+            } catch (\nodge\eauth\ErrorException $e) {
+                Yii::$app->getSession()->setFlash('error', 'EAuthException: '.$e->getMessage());
+
+                $eauth->cancel();
+                $eauth->redirect($eauth->getCancelUrl());
+            }
+        }
+
+        return $this->render('login');
+    }
+
+    public function actionVote() {
+        $limit = 12;
+        $count = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->count();
+
+        $query = Post::find()
+            ->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])
+            ->limit($limit)
+            ->orderBy(new \yii\db\Expression('rand()'));
+
+        if (Yii::$app->request->isAjax && isset($_GET['ids'])) {
+            $posts = $query->andWhere(['not in', 'id', $_GET['ids']])->all();
+
+            return $this->renderPartial('_bothie_blocks', [
+                'posts' => $posts,
+                'noMorePosts' => $count + count($_GET['ids']) >= $limit ? false : true,
+            ]);
+        }
+
+        $posts = $query->all();
+        $noMorePosts = $count >= $limit ? false : true;
+
+        return $this->render('vote', [
+            'posts' => $posts,
+            'noMorePosts' => $noMorePosts,
+        ]);
+    }
+
+
+    public function actionUserAction($id, $type=null) {        
+        if(Yii::$app->request->isAjax) {
+            Yii::$app->response->format = \yii\web\Response::FORMAT_JSON;
+            switch ($type) {
+                case 'vk':
+                    $type = PostAction::TYPE_SHARE_VK;
+                    break;
+                case 'fb':
+                    $type = PostAction::TYPE_SHARE_FB;
+                    break;                
+                default:
+                    $type = PostAction::TYPE_LIKE;
+                    break;
+            }
+            $post = $this->findPost($id);
+            if($post !== null && $post->userCan($type)) {
+                PostAction::create($id, $type);
+
+                $newScore = Post::find()->select('score')->where(['id' => $id])->column();
+                return ['status' => 'success', 'score' => $newScore];
+            } else {
+                return ['status' => 'error'];
+            }
+        }
+    }
+
+    public function actionPost($id) {
+        $userPost = $this->findPost($id);
+
+        $posts = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->limit(12)->orderBy(new \yii\db\Expression('rand()'))->all();
+
+        return $this->render('post', [
+            'userPost' => $userPost,
+            'posts' => $posts,
+        ]);
+    }
+
     public function actionIndexNew($res = 1)
     {
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
@@ -218,6 +402,7 @@ class SiteController extends Controller
             'comments' => $comments,
             'res' => $res,
             'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
+            'posts' => Post::find()->where(['status' => Post::STATUS_ACTIVE])->all(),
         ]);
     }
 

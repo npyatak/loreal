@@ -56,16 +56,13 @@ class PostController extends Controller
         ]);
     }
 
-    public function actionBan($id) {
+    public function actionStatus($id, $status) {
         $model = $this->findModel($id);
-        if($model->status === Post::STATUS_BANNED) {
-            $model->status = Post::STATUS_ACTIVE;
-        } else {
-            $model->status = Post::STATUS_BANNED;
-        }
-        $model->save(false, ['status', 'updated_at']);
+        $model->status = $status;
 
-        return $this->redirect(['index']);
+        return $model->save(false);
+        
+        //return $this->redirect(['index']);
     }
 
     public function actionDelete($id) {
