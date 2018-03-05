@@ -19,10 +19,10 @@ $this->params['bodyClass'] = 'page-front';
                     <a href="#">Вдохновись и<br>Покажи, на что <br>ты способен!<br>старт 8 марта</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Тьюториалы</a>
                 </div>
                 <!-- <div class="tc1-block3">
-                    <a href="<?=Url::toRoute(['site/video', '#' => 'backstage']);?>">смотреть бекстейджи</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'backstage']);?>">смотреть бекстейджи</a>
                 </div> -->
             </div>
             <div class="s1__tc-2">
@@ -112,7 +112,7 @@ $this->params['bodyClass'] = 'page-front';
             </div>
 
             <div class="see-all">
-                <a href="<?=Url::toRoute(['site/video']);?>">Смотреть все</a>
+                <a href="<?=Url::toRoute(['site/videos']);?>">Смотреть все</a>
             </div>
         </div>
     </div>

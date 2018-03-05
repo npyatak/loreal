@@ -151,12 +151,12 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionVideo()
+    public function actionVideos()
     {
         $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
 
-        return $this->render('video', [
+        return $this->render('videos', [
             'videosTop' => $videosTop,
             'videosBottom' => $videosBottom,
         ]);
