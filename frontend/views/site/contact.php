@@ -2,6 +2,7 @@
 use yii\helpers\Html;
 use yii\bootstrap\ActiveForm;
 use yii\captcha\Captcha;
+use common\widgets\Alert;
 
 $this->title = 'Обратная связь';
 $this->params['breadcrumbs'][] = $this->title;
@@ -9,6 +10,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 <div class="site-contact">
     <h1><?= Html::encode($this->title) ?></h1>
+    <?= Alert::widget() ?>
     <div class="row">
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'contact-form']); ?>
