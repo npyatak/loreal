@@ -96,6 +96,8 @@ class SiteController extends Controller
 
     public function actionIndex($res = 1)
     {
+        $postsLimit = 8;
+        
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
             $share = Share::find()->where(['uri' => $uri])->asArray()->one();
@@ -148,6 +150,7 @@ class SiteController extends Controller
             'comments' => $comments,
             'res' => $res,
             'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
+            'posts' => Post::find()->where(['status' => Post::STATUS_ACTIVE])->limit($postsLimit)->all(),
         ]);
     }
 
