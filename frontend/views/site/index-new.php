@@ -3,7 +3,7 @@ use yii\helpers\Url;
 
 $this->params['bodyClass'] = 'page-front page-new-front';
 ?>
-<!-- ЗНАЮ, что не тут должно быть. Я не оч в уии. -->
+<!-- Less js  -->
 <link rel="stylesheet/less" type="text/css" href="/frontend/web/css/styles.less" />
 <script>
   less = {
