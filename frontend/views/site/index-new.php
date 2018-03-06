@@ -103,7 +103,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         </div>
 
         <div class="st__see-all-tutor">
-            <a href="#">Смотри все тьюториалы от L'Oréal Paris</a>
+            <a href="<?=Url::toRoute(['site/videos']);?>">Смотри все тьюториалы от L'Oréal Paris</a>
         </div>
 
     </div>
@@ -154,7 +154,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         </div>
 
         <div class="full-reg">
-            <a href="#">Полные правила</a>
+            <a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a>
         </div>
 
     </div>
