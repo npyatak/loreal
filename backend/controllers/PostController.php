@@ -43,6 +43,19 @@ class PostController extends Controller
             'dataProvider' => $dataProvider,
         ]);
     }
+    
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
 
     /**
      * Displays a single Post model.

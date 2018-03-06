@@ -14,6 +14,7 @@ class AppAsset extends AssetBundle
     public $css = [
         'css/app.css?v=05032018',
         'css/add.css',
+        'css/new.css',
         'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i',
     ];
     public $js = [

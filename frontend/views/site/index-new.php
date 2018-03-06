@@ -251,8 +251,15 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="view-filter">
                     
                     <div class="sorting">
-                        <div class="date sort-param"><a href="?params=1">По дате</a></div>
-                        <div class="point sort-param active"><a href="?params=2">По баллам</a></div>
+                    <div class="ch_cp_sort_selects">
+                        
+                    </div>
+                        <div class="date sort-param">
+                            <a href="<?=Url::current(['sort' => $sort == '-created_at' ? 'created_at' : '-created_at']);?>" class="<?=in_array($sort, ['-created_at', 'created_at']) ? 'active' : '';?>">По дате</a>
+                        </div>
+                        <div class="point sort-param active">
+                            <a href="<?=Url::current(['sort' => '-likes']);?>" class="<?=$sort == '-likes' ? 'active' : '';?>">По баллам</a>
+                        </div>
                     </div>
 
                     <div class="upload-file">
@@ -266,30 +273,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 </div>
 
                 <div class="view-content">
-
-                    <?php for($i = 1;$i <= 4; $i++ ) {?>
-                        <div class="view-row view-row-<?php print $i; ?>">
-                            <div class="field-points-label">1234</div>
-                            <div class="field-image">
-                                <img src="/images/new-index/nate-vasileva.jpg" alt="">
-                            </div>
-                            <div class="field-name">
-                                НаТаЛЬЯ ВАСИЛЬЕВА
-                            </div>
-                            <div class="field-points">
-                                Баллы: 1234
-                            </div>
-                            <div class="field-shape">
-                                Название созданного образа 1
-                            </div>
-
-                            <div class="field-vote">
-                                <a href="#">ГОлосовать</a>
-                            </div>
-
-                        </div>
-                    <?php } ?>
-
+                    <?=$this->render('_posts', ['posts' => $posts]);?>
                 </div>
                 
             </div>

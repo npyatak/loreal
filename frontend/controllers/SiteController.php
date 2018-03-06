@@ -97,7 +97,26 @@ class SiteController extends Controller
     public function actionIndex($res = 1)
     {
         $postsLimit = 8;
-        
+
+        $count = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->count();
+
+        $query = Post::find()
+            ->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])
+            ->limit($postsLimit)
+            ->orderBy(new \yii\db\Expression('rand()'));
+
+        if (Yii::$app->request->isAjax && isset($_GET['ids'])) {
+            $posts = $query->andWhere(['not in', 'id', $_GET['ids']])->all();
+
+            return $this->renderPartial('_posts', [
+                'posts' => $posts,
+                'noMorePosts' => $count + count($_GET['ids']) >= $postsLimit ? false : true,
+            ]);
+        }
+
+        $posts = $query->all();
+        $noMorePosts = $count >= $postsLimit ? false : true;
+
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
             $share = Share::find()->where(['uri' => $uri])->asArray()->one();
@@ -150,7 +169,8 @@ class SiteController extends Controller
             'comments' => $comments,
             'res' => $res,
             'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
-            'posts' => Post::find()->where(['status' => Post::STATUS_ACTIVE])->limit($postsLimit)->all(),
+            'posts' => $posts,
+            'noMorePosts' => $noMorePosts,
         ]);
     }
 
@@ -353,6 +373,27 @@ class SiteController extends Controller
 
     public function actionIndexNew($res = 1)
     {
+        $postsLimit = 8;
+
+        $count = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->count();
+
+        $query = Post::find()
+            ->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])
+            ->limit($postsLimit)
+            ->orderBy(new \yii\db\Expression('rand()'));
+
+        if (Yii::$app->request->isAjax && isset($_GET['ids'])) {
+            $posts = $query->andWhere(['not in', 'id', $_GET['ids']])->all();
+
+            return $this->renderPartial('_posts', [
+                'posts' => $posts,
+                'noMorePosts' => $count + count($_GET['ids']) >= $postsLimit ? false : true,
+            ]);
+        }
+
+        $posts = $query->all();
+        $noMorePosts = $count >= $postsLimit ? false : true;
+
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
             $share = Share::find()->where(['uri' => $uri])->asArray()->one();
@@ -397,7 +438,7 @@ class SiteController extends Controller
             ];
         }
 
-        return $this->render('index-new', [
+        return $this->render('index', [
             'products' => $products,
             'results' => $results,
             'questions' => $questions,
@@ -405,7 +446,8 @@ class SiteController extends Controller
             'comments' => $comments,
             'res' => $res,
             'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
-            'posts' => Post::find()->where(['status' => Post::STATUS_ACTIVE])->all(),
+            'posts' => $posts,
+            'noMorePosts' => $noMorePosts,
         ]);
     }
 

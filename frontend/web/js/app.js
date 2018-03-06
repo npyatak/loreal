@@ -215,3 +215,19 @@ $('#login-popup .bp__close').on('click',function () {
     $('#login-popup').removeClass('active');
     $('#login-popup').removeAttr('style');
 });
+
+$(document).on('click', '.vote-btn', function (e) {
+    e.preventDefault();
+
+    var obj = $(this).closest('.view-row');
+
+    $.ajax({
+        type: 'GET',
+        url: '/site/user-action',
+        data: 'id='+obj.attr('data-id'),
+        success: function (data) {
+            obj.find('.score').html(data.score);
+            obj.remove();
+        }
+    });
+});

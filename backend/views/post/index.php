@@ -74,7 +74,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
                 [
                     'class' => 'yii\grid\ActionColumn',
-                    'template' => '{view} {approve} {ban} {delete}',
+                    'template' => '{view} {approve} {ban} {update} {delete}',
                     'buttons' => [
                         'approve' => function ($url, $model) {
                             $url = Url::toRoute(['/post/status', 'id'=>$model->id, 'status' => Post::STATUS_ACTIVE]);
