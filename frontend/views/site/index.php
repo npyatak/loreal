@@ -2,6 +2,8 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 
+$this->registerJsFile(Url::toRoute('js/test.js'), ['depends' => [\yii\web\JqueryAsset::className()]]);
+
 $this->params['bodyClass'] = 'page-front';
 ?>
 
@@ -116,6 +118,20 @@ $this->params['bodyClass'] = 'page-front';
             </div>
         </div>
     </div>
+</div>
+
+<div class="screen-3" id="screen-3">
+    <?php if($posts):?>
+        <div id="container" class="bothie-blocks wow fadeInUp">
+            <?=$this->render('_posts', ['posts' => $posts]);?>
+        </div>
+        
+        <div class="video">
+            <div class="see-all">
+                <a href="<?=Url::toRoute(['site/vote']);?>">Смотреть все</a>
+            </div>
+        </div>
+    <?php endif;?>
 </div>
 
 <?php
