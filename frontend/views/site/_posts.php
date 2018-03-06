@@ -1,5 +1,7 @@
 <?php foreach ($posts as $post):?>
-	<img src="<?=$post->imageUrl;?>">
-	<?=$this->render('_like_button', ['post' => $post]);?>
-	<span><?=$post->score;?></span>
+	<div class="grid-item" data-id="<?=$post->id;?>">
+		<img src="<?=$post->imageUrl;?>">
+		<?=$this->render('_like_button', ['post' => $post]);?>
+		<span><?=$post->score;?></span>
+	</div>
 <?php endforeach;?>

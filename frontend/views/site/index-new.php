@@ -1,6 +1,8 @@
 <?php
 use yii\helpers\Url;
 
+$this->registerJsFile(Url::toRoute('js/test.js'), ['depends' => [\yii\web\JqueryAsset::className()]]);
+
 $this->params['bodyClass'] = 'page-front page-new-front';
 ?>
 <!-- ЗНАЮ, что не тут должно быть. Я не оч в уии. -->

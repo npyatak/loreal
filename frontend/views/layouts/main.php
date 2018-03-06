@@ -125,6 +125,15 @@ AppAsset::register($this);
                 </div>
             </div>
 
+            <?php if(Yii::$app->user->isGuest && !in_array(Yii::$app->controller->action->id, ['video', 'index'])):?>
+            <div id="login-popup">
+                <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
+                <div class="bp__content">
+                    <?=$this->render('../site/_login');?>
+                </div>
+            </div>
+            <?php endif;?>
+
             <div id="overlay" class="overlay">&nbsp;</div>
         </div>
 
@@ -139,10 +148,6 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
-
-    <?php if(Yii::$app->user->isGuest && !in_array(Yii::$app->controller->action->id, ['video', 'index'])) {
-        echo $this->render('_login_modal');
-    }?>
 
 <?php $this->endBody() ?>
 </body>

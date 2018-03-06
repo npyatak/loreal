@@ -284,7 +284,7 @@ class SiteController extends Controller
     }
 
     public function actionVote() {
-        $limit = 12;
+        $limit = 8;
         $count = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->count();
 
         $query = Post::find()
@@ -295,7 +295,7 @@ class SiteController extends Controller
         if (Yii::$app->request->isAjax && isset($_GET['ids'])) {
             $posts = $query->andWhere(['not in', 'id', $_GET['ids']])->all();
 
-            return $this->renderPartial('_bothie_blocks', [
+            return $this->renderPartial('_posts', [
                 'posts' => $posts,
                 'noMorePosts' => $count + count($_GET['ids']) >= $limit ? false : true,
             ]);
