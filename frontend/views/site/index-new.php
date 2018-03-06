@@ -238,6 +238,66 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <img src="/images/s3__sm-a7c4007519.png" alt="">
             </div>
         </div>
+
+        <div class="gallery-his-turn">
+            
+            <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
+            <div class="ght__subtitle">Поддержи их своим голосом</div>
+
+            <div class="view view-voting">
+
+                <div class="view-filter">
+                    
+                    <div class="sorting">
+                        <div class="date sort-param"><a href="?params=1">По дате</a></div>
+                        <div class="point sort-param active"><a href="?params=2">По баллам</a></div>
+                    </div>
+
+                    <div class="upload-file">
+                        <form action="">
+                          <input id="main-upload" type="file" name="pic" accept="image/*">
+                          <label for="main-upload"><span class="button-title">Загрузи свое фото на проект +</span></label>
+                          <input type="submit" name="op">
+                        </form>
+                    </div>
+
+                </div>
+
+                <div class="view-content">
+
+                    <?php for($i = 1;$i <= 4; $i++ ) {?>
+                        <div class="view-row view-row-<?php print $i; ?>">
+                            <div class="field-points-label">1234</div>
+                            <div class="field-image">
+                                <img src="/images/new-index/nate-vasileva.jpg" alt="">
+                            </div>
+                            <div class="field-name">
+                                НаТаЛЬЯ ВАСИЛЬЕВА
+                            </div>
+                            <div class="field-points">
+                                Баллы: 1234
+                            </div>
+                            <div class="field-shape">
+                                Название созданного образа 1
+                            </div>
+
+                            <div class="field-vote">
+                                <a href="#">ГОлосовать</a>
+                            </div>
+
+                        </div>
+                    <?php } ?>
+
+                </div>
+                
+            </div>
+            
+            <div class="see-all">
+                <a href="/videos">Смотреть все</a>
+            </div>
+
+        </div>
+
     </div>
 </div>
 

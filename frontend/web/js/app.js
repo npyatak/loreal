@@ -149,7 +149,7 @@ function StagePoppup(data){
     $('.stage .st__blocks .st__block .stb-play').on('click',function(){
         window.scrollTo(0, 0);
         $('#stage-popup').addClass('active');
-        //Скроллы продуктов
+        //Скроллы продуктов при клике (нужно 2 класса product-1 и product-2)
         if ( $(this).closest('.st__block').hasClass('st__block-1') ) {
             /*console.log(1);
             data.scrollToX($('.screen-2 .product-union .products .product:nth-child(1)').position().left);*/
