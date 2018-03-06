@@ -149,6 +149,21 @@ function StagePoppup(data){
     $('.stage .st__blocks .st__block .stb-play').on('click',function(){
         window.scrollTo(0, 0);
         $('#stage-popup').addClass('active');
+        //Скроллы продуктов
+        if ( $(this).closest('.st__block').hasClass('st__block-1') ) {
+            /*console.log(1);
+            data.scrollToX($('.screen-2 .product-union .products .product:nth-child(1)').position().left);*/
+            if ($('.screen-2 .product-union .products .product-1').length != 0) {
+                data.scrollToX($('.screen-2 .product-union .products .product-1').position().left);
+            }
+        } else if ( $(this).closest('.st__block').hasClass('st__block-2') ) {
+            /*console.log(2);
+            data.scrollToX($('.screen-2 .product-union .products .product:nth-child(5)').position().left);*/
+            if ($('.screen-2 .product-union .products .product-2').length != 0) {
+                data.scrollToX($('.screen-2 .product-union .products .product-2').position().left);
+            }
+        }
+
     });
 
     $('#stage-popup .sp__close').on('click',function(){
@@ -163,23 +178,6 @@ function StagePoppup(data){
         myVideo.play();
     });
 
-    $('body.page-new-front .stage .st__blocks .st__block-1').hover(
-        function(){
-            data.scrollToX($('.screen-2 .product-union .products .product-1').position().left);
-        }, 
-        function(){
-            data.scrollToX($('.screen-2 .product-union .products .product-2').position().left);
-        }
-    );
-
-    $('body.page-new-front .stage .st__blocks .st__block-2').hover(
-        function(){
-            //$('.screen-2 .product-union .jspPane').css('left','0px');
-        }, 
-        function(){
-            
-        }
-    );
 
 }
 

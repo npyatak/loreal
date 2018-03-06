@@ -33,7 +33,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Вдохновляйся и<br/> покажи, на что<br/> ты способен!</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
                 </div>
             </div>
             <div class="s1__tc-2">
@@ -236,19 +236,6 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             </div>
             <div class="sm sm-2">
                 <img src="/images/s3__sm-a7c4007519.png" alt="">
-            </div>
-        </div>
-        <div class="video">
-            <div class="v__title">Смотри видео-уроки мейкапа от</div>
-            <div class="v__lp">
-                <a href="#"><img src="/images/s3__v__lp-502e83f397.svg" alt=""></a>
-            </div>
-            <div class="v__img">
-                <img src="<?=$video->imageUrl;?>" alt="">
-                <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
-            </div>
-            <div class="see-all">
-                <a href="<?=Url::toRoute(['site/videos']);?>">Смотреть все</a>
             </div>
         </div>
     </div>
