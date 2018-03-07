@@ -335,6 +335,14 @@ $script = "
 
         window.history.pushState(null, '', '/?res='+res);
     }
+    
+    $(document).on('pjax:beforeReplace', function() {
+        $.ias().destroy();
+    });
+
+    $(document).on('pjax:end', function() {
+        $.ias().reinitialize();
+    });
 ";
 
 $this->registerJs($script, yii\web\View::POS_END);
