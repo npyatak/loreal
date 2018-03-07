@@ -91,7 +91,7 @@ $typeArr = [
 		</div>
 
 		<div class="full-rules">
-			<a href="#">Полные правила</a>
+			<a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a>
 		</div>
 		
 		<div class="screen-2">
