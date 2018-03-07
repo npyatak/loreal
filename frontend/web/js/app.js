@@ -220,14 +220,15 @@ $(document).on('click', '.vote-btn', function (e) {
     e.preventDefault();
 
     var obj = $(this).closest('.view-row');
+    var link = $(this);
 
     $.ajax({
         type: 'GET',
         url: '/site/user-action',
-        data: 'id='+obj.attr('data-id'),
+        data: 'id='+obj.attr('data-key'),
         success: function (data) {
             obj.find('.score').html(data.score);
-            obj.remove();
+            link.remove();
         }
     });
 });

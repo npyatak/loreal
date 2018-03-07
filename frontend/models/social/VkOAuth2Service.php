@@ -13,6 +13,9 @@ class VkOAuth2Service extends \nodge\eauth\services\VKontakteOAuth2Service {
 
 	protected function fetchAttributes() {
 		$tokenData = $this->getAccessTokenData();
+
+		$access_token = $tokenData['access_token'];
+		
 		$info = $this->makeSignedRequest('users.get.json', [
 			'query' => [
 				'uids' => $tokenData['params']['user_id'],
@@ -28,6 +31,7 @@ class VkOAuth2Service extends \nodge\eauth\services\VKontakteOAuth2Service {
 		$this->attributes['name'] = $info['first_name'] . ' ' . $info['last_name'];
 		$this->attributes['url'] = 'http://vk.com/id' . $info['id'];
 		$this->attributes['photo_url'] = $info['photo_medium'];
+		$this->attributes['access_token'] = $access_token;
 
 		if (!empty($info['nickname'])) {
 			$this->attributes['username'] = $info['nickname'];

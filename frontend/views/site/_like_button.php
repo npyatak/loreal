@@ -8,7 +8,7 @@ use common\models\PostAction;
     <?=Html::a('Голосовать', null, [
         'class' => 'login-modal-btn',
     ]);?>
-<?php elseif($post->userCan(PostAction::TYPE_LIKE)):?>
+<?php elseif($model->userCan(PostAction::TYPE_LIKE)):?>
     <?=Html::a('Голосовать', null, [
         'class' => 'vote-btn',
     ]);?>
