@@ -89,20 +89,20 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></div>
 
         <div class="st__blocks">
-            <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>2]);?>">
+            <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
                 <div class="stb-img" style="background-image: url('/images/new-index/super-woman.png');"><img src="/images/new-index/super-woman.png" alt=""></div>
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С 8 марта по 21 марта</div>
-                    <div class="stb-subtitle">Супер-женщина</div>
+                    <div class="stb-subtitle">МЭЙКАП В СТИЛЕ КОМИКСОВ</div>
                 </div>
             </a>
-            <a class="st__block st__block-2" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
+            <a class="st__block st__block-2" href="<?=Url::toRoute(['site/videos', 'type'=>2]);?>">
                 <div class="stb-img" style="background-image: url('/images/new-index/from-pic.png');"><img src="/images/new-index/from-pic.png" alt=""></div>
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С 8 марта по 21 марта</div>
-                    <div class="stb-subtitle">Как с картины</div>
+                    <div class="stb-subtitle">МЭЙКАП НА ХЭЛЛОУИН</div>
                 </div>
             </a>
         </div>

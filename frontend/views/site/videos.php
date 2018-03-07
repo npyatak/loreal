@@ -37,10 +37,39 @@ $typeArr = [
 		<div class="vs__title">БРОСЬ ВЫЗОВ МЕЙКАПЕРАМ!</div>
 		<div class="vs__subtitle">#lorealparis_мейкаперы</div>
 		<div class="vs__intro">Вдохновляйся и Покажи, на что <br>ты способен!</div>
+
+		<div class="step-region">
+
+	        <div class="steps">
+	            <div class="step step-1">
+	                <div class="s-number">1</div>
+	                <div class="s-body">
+	                    Смотри тьюториалы
+	                </div>
+	            </div>
+	            <div class="step step-2">
+	                <div class="s-number">2</div>
+	                <div class="s-body">
+	                    ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
+                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
+                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
+	                </div>
+	            </div>
+	            <div class="step step-3">
+	                <div class="s-number">3</div>
+	                <div class="s-body">
+	                    ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
+	                </div>
+	            </div>
+	        </div>
+
+		</div>
+
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
 			<div class="vg__title vg1__title">8-21 марта: как с картинки</div>
 			<div class="vg__union vg1__union">
-				<div class="vg__big-video vg1__big-video" vg="prod-1">
+				<div class="vg__big-video vg1__big-video" video-id="<?=$typeArr[$type]['video'];?>" vg="prod-1">
 					<div class="close">X</div>
 					<img src="<?=$typeArr[$type]['preview'];?>" alt="">
 					<a class="play-btn" href="<?=$typeArr[$type]['video'];?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
@@ -60,6 +89,10 @@ $typeArr = [
 				</div>
 			</div>
 		</div>
+
+		<div class="full-rules">
+			<a href="#">Полные правила</a>
+		</div>
 		
 		<div class="screen-2">
 			<div class="s2__title">Брось вызов вместе с</div>
@@ -67,7 +100,7 @@ $typeArr = [
 			    <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
 			</div>
 
-			<div class="product-union scroll-pane horizontal-only <?=$type == 1 ? '' : 'hide';?>" vg="prod-1">
+			<div class="product-union scroll-pane horizontal-only" vg="prod-1">
 			    <?php if($productsTop):?>
 		            <div class="products">
 		                <?php foreach ($productsTop as $product):?>
@@ -131,8 +164,8 @@ $typeArr = [
 			        <a href="#"><img src="/images/s3__v__lp-502e83f397.svg" alt=""></a>
 			    </div>
 			    <div class="v__img">
-			        <img src="<?=$video->imageUrl;?>" alt="">
-			        <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/<?=$video->key;?>?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
+			        <img src="/images/preview.jpg" alt="">
+			        <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/zFw3lUtfU5g?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 			    </div>
 
 			    <div class="after-video">

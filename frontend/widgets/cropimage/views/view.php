@@ -17,7 +17,7 @@ $emptyBlock = empty($template_image) ? '' : 'hidden';
                 <?php if($label):?>
                     <h2><?=$label;?></h2>
                 <?php else:?>
-                    <h2>Загрузи фото<br> с <span></span> камеры</h2>
+                    <h2>Загрузи фото</h2>
                 <?php endif;?>
             </div>
             <span class="glyphicon glyphicon-remove mr-remove <?= $removeBtn ?>"></span>

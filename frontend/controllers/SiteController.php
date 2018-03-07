@@ -44,14 +44,14 @@ class SiteController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['login', 'logout',/* 'participate', */'user-action'],
+                'only' => ['login', 'logout', 'participate', 'user-action'],
                 'rules' => [
                     [
                         'actions' => ['login'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout',/* 'participate',*/ 'user-action'],
+                        'actions' => ['logout', 'participate', 'user-action'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -184,8 +184,7 @@ class SiteController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
-        $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
-        $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
+        //$video = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one();
 
         $productsTop = Product::find()
             ->joinWith('productGalleries')
@@ -202,11 +201,10 @@ class SiteController extends Controller
             ->all();
 
         return $this->render('videos', [
-            'videosTop' => $videosTop,
-            'videosBottom' => $videosBottom,
             'productsTop' => $productsTop,
             'productsBottom' => $productsBottom,
             'type' => $type,
+            //'video' => $video,
         ]);
     }
 
@@ -229,6 +227,7 @@ class SiteController extends Controller
 
     public function actionParticipate() {
         $model = new Post();
+        $model->type = 1;
 
         if(!Yii::$app->user->isGuest && $model->load(Yii::$app->request->post())) {
             $model->is_from_ig = 0;
@@ -247,12 +246,12 @@ class SiteController extends Controller
                 $model->imageFile->saveAs($path.$model->image);
                 
                 Image::cropImageSection($path.$model->image, $path.$model->image, [
-                    'width' => $model->front_w,
-                    'height' => $model->front_h,
-                    'y' => $model->front_y,
-                    'x' => $model->front_x,
-                    'scale' => $model->front_scale,
-                    'degrees' => $model->front_angle,
+                    'width' => $model->w,
+                    'height' => $model->h,
+                    'y' => $model->y,
+                    'x' => $model->x,
+                    'scale' => $model->scale,
+                    'degrees' => $model->angle,
                 ]);
 
                 return $this->redirect(['participate']);
@@ -263,6 +262,7 @@ class SiteController extends Controller
             'currentWeek' => $this->currentWeek,
             'weeks' => Week::find()->all(),
             'model' => $model,
+            'user' => Yii::$app->user->identity,
         ]);
     }
 

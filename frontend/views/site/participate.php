@@ -40,17 +40,15 @@ $this->params['bodyClass'] = 'page-participate';
         
         <div class="user">
             
-            <div class="user__name">Vasilyeva oksana</div>
-            
-            <div class="user__img">
-                <img src="/images/participate/oksi.jpg" alt="">
-            </div>
-
+            <div class="user__name"><?=$user->fullName;?></div>
+            <?php if($user->image):?>
+                <div class="user__img">
+                    <img src="<?=$user->image;?>" alt="">
+                </div>
+            <?php endif;?>
         </div>
 
-
         <div class="step-region">
-
             <div class="steps">
                 <div class="step step-1">
                     <div class="s-number">1</div>
@@ -61,14 +59,16 @@ $this->params['bodyClass'] = 'page-participate';
                 <div class="step step-2">
                     <div class="s-number">2</div>
                     <div class="s-body">
-                        Выполняй задание<br/> 
-                        и загружай фото в <a href="#"><i class="vk">&nbsp;</i></a> и <a href="#"><i class="insta">&nbsp;</i></a>
+                        ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
+                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
+                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
                     </div>
                 </div>
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        Получай призы от L’OrÉal Paris
+                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
                     </div>
                 </div>
             </div>
@@ -76,132 +76,97 @@ $this->params['bodyClass'] = 'page-participate';
         </div>
         
         <div class="upload-makeup-photo">
+            <div class="ump__title">Загрузи фото мэйкапа <span>на хэллоуин</span></div>
+            <?php $form = ActiveForm::begin([
+                'options' => [
+                    'enctype' => 'multipart/form-data',
+                    'id' => 'post-image-form',
+                    'no-validate' => ''
+                ],
+            ]); ?>
 
-            <div class="ump__title">Загрузи фото мэйкапа на хэллоуин</div>
+                <?=$form->field($model, "imageFile")->widget(frontend\widgets\cropimage\ImageCropSection::className(), [
+                    'form' => $form,
+                    //'label' => $currentWeek->hint_2,
+                    'options' => [
+                        'id' => 'post-imagefile',
+                        'class' => 'hidden',
+                    ],
+                    'attribute_x'=>'x',
+                    'attribute_y'=>'y',
+                    'attribute_width'=>'w',
+                    'attribute_height'=>'h',
+                    'attribute_scale'=>'scale',
+                    'attribute_angle'=>'angle',
+                    'class_block'=>'center-block',
+                    'plugin_options' => [
+                        'width' => Yii::$app->params['postImageSize']['width'],
+                        'height' => Yii::$app->params['postImageSize']['height'],
+                        'id_input_file' => 'post-imagefile',
+                        'section' => 'image'
+                    ],
+                    'template_image'=> isset($model->id) && $model->getImageUrl($model->id,false) ? Html::img($model->getImageUrl($model->id),$model::IMAGE_WIDGET_CONFIGS['section1']) : null
+                ])->label(false);?>
 
-            <div class="ump__img">
-                <img src="" alt="">
-                <div class="upload-lbl">Загрузи фото</div>
-            </div>
-
-            <div class="ump__controls">
-                <div class="btn__upload"><a href="#">&nbsp;</a></div>
-                <div class="btn__repeat"><a href="#">&nbsp;</a></div>
-                <div class="btn__edit"><a href="#">&nbsp;</a></div>
-            </div>
-
+                <?=$form->field($model, 'type', ['template' => '{input}'])->hiddenInput();?>
+                
+            <?php ActiveForm::end(); ?>
         </div>
 
-        <div class="full-rules"><a href="#">Полные правила</a></div>
+        <div class="full-rules"><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></div>
 
-        <div class="style-comics"><a href="#">Выбрать мэйкап в стиле комиксов</a></div>
+        <div class="style-comics"><a href="#">Выбрать мэйкап <span>в стиле комиксов</span></a></div>
 
         <div class="ready"><a href="#">Готово!</a></div>
 
-        
+        <?php if(count($user->posts) > 0):?>
         <div class="gallery-his-turn">
-
             <h2 class="title-gallery">твои Другие работы</h2>
-
             <div class="view view-voting">
-
                 <div class="view-content">
-
+                <?php foreach ($user->posts as $post):?>
                     <div class="view-row">    
-                        <div class="field-points-label score">1</div>
+                        <div class="field-points-label score"><?=$post->score;?></div>
                         <div class="field-image">
-                            <img src="http://oxanavasil.uw-t.com/uploads/post/39/0d7ea787e2d4464cbfc84fd754edda58.jpg" alt="">
+                            <img src="<?=$post->imageUrl;?>" alt="">
                         </div>
                             <div class="field-points">
-                            Баллы: <span class="score">1</span>
-                        </div>
-                        
-                        <div class="field-vote">
-                            <a class="login-modal-btn">Голосовать</a>    
+                            Баллы: <span class="score"><?=$post->score;?></span>
                         </div>
                     </div>
-
-                    <div class="view-row">    
-                        <div class="field-points-label score">1</div>
-                        <div class="field-image">
-                            <img src="http://oxanavasil.uw-t.com/uploads/post/39/0d7ea787e2d4464cbfc84fd754edda58.jpg" alt="">
-                        </div>
-                            <div class="field-points">
-                            Баллы: <span class="score">1</span>
-                        </div>
-                        
-                        <div class="field-vote">
-                            <a class="login-modal-btn">Голосовать</a>    
-                        </div>
-                    </div>
-
-                    <div class="view-row">    
-                        <div class="field-points-label score">1</div>
-                        <div class="field-image">
-                            <img src="http://oxanavasil.uw-t.com/uploads/post/39/0d7ea787e2d4464cbfc84fd754edda58.jpg" alt="">
-                        </div>
-                            <div class="field-points">
-                            Баллы: <span class="score">1</span>
-                        </div>
-                        
-                        <div class="field-vote">
-                            <a class="login-modal-btn">Голосовать</a>    
-                        </div>
-                    </div>
-
-                    <div class="view-row">    
-                        <div class="field-points-label score">1</div>
-                        <div class="field-image">
-                            <img src="http://oxanavasil.uw-t.com/uploads/post/39/0d7ea787e2d4464cbfc84fd754edda58.jpg" alt="">
-                        </div>
-                            <div class="field-points">
-                            Баллы: <span class="score">1</span>
-                        </div>
-                        
-                        <div class="field-vote">
-                            <a class="login-modal-btn">Голосовать</a>    
-                        </div>
-                    </div>
-
-                    <div class="view-row">    
-                        <div class="field-points-label score">1</div>
-                        <div class="field-image">
-                            <img src="http://oxanavasil.uw-t.com/uploads/post/39/0d7ea787e2d4464cbfc84fd754edda58.jpg" alt="">
-                        </div>
-                            <div class="field-points">
-                            Баллы: <span class="score">1</span>
-                        </div>
-                        
-                        <div class="field-vote">
-                            <a class="login-modal-btn">Голосовать</a>    
-                        </div>
-                    </div>
-
+                <?php endforeach;?>
                 </div>
-
             </div>
-
         </div>
-
-
-        <?php $form = ActiveForm::begin([
-            'options' => [
-                'enctype' => 'multipart/form-data',
-                'id' => 'post-image-form',
-            ],
-        ]); ?>
-
-        <?= $form->field($model, 'imageFile')->fileInput();?>
-        
-        <?php ActiveForm::end(); ?>
-
-        <!-- другие работы пользователя -->
-        <?php if(false && count(Yii::$app->user->identity->posts) > 0):?>
-            <h2 class="">Другие работы:</h2>
-            <?php foreach (Yii::$app->user->identity->posts as $post):?>
-                <?=$this->render('_user_post', ['post' => $post]);?>
-            <?php endforeach;?>
         <?php endif;?>
-
     </div>
 </div>
+
+<?php
+$script = "
+    $(document).on('click', '.ready a', function(e) {
+        $('#post-image-form').submit();
+
+        return false;
+    });
+
+    var type1 = 'на хэллоуин';
+    var type2 = 'в стиле комиксов';
+
+    $(document).on('click', '.style-comics a', function(e) {
+        if($('#post-type').val() == 1) {
+            $('#post-type').val(2);
+            $('.style-comics span').html(type1);
+            $('.ump__title span').html(type2);
+        } else {
+            $('#post-type').val(1);
+            $('.style-comics span').html(type2);
+            $('.ump__title span').html(type1);
+        }
+
+        return false;
+    });
+";
+
+$this->registerJs($script, yii\web\View::POS_END);
+?>
