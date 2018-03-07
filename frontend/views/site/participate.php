@@ -204,17 +204,4 @@ $this->params['bodyClass'] = 'page-participate';
         <?php endif;?>
 
     </div>
-    
-<<<<<<< HEAD
-=======
-    <?php ActiveForm::end(); ?>
-
-    <!-- другие работы пользователя -->
-    <?php if(false && count(Yii::$app->user->identity->posts) > 0):?>
-        <h2 class="">Другие работы:</h2>
-        <?php foreach (Yii::$app->user->identity->posts as $post):?>
-            <?=$this->render('_user_post', ['post' => $post]);?>
-        <?php endforeach;?>
-    <?php endif;?>
->>>>>>> 995554c770831f0e091e73c725ae1de76edc8ec9
 </div>
