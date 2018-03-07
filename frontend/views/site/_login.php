@@ -10,7 +10,7 @@ $this->title = 'Авторизуйся, используя свой акаунт
     <?php echo \frontend\widgets\social\SocialWidget::widget(['action' => 'site/login']); ?>
     <!--<p>Авторизуйся, используя один из аккаунтов соц.сетей</p>-->
 </div>
-<div class="site-login__second">
+<div class="site-login__second text-center">
     <span class="alert"></span>
     <!--<hr class="hr">-->
     <form action="">
