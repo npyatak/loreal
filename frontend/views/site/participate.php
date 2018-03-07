@@ -17,7 +17,7 @@ use yii\widgets\ActiveForm;
     <?php ActiveForm::end(); ?>
 
     <!-- другие работы пользователя -->
-    <?php if(count(Yii::$app->user->identity->posts) > 0):?>
+    <?php if(false && count(Yii::$app->user->identity->posts) > 0):?>
         <h2 class="">Другие работы:</h2>
         <?php foreach (Yii::$app->user->identity->posts as $post):?>
             <?=$this->render('_user_post', ['post' => $post]);?>

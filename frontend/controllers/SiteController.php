@@ -43,14 +43,14 @@ class SiteController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['login', 'logout', 'participate', 'user-action'],
+                'only' => ['login', 'logout',/* 'participate', */'user-action'],
                 'rules' => [
                     [
                         'actions' => ['login'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'participate', 'user-action'],
+                        'actions' => ['logout',/* 'participate',*/ 'user-action'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -252,7 +252,7 @@ class SiteController extends Controller
             if($ref !== '' && $ref != '/login') {
                 $eauth->setRedirectUrl(Url::toRoute($ref));
             } else {
-                $eauth->setRedirectUrl(Url::toRoute('site/vote'));
+                $eauth->setRedirectUrl(Url::toRoute('site/participate'));
             }
             $eauth->setCancelUrl(Url::toRoute('site/login'));
 
