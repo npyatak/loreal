@@ -47,7 +47,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Сделай мейк круче, чем участники проекта, и получай призы!</a>
                 </div>
                 <div class="go-participate">
-                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>" class="anchor-link">Участвовать</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Участвовать</a>
                 </div>
             </div>
         </div>
