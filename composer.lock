@@ -8,9 +8,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
     "hash": "710d26d096b5d2c230f38bb929c7620c",
 >>>>>>> 995554c770831f0e091e73c725ae1de76edc8ec9
+=======
+    "hash": "710d26d096b5d2c230f38bb929c7620c",
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
     "hash": "710d26d096b5d2c230f38bb929c7620c",
 >>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
@@ -635,6 +639,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         {
             "name": "kop/yii2-scroll-pager",
@@ -683,6 +688,8 @@
                 "yii2"
             ],
             "time": "2016-07-06T19:56:33+00:00"
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
 >>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
@@ -1157,6 +1164,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         },
         {
             "name": "webcreate/jquery-ias",
@@ -1197,6 +1205,8 @@
                 "scrolling"
             ],
             "time": "2017-06-29T21:13:27+00:00"
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
 >>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======

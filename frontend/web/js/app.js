@@ -285,7 +285,10 @@ $(document).on('click', 'a', function(e) {
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
 >>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
@@ -303,7 +306,10 @@ $('#login-popup .bp__close').on('click',function () {
     $('#login-popup').removeClass('active');
     $('#login-popup').removeAttr('style');
 });
+<<<<<<< HEAD
 >>>>>>> 995554c770831f0e091e73c725ae1de76edc8ec9
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 
 $(document).on('click', '.vote-btn', function (e) {
     e.preventDefault();

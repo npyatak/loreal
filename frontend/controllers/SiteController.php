@@ -394,6 +394,7 @@ class SiteController extends Controller
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     public function actionIndexNew($res = 1)
     {
         $sort = Yii::$app->getRequest()->getQueryParam('sort');
@@ -471,6 +472,8 @@ class SiteController extends Controller
         ]);
     }
 
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
 >>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 =======
