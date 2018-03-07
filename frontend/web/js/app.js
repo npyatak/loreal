@@ -204,7 +204,7 @@ $(document).on('click', 'a', function(e) {
     }
 });
 
-$('.login-modal-btn').on('click',function (e) {
+$(document).on('click', '.login-modal-btn' ,function (e) {
     e.preventDefault();
     $('#login-popup').addClass('active');
     window.scrollTo(0, 0);

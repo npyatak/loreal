@@ -2,6 +2,7 @@
 use yii\helpers\Url;
 use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
+use yii\widgets\Pjax;
 
 $this->registerJsFile(Url::toRoute('js/test.js'), ['depends' => [\yii\web\JqueryAsset::className()]]);
 
@@ -248,14 +249,10 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>
 
+            <?php Pjax::begin(); ?> 
             <div class="view view-voting">
-
                 <div class="view-filter">
-                    
                     <div class="sorting">
-                    <div class="ch_cp_sort_selects">
-                        
-                    </div>
                         <div class="date sort-param <?=in_array($sort, ['-created_at', 'created_at']) ? 'active' : '';?>">
                             <a href="<?=Url::current(['sort' => $sort == '-created_at' ? 'created_at' : '-created_at']);?>">По дате</a>
                         </div>
@@ -267,7 +264,6 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <div class="upload-file">
                         <a href="<?=Url::toRoute(['site/participate']);?>" class="link">Загрузи свое фото на проект +</a>
                     </div>
-
                 </div>
 
                 <?= ListView::widget([
@@ -295,8 +291,8 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                         ]
                     ],
                 ]);?>
-                
             </div>
+            <?php Pjax::end(); ?>
 
         </div>
 
