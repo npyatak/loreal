@@ -178,8 +178,12 @@ class SiteController extends Controller
         ]);
     }
 
-    public function actionVideos()
+    public function actionVideos($type = 2)
     {
+        if(!in_array($type, [1, 2])) {            
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
         $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
 
@@ -202,6 +206,7 @@ class SiteController extends Controller
             'videosBottom' => $videosBottom,
             'productsTop' => $productsTop,
             'productsBottom' => $productsBottom,
+            'type' => $type,
         ]);
     }
 

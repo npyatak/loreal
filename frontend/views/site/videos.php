@@ -2,6 +2,11 @@
 use yii\helpers\Url;
 
 $this->params['bodyClass'] = 'page-video page-new-video';
+
+$typeArr = [
+	1 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'hell.mp4', 'preview' => '/images/video/preview_2.jpg'],
+	2 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'superwoman_on_5.mp4', 'preview' => '/images/video/preview_1.jpg'],
+];
 ?>
 
 <!-- Less js  -->
@@ -35,34 +40,22 @@ $this->params['bodyClass'] = 'page-video page-new-video';
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
 			<div class="vg__title vg1__title">8-21 марта: как с картинки</div>
 			<div class="vg__union vg1__union">
-				<?php if(isset($videosTop[0])):?>
 				<div class="vg__big-video vg1__big-video" vg="prod-1">
 					<div class="close">X</div>
-					<!--<img src="<?//=$videosTop[0]->imageUrl;?>" alt="">-->
-					<img src="/images/video/preview_1.jpg" alt="">
-					<a class="play-btn" href="superwoman_on_5.mp4"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
+					<img src="<?=$typeArr[$type]['preview'];?>" alt="">
+					<a class="play-btn" href="<?=$typeArr[$type]['video'];?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 					<video id="video-main">
-					    <source src="/video/superwoman_on_5.mp4" type="video/mp4">
+					    <source src="/video/<?=$typeArr[$type]['video'];?>" type="video/mp4">
 					    Your browser does not support the video tag.
 					</video>
 				</div>
-				<?php endif;?>
 				<div class="vg__thumbnail-union vg1__thumbnail-union">
 					<div class="vg__thumbnails vg1__thumbnails">
-					<?php foreach ($videosTop as $key => $video):?>
-						<?php if($key != 0):?>
-							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$video->key;?>">
-								<img src="<?=$video->imageUrl;?>" alt="">
+						<?php foreach ($typeArr as $key => $t):?>
+							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$t['video'];?>" vg="<?=$type;?>">
+								<img src="<?=$t['preview'];?>" alt="">
 							</div>
-						<?php endif;?>
-					<?php endforeach;?>
-					<div class="vg__thumbnail vg__thumbnail-1" video-id="superwoman_on_5.mp4" vg="prod-1">
-						<img src="/images/video/preview_1.jpg" alt="">
-					</div>
-					<div class="vg__thumbnail vg__thumbnail-2" video-id="hell.mp4" vg="prod-2">
-						<img src="/images/video/preview_2.jpg" alt="">
-					</div>
-
+						<?php endforeach;?>
 					</div>
 				</div>
 			</div>
@@ -74,7 +67,7 @@ $this->params['bodyClass'] = 'page-video page-new-video';
 			    <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
 			</div>
 
-			<div class="product-union scroll-pane horizontal-only" vg="prod-1">
+			<div class="product-union scroll-pane horizontal-only <?=$type == 1 ? '' : 'hide';?>" vg="prod-1">
 			    <?php if($productsTop):?>
 		            <div class="products">
 		                <?php foreach ($productsTop as $product):?>
@@ -165,78 +158,4 @@ $this->params['bodyClass'] = 'page-video page-new-video';
 			</div>
 		</div>
 	</div>
-</div>
-
-<div class="screen-2">
-    <div class="s2__zasvet">&nbsp;</div>
-    <div class="container s2__container">
-        <div class="s2__title">Брось вызов вместе с</div>
-        <div class="s2__lp">
-            <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
-        </div>
-        <div class="product-union scroll-pane horizontal-only">
-            <?php if($productsTop):?>
-            <div class="products">
-                <?php foreach ($productsTop as $product):?>
-                <div class="product">
-                    <div class="product-img">
-                        <img src="<?=$product->image;?>" alt="">
-                    </div>
-                    <div class="product-info">
-                        <div class="description"><?=$product->description;?></div>
-                        <div class="title"><?=$product->title;?></div>
-                        <?php if($product->productLinks):?>
-                        <div class="buy">
-                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
-                            <div class="links">
-                                <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
-                                <?php endforeach;?>
-                            </div>
-                        </div>
-                        <?php endif;?>
-                    </div>
-                </div>
-                <?php endforeach;?>
-            </div>
-            <?php endif;?>
-        </div>
-    </div>
-</div>
-
-<div class="screen-2">
-    <div class="s2__zasvet">&nbsp;</div>
-    <div class="container s2__container">
-        <div class="s2__title">Брось вызов вместе с</div>
-        <div class="s2__lp">
-            <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
-        </div>
-        <div class="product-union scroll-pane horizontal-only">
-            <?php if($productsBottom):?>
-            <div class="products">
-                <?php foreach ($productsBottom as $product):?>
-                <div class="product">
-                    <div class="product-img">
-                        <img src="<?=$product->image;?>" alt="">
-                    </div>
-                    <div class="product-info">
-                        <div class="description"><?=$product->description;?></div>
-                        <div class="title"><?=$product->title;?></div>
-                        <?php if($product->productLinks):?>
-                        <div class="buy">
-                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
-                            <div class="links">
-                                <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
-                                <?php endforeach;?>
-                            </div>
-                        </div>
-                        <?php endif;?>
-                    </div>
-                </div>
-                <?php endforeach;?>
-            </div>
-            <?php endif;?>
-        </div>
-    </div>
 </div>
