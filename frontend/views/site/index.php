@@ -38,7 +38,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Вдохновляйся и<br/> покажи, на что<br/> ты способен!</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Тьюториалы</a>
                 </div>
             </div>
             <div class="s1__tc-2">
@@ -46,7 +46,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Сделай мейк круче, чем участники проекта, и получай призы!</a>
                 </div>
                 <div class="go-participate">
-                    <a href="#screen-3" class="anchor-link">Участвовать</a>
+                    <a href="#posts" class="anchor-link">Участвовать</a>
                 </div>
             </div>
         </div>
@@ -225,7 +225,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             </div>
         </div>
 
-        <div class="gallery-his-turn">
+        <div class="gallery-his-turn" id="posts">
             
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>

@@ -16,7 +16,7 @@ function mainMenu() {
 //Реализация видеогалереи
 function videoGallery() {
     //Показывать продукты в зависимости от видоса
-    if ( typeof $('.video-gallery .vg__union .vg__big-video').attr('vg') !== typeof undefined && $('.video-gallery .vg__union .vg__big-video').attr('vg') !== false ) {
+    if (typeof $('.video-gallery .vg__union .vg__big-video').attr('vg') !== typeof undefined && $('.video-gallery .vg__union .vg__big-video').attr('vg')) {
         $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
     }
 
@@ -94,6 +94,7 @@ function videoGallery() {
         if ( typeof $('.video-gallery .vg__union .vg__big-video').attr('vg') !== typeof undefined && $('.video-gallery .vg__union .vg__big-video').attr('vg') !== false ) {
             $('.screen-2 .product-union').hide();
             $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
+            $('.vg__title').text($(this).data('title'));
         }
 
         //Правки со скрытием превьюх
