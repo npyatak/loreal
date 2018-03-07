@@ -69,7 +69,7 @@ $typeArr = [
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
 			<div class="vg__title vg1__title">8-21 марта: как с картинки</div>
 			<div class="vg__union vg1__union">
-				<div class="vg__big-video vg1__big-video" video-id="<?=$typeArr[$type]['video'];?>" vg="prod-1">
+				<div class="vg__big-video vg1__big-video" video-id="<?=$typeArr[$type]['video'];?>" vg="prod-<?=$type;?>">
 					<div class="close">X</div>
 					<img src="<?=$typeArr[$type]['preview'];?>" alt="">
 					<a class="play-btn" href="<?=$typeArr[$type]['video'];?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
@@ -81,7 +81,7 @@ $typeArr = [
 				<div class="vg__thumbnail-union vg1__thumbnail-union">
 					<div class="vg__thumbnails vg1__thumbnails">
 						<?php foreach ($typeArr as $key => $t):?>
-							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$t['video'];?>" vg="<?=$type;?>">
+							<div class="vg__thumbnail vg__thumbnail-1" video-id="<?=$t['video'];?>" vg="prod-<?=$key;?>">
 								<img src="<?=$t['preview'];?>" alt="">
 							</div>
 						<?php endforeach;?>
