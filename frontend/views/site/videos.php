@@ -1,11 +1,12 @@
 <?php 
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 $this->params['bodyClass'] = 'page-video page-new-video';
 
 $typeArr = [
-	1 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'hell.mp4', 'preview' => '/images/video/preview_2.jpg'],
-	2 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'superwoman_on_5.mp4', 'preview' => '/images/video/preview_1.jpg'],
+	1 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'hell.mp4', 'preview' => '/images/video/preview_2.jpg'],
+	2 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'superwoman_on_5.mp4', 'preview' => '/images/video/preview_1.jpg'],
 ];
 ?>
 
@@ -67,7 +68,7 @@ $typeArr = [
 		</div>
 
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
-			<div class="vg__title vg1__title">8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН</div>
+			<div class="vg__title vg1__title"><?=$typeArr[$type]['title'];?></div>
 			<div class="vg__union vg1__union">
 				<div class="vg__big-video vg1__big-video" video-id="<?=$typeArr[$type]['video'];?>" vg="prod-<?=$type;?>">
 					<div class="close">X</div>
@@ -116,7 +117,9 @@ $typeArr = [
 		                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
 		                            <div class="links">
 		                                <?php foreach ($product->productLinks as $link):?>
-		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
+		                                    	<?=$link->logo ? Html::img($link->logo) : $link->title;?>
+		                                    </a>
 		                                <?php endforeach;?>
 		                            </div>
 		                        </div>
@@ -144,7 +147,9 @@ $typeArr = [
 		                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
 		                            <div class="links">
 		                                <?php foreach ($product->productLinks as $link):?>
-		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
+		                                    	<?=$link->logo ? Html::img($link->logo) : $link->title;?>
+		                                    </a>
 		                                <?php endforeach;?>
 		                            </div>
 		                        </div>

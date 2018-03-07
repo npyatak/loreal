@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\Html;
 use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
 use yii\widgets\Pjax;
@@ -192,7 +193,9 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                             <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
+                                        <?=$link->logo ? Html::img($link->logo) : $link->title;?>
+                                    </a>
                                 <?php endforeach;?>
                             </div>
                         </div>
