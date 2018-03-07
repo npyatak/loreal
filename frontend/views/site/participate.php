@@ -61,14 +61,16 @@ $this->params['bodyClass'] = 'page-participate';
                 <div class="step step-2">
                     <div class="s-number">2</div>
                     <div class="s-body">
-                        Выполняй задание<br/> 
-                        и загружай фото в <a href="#"><i class="vk">&nbsp;</i></a> и <a href="#"><i class="insta">&nbsp;</i></a>
+                        ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
+                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
+                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
                     </div>
                 </div>
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        Получай призы от L’OrÉal Paris
+                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
                     </div>
                 </div>
             </div>

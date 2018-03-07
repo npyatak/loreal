@@ -32,11 +32,40 @@ $this->params['bodyClass'] = 'page-video page-new-video';
 		<div class="vs__title">БРОСЬ ВЫЗОВ МЕЙКАПЕРАМ!</div>
 		<div class="vs__subtitle">#lorealparis_мейкаперы</div>
 		<div class="vs__intro">Вдохновляйся и Покажи, на что <br>ты способен!</div>
+
+		<div class="step-region">
+
+	        <div class="steps">
+	            <div class="step step-1">
+	                <div class="s-number">1</div>
+	                <div class="s-body">
+	                    Смотри тьюториалы
+	                </div>
+	            </div>
+	            <div class="step step-2">
+	                <div class="s-number">2</div>
+	                <div class="s-body">
+	                    ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
+                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
+                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
+	                </div>
+	            </div>
+	            <div class="step step-3">
+	                <div class="s-number">3</div>
+	                <div class="s-body">
+	                    ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
+	                </div>
+	            </div>
+	        </div>
+
+		</div>
+
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
 			<div class="vg__title vg1__title">8-21 марта: как с картинки</div>
 			<div class="vg__union vg1__union">
 				<?php if(isset($videosTop[0])):?>
-				<div class="vg__big-video vg1__big-video" vg="prod-1">
+				<div class="vg__big-video vg1__big-video" video-id="superwoman_on_5.mp4" vg="prod-1">
 					<div class="close">X</div>
 					<!--<img src="<?//=$videosTop[0]->imageUrl;?>" alt="">-->
 					<img src="/images/video/preview_1.jpg" alt="">
@@ -66,6 +95,10 @@ $this->params['bodyClass'] = 'page-video page-new-video';
 					</div>
 				</div>
 			</div>
+		</div>
+
+		<div class="full-rules">
+			<a href="#">Полные правила</a>
 		</div>
 		
 		<div class="screen-2">

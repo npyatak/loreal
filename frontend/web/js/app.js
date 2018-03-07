@@ -20,6 +20,8 @@ function videoGallery() {
         $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
     }
 
+    $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[video-id="' + $('.video-gallery .vg__union .vg__big-video').attr('video-id') + '"]').hide();
+
     //Расчет ширины галерей
     $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails').each(function () {
         var countThumbnail = $(this).children().length,
@@ -93,6 +95,11 @@ function videoGallery() {
             $('.screen-2 .product-union').hide();
             $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
         }
+
+        //Правки со скрытием превьюх
+        $('.video-gallery .vg__union .vg__big-video').attr('video-id',$(this).attr('video-id'));
+        $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail').show();
+        $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[video-id="' + $('.video-gallery .vg__union .vg__big-video').attr('video-id') + '"]').hide();
 
     });
 
@@ -252,7 +259,7 @@ $(document).ready(function () {
 
         //Попап на новой фронт стр.
         if ($('#stage-popup').length != 0) {
-            StagePoppup(apiJsp);
+            //StagePoppup(apiJsp);
         }
     } );
     

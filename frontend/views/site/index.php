@@ -94,7 +94,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С 8 марта по 21 марта</div>
-                    <div class="stb-subtitle">Супер-женщина</div>
+                    <div class="stb-subtitle">МЭЙКАП В СТИЛЕ КОМИКСОВ</div>
                 </div>
             </div>
             <div class="st__block st__block-2">
@@ -102,7 +102,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С 8 марта по 21 марта</div>
-                    <div class="stb-subtitle">Как с картины</div>
+                    <div class="stb-subtitle">МЭЙКАП НА ХЭЛЛОУИН</div>
                 </div>
             </div>
         </div>
