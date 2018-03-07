@@ -15,17 +15,22 @@ function mainMenu() {
 
 //Реализация видеогалереи
 function videoGallery() {
+    //Показывать продукты в зависимости от видоса
+    if ( typeof $('.video-gallery .vg__union .vg__big-video').attr('vg') !== typeof undefined && $('.video-gallery .vg__union .vg__big-video').attr('vg') !== false ) {
+        $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
+    }
+
     //Расчет ширины галерей
     $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails').each(function () {
-        /*var countThumbnail = $(this).children().length,
+        var countThumbnail = $(this).children().length,
             widthElem = $(this).find('> .vg__thumbnail:first-child').width(),
             marginElem = $(this).find('> .vg__thumbnail:first-child').outerWidth(true) - $(this).find('> .vg__thumbnail:first-child').width();
 
         $(this).width( (countThumbnail * widthElem) + (marginElem * (countThumbnail - 1) ) );
-        */
+        
     });
-
-    $('.video-gallery .vg__union .vg__big-video .play-btn').on('click', function (e) {
+    //Галерейка с ютубом
+    $('.video-gallery.youtube .vg__union .vg__big-video .play-btn').on('click', function (e) {
         e.preventDefault();
         $(this).hide();
         $(this).parent().find('> img').hide();
@@ -33,20 +38,62 @@ function videoGallery() {
         $(this).parent().append('<iframe frameborder="0" allowfullscreen="" src="http://www.youtube-nocookie.com/embed/' + $(this).attr('href') + '?rel=0&amp;autoplay=1&amp;iframe=true"></iframe>');
     });
 
-    $('.video-gallery .vg__union .vg__big-video .close').on('click', function (e) {
+    $('.video-gallery.youtube .vg__union .vg__big-video .close').on('click', function (e) {
         $(this).hide();
         $(this).parent().find('> img').show();
         $(this).parent().find('.play-btn').show();
         $(this).parent().find('iframe').remove();;
     });
 
-    $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail').on('click', function () {
+    $('.video-gallery.youtube .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail').on('click', function () {
         $(this).closest('.vg__union').find('.vg__big-video .close').hide();
         $(this).closest('.vg__union').find('.vg__big-video > img').attr('src',$(this).find('img').attr('src'));
         $(this).closest('.vg__union').find('.vg__big-video > img').show();
         $(this).closest('.vg__union').find('.vg__big-video iframe').remove();
         $(this).closest('.vg__union').find('.vg__big-video .play-btn').show();
         $(this).closest('.vg__union').find('.vg__big-video .play-btn').attr('href',$(this).attr('video-id'));
+    });
+
+    //Галерея без ютуба
+    $('.video-gallery.no-youtube .vg__union .vg__big-video .play-btn').on('click', function (e) {
+        e.preventDefault();
+        $(this).hide();
+        $(this).parent().find('> img').hide();
+        $(this).parent().find('.close').show();
+        $(this).parent().find('#video-main source').attr('src','/video/' + $(this).attr('href'));
+        $(this).parent().find('#video-main').show();
+        var myVideo = document.getElementById("video-main"); 
+        myVideo.play();
+    });
+
+    $('.video-gallery.no-youtube .vg__union .vg__big-video .close').on('click', function (e) {
+        $(this).hide();
+        $(this).parent().find('> img').show();
+        $(this).parent().find('.play-btn').show();
+        $(this).parent().find('#video-main').hide();
+        var myVideo = document.getElementById("video-main"); 
+        myVideo.pause();
+    });
+
+    $('.video-gallery.no-youtube .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail').on('click', function () {
+        $(this).closest('.vg__union').find('.vg__big-video .close').hide();
+        $(this).closest('.vg__union').find('.vg__big-video > img').attr('src',$(this).find('img').attr('src'));
+        $(this).closest('.vg__union').find('.vg__big-video > img').show();
+        $('#video-main').hide();
+        var myVideo = document.getElementById("video-main"); 
+        myVideo.pause();
+        $('#video-main source').attr('src','/video/' + $(this).attr('video-id'));
+        myVideo.load();
+        $(this).closest('.vg__union').find('.vg__big-video .play-btn').show();
+        $(this).closest('.vg__union').find('.vg__big-video .play-btn').attr('href',$(this).attr('video-id'));
+
+        //Чтобы ховать продукты при разных видосах
+        $(this).closest('.vg__union').find('.vg__big-video').attr('vg',$(this).attr('vg'));
+        if ( typeof $('.video-gallery .vg__union .vg__big-video').attr('vg') !== typeof undefined && $('.video-gallery .vg__union .vg__big-video').attr('vg') !== false ) {
+            $('.screen-2 .product-union').hide();
+            $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
+        }
+
     });
 
 }
@@ -71,18 +118,25 @@ function BuyProducts() {
 
 
 function WidthProducts() {
-    var countProd = $('.screen-2 .product-union .products').children().length,
-        widthProd;
 
-    if ( $(window).width() <= 1279 ) {
-        widthProd = 285;
-        $('.screen-2 .product-union .products .product').width(widthProd);
-    } else {
-        widthProd = 277.5;
-        $('.screen-2 .product-union .products .product').width(widthProd);
-    }
+    $('.screen-2 .product-union').each(function(){
 
-    $('.screen-2 .product-union .products').width( countProd * widthProd);
+        var countProd = $(this).find('.products').children().length,
+            widthProd;
+
+        if ( $(window).width() <= 1279 ) {
+            widthProd = 285;
+            $(this).find('.products .product').width(widthProd);
+        } else {
+            widthProd = 277.5;
+            $(this).find('.products .product').width(widthProd);
+        }
+
+        $(this).find('.products').width( countProd * widthProd);
+
+    });
+
+    
 
 }
 
@@ -124,10 +178,30 @@ function StagePoppup(data){
 
 }
 
+//Попап для логина
+function LoginPopup() {
+    
+    $('.login-modal-btn').on('click',function (e) {
+        e.preventDefault();
+        $('#login-popup').addClass('active');
+        window.scrollTo(0, 0);
+        $('#login-popup').css('top', 0);
+    });
+
+    $('#login-popup .bp__close').on('click',function () {
+        $('#login-popup').removeClass('active');
+        $('#login-popup').removeAttr('style');
+    });
+
+}
+
 $(document).ready(function () {
 
     //Для работы меню
     mainMenu();    
+
+    //Попап логина
+    LoginPopup();
 
     //Покупка продуктов
     if ($('.product-union .products').length != 0) {
@@ -162,23 +236,26 @@ $(document).ready(function () {
     //Просчет продуктов
     WidthProducts();
 
-    //Стидизация скролла
-    var elemJsp = $('.scroll-pane').jScrollPane({
-        showArrows: true,
-        autoReinitialise: true,
-        horizontalDragMinWidth: 124,
-        horizontalDragMaxWidth: 124,
-        mouseWheelSpeed:50,
-        arrowButtonSpeed:50,
-        trackClickSpeed:50,
-        hideFocus:true
-    });
-    var apiJsp = elemJsp.data('jsp');
+    $( function() {
+        //Стилизация скролла
+        var elemJsp = $('.scroll-pane').jScrollPane({
+            showArrows: true,
+            autoReinitialise: true,
+            horizontalDragMinWidth: 124,
+            horizontalDragMaxWidth: 124,
+            mouseWheelSpeed:50,
+            arrowButtonSpeed:50,
+            trackClickSpeed:50,
+            hideFocus:true
+        });
+        var apiJsp = elemJsp.data('jsp');
 
-    //Попап на новой фронт стр.
-    if ($('#stage-popup').length != 0) {
-        StagePoppup(apiJsp);
-    }
+        //Попап на новой фронт стр.
+        if ($('#stage-popup').length != 0) {
+            StagePoppup(apiJsp);
+        }
+    } );
+    
 });
 
 $(window).resize(function(){
@@ -204,7 +281,18 @@ $(document).on('click', 'a', function(e) {
     }
 });
 
-$('.login-modal-btn').on('click',function (e) {
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+$(document).on('click', '.login-modal-btn' ,function (e) {
     e.preventDefault();
     $('#login-popup').addClass('active');
     window.scrollTo(0, 0);
@@ -214,4 +302,22 @@ $('.login-modal-btn').on('click',function (e) {
 $('#login-popup .bp__close').on('click',function () {
     $('#login-popup').removeClass('active');
     $('#login-popup').removeAttr('style');
+});
+>>>>>>> 995554c770831f0e091e73c725ae1de76edc8ec9
+
+$(document).on('click', '.vote-btn', function (e) {
+    e.preventDefault();
+
+    var obj = $(this).closest('.view-row');
+    var link = $(this);
+
+    $.ajax({
+        type: 'GET',
+        url: '/site/user-action',
+        data: 'id='+obj.attr('data-key'),
+        success: function (data) {
+            obj.find('.score').html(data.score);
+            link.remove();
+        }
+    });
 });

@@ -124,6 +124,8 @@ AppAsset::register($this);
                     </div>
                 </div>
             </div>
+            
+            <div id="overlay" class="overlay">&nbsp;</div>
 
             <?php if(Yii::$app->user->isGuest && !in_array(Yii::$app->controller->action->id, ['video', 'index'])):?>
             <div id="login-popup">
@@ -134,7 +136,8 @@ AppAsset::register($this);
             </div>
             <?php endif;?>
 
-            <div id="overlay" class="overlay">&nbsp;</div>
+            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
+
         </div>
 
     </div>

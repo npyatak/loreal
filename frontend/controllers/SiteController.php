@@ -16,12 +16,14 @@ use common\models\User;
 use common\models\Question;
 use common\models\TestResult;
 use common\models\Product;
+use common\models\ProductGallery;
 use common\models\Video;
 use common\models\Share;
 use common\models\Post;
 use common\models\PostAction;
 use common\models\Week;
 use frontend\models\ContactForm;
+use common\models\search\PostSearch;
 
 /**
  * Site controller
@@ -42,14 +44,14 @@ class SiteController extends Controller
             ],
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['login', 'logout', 'participate', 'user-action'],
+                'only' => ['login', 'logout',/* 'participate', */'user-action'],
                 'rules' => [
                     [
                         'actions' => ['login'],
                         'allow' => true,
                     ],
                     [
-                        'actions' => ['logout', 'participate', 'user-action'],
+                        'actions' => ['logout',/* 'participate',*/ 'user-action'],
                         'allow' => true,
                         'roles' => ['@'],
                     ],
@@ -96,8 +98,6 @@ class SiteController extends Controller
 
     public function actionIndex($res = 1)
     {
-        $postsLimit = 8;
-        
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
             $share = Share::find()->where(['uri' => $uri])->asArray()->one();
@@ -107,7 +107,29 @@ class SiteController extends Controller
             return $share;
         }
 
-        $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
+        $sort = Yii::$app->getRequest()->getQueryParam('sort', '-created_at');
+
+        $searchModel = new PostSearch();
+        $params = Yii::$app->request->queryParams;
+        $params['PostSearch']['status'] = Post::STATUS_ACTIVE;
+        $params['PostSearch']['week_id'] = $this->currentWeek->id;
+
+        $dataProvider = $searchModel->search($params);
+        $dataProvider->sort = [
+            //'defaultOrder' => ['score'=>SORT_DESC],
+            'defaultOrder' => ['created_at'=>SORT_DESC],
+            'attributes' => ['created_at', 'score'],
+        ];
+        $dataProvider->pagination = [
+            'pageSize' => 8,
+        ];
+
+        $products = Product::find()
+            ->joinWith('productGalleries')
+            ->joinWith('productLinks')
+            ->where(['show_on_main' => 1])
+            ->andWhere(['product_gallery.gallery' => ProductGallery::INDEX])
+            ->all();
 
         $results = [];
         $questions = [];
@@ -149,8 +171,10 @@ class SiteController extends Controller
             'scores' => $scores,
             'comments' => $comments,
             'res' => $res,
-            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
-            'posts' => Post::find()->where(['status' => Post::STATUS_ACTIVE])->limit($postsLimit)->all(),
+            //'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),       
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'sort' => $sort,
         ]);
     }
 
@@ -159,9 +183,25 @@ class SiteController extends Controller
         $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
 
-        return $this->render('videos', [
+        $productsTop = Product::find()
+            ->joinWith('productGalleries')
+            ->joinWith('productLinks')
+            ->where(['show_on_main' => 1])
+            ->andWhere(['product_gallery.gallery' => ProductGallery::VIDEO_1])
+            ->all();
+
+        $productsBottom = Product::find()
+            ->joinWith('productGalleries')
+            ->joinWith('productLinks')
+            ->where(['show_on_main' => 1])
+            ->andWhere(['product_gallery.gallery' => ProductGallery::VIDEO_2])
+            ->all();
+
+        return $this->render('video-new', [
             'videosTop' => $videosTop,
             'videosBottom' => $videosBottom,
+            'productsTop' => $productsTop,
+            'productsBottom' => $productsBottom,
         ]);
     }
 
@@ -231,7 +271,7 @@ class SiteController extends Controller
             if($ref !== '' && $ref != '/login') {
                 $eauth->setRedirectUrl(Url::toRoute($ref));
             } else {
-                $eauth->setRedirectUrl(Url::toRoute('site/vote'));
+                $eauth->setRedirectUrl(Url::toRoute('site/participate'));
             }
             $eauth->setCancelUrl(Url::toRoute('site/login'));
 
@@ -265,7 +305,7 @@ class SiteController extends Controller
 
                     $user->ip = $_SERVER['REMOTE_ADDR'];
                     $user->browser = $_SERVER['HTTP_USER_AGENT'];
-                    $user->save(false, ['ip', 'browser']);
+                    $user->save(false);
 
                     Yii::$app->user->login($user);
                     // special redirect with closing popup window
@@ -351,8 +391,28 @@ class SiteController extends Controller
         ]);
     }
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
     public function actionIndexNew($res = 1)
     {
+        $sort = Yii::$app->getRequest()->getQueryParam('sort');
+
+        $searchModel = new PostSearch();
+        $params = Yii::$app->request->queryParams;
+        $params['PostSearch']['status'] = Post::STATUS_ACTIVE;
+        $params['PostSearch']['week_id'] = $this->currentWeek->id;
+
+        $dataProvider = $searchModel->search($params);
+        $dataProvider->sort = [
+            //'defaultOrder' => ['score'=>SORT_DESC],
+            'defaultOrder' => ['created_at'=>SORT_DESC],
+            'attributes' => ['created_at', 'score'],
+        ];
+        $dataProvider->pagination = [
+            'pageSize' => 8,
+        ];
+
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
             $share = Share::find()->where(['uri' => $uri])->asArray()->one();
@@ -404,11 +464,19 @@ class SiteController extends Controller
             'scores' => $scores,
             'comments' => $comments,
             'res' => $res,
-            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
-            'posts' => Post::find()->where(['status' => Post::STATUS_ACTIVE])->all(),
+            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),       
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'sort' => $sort,
         ]);
     }
 
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
     public function actionVideoNew()
     {
         $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
@@ -437,89 +505,13 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    private function findPost($id) {
+        $post = Post::findOne($id);
 
-
-    public function actionVkParse($hashtag = 'axebest') {
-        if(Yii::$app->user->isGuest) {
-            return $this->redirect(Url::toRoute(['profile/index']));
+        if($post === null || $post->status === Post::STATUS_BANNED) {
+            throw new NotFoundHttpException('The requested page does not exist.');
         }
-        
-        $user = Yii::$app->user->identity;
 
-        $url = 'https://api.vk.com/method/video.search';
-        $params = [
-            'q' => $hashtag,
-            'extended' => 1,
-            //'count' => 3,
-            //'params[start_from]' => '6%2F-65395224_8404',
-            'fields' => 'profiles',
-            'v' => 5.69,
-            'access_token' => $user->access_token,
-            'redirect_uri' => 'https://oauth.vk.com/blank.html',
-            // 'filters' => 'youtube',
-            // 'sort' => 0,
-        ];
-
-        $postParams = [];
-        foreach ($params as $key => $value) {
-            $postParams[] = $key.'='.$value; 
-        }
-        $url = $url.'?'.implode('&', $postParams);
-
-        $res = file_get_contents($url);
-        $res = json_decode($res);
-
-        if(isset($res->response)) {
-            $names = [];
-            $addedCount = 0;
-            if($res->response->profiles) {
-                foreach ($res->response->profiles as $profile) {
-                    $names[$profile->id] = $profile->first_name.' '.$profile->last_name;
-                }
-            }
-            if($res->response->groups) {
-                foreach ($res->response->groups as $group) {
-                    $names[$group->id] = $group->name;
-                }
-            }
-
-            if($res->response->items) {
-                foreach ($res->response->items as $item) {
-                    $challenge = new Challenge;
-
-                    if(isset($item->platform) && $item->platform == 'YouTube') {
-                        $challenge->link = $item->player;
-                    } else {
-                        $challenge->link = 'https://vk.com/video'.$item->owner_id.'_'.$item->id;
-                    }
-                    // $exp = explode('?', $item->player);
-                    // $exp = explode('/', $exp[0]);
-                    // $challenge->access_key = end($exp);
-
-                    $sizes = ['photo_800', 'photo_640', 'photo_320', 'photo_160'];
-                    foreach ($sizes as $size) {
-                        if(isset($item->$size)) {
-                            $challenge->image = $item->$size;
-                            break;
-                        }
-                    }
-                    
-                    if($item->owner_id && isset($names[$item->owner_id])) {
-                        $challenge->name = $names[$item->owner_id];
-                    }
-                    
-                    //$challenge->soc = Challenge::SOC_YOUTUBE;
-
-                    if($challenge->save()) {
-                        $addedCount++;
-                    }
-                }
-            }
-
-            echo 'Найдено видео: '.count($res->response->items).' Добавлено новых: '.$addedCount;
-        } else {
-            echo 'Что-то пошло не так. Ответ сервера: ';
-            print_r($res);
-        }
+        return $post;
     }
 }

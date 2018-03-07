@@ -101,7 +101,8 @@ a::-moz-selection {
 
 @media all and (max-width: 1279px){
     .screen-1 .s1__two-col .s1__tc-1 .tc1-block2 a:hover{
-        background-size: cover;
+        /*background-size: cover;*/
+        background: url(../images/s1-new/mobile/tc1-block2_hover.png) 0 no-repeat;
     }
 }
 
@@ -192,11 +193,37 @@ body.page-video .video-screen .video_bulbs{
     box-shadow: 0 0 81px hsla(35,92%,85%,.22);
     text-align: center;
 }
-#login-popup, .overlay {
+#login-popup{
     display: none;
     top: 0;
     width: 100%;
 }
 #login-popup.active {
     display: block;
+}
+.link {
+    color: #a68c69;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1;
+    text-transform: uppercase;
+    cursor: pointer;
+    letter-spacing: 0.62px;
+}
+.ias-trigger {
+    margin: 20px auto;
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+    width: 100%;
+    text-align: center;
+=======
+>>>>>>> 995554c770831f0e091e73c725ae1de76edc8ec9
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
+=======
+>>>>>>> b285b09ab09a217f33846cd93e3fcaa4dd1bf6db
 }

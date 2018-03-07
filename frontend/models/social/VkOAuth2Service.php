@@ -13,6 +13,7 @@ class VkOAuth2Service extends \nodge\eauth\services\VKontakteOAuth2Service {
 
 	protected function fetchAttributes() {
 		$tokenData = $this->getAccessTokenData();
+		
 		$info = $this->makeSignedRequest('users.get.json', [
 			'query' => [
 				'uids' => $tokenData['params']['user_id'],
@@ -20,7 +21,7 @@ class VkOAuth2Service extends \nodge\eauth\services\VKontakteOAuth2Service {
 				'fields' => 'nickname, sex, bdate, city, country, timezone, photo, photo_medium, photo_big, photo_rec',
 			],
 		]);
-//print_r($info);exit;
+
 		$info = $info['response'][0];
 
 		$this->attributes = $info;
@@ -47,10 +48,10 @@ class VkOAuth2Service extends \nodge\eauth\services\VKontakteOAuth2Service {
 		// $this->attributes['city'] = json_decode(file_get_contents('https://api.vk.com/method/database.getCitiesById' . '?' . urldecode(http_build_query(['city_ids' => $info['city']]))), true);
 		// $this->attributes['city'] = $this->city['response'][0]['name'];
 
-		$smas=explode('.',$info['bdate']);
-		$str = $smas[2]. '-' . $smas[1] . '-'. $smas[0];
-		$timestamp = strtotime($str);
-		$this->attributes['bdate'] = date('Y-n-d ', $timestamp);
+		// $smas=explode('.',$info['bdate']);
+		// $str = $smas[2]. '-' . $smas[1] . '-'. $smas[0];
+		// $timestamp = strtotime($str);
+		// $this->attributes['bdate'] = date('Y-n-d ', $timestamp);
 
 		return true;
 	}

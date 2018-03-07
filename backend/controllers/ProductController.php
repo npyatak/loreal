@@ -7,6 +7,7 @@ use yii\web\NotFoundHttpException;
 
 use common\models\Product;
 use common\models\ProductLink;
+use common\models\ProductGallery;
 use common\models\search\ProductSearch;
 
 /**
@@ -76,6 +77,8 @@ class ProductController extends CController
             }
         }
 
+        $model->galleryArray = ProductGallery::find()->select('gallery')->where(['product_id' => $model->id])->column();
+        
         return $this->render('update', [
             'model' => $model,
             'productLinkModels' => $productLinkModels,

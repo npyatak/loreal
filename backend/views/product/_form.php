@@ -4,6 +4,8 @@ use yii\helpers\ArrayHelper;
 use yii\bootstrap\ActiveForm;
 use common\components\ElfinderInput;
 use unclead\multipleinput\TabularInput;
+
+use common\models\ProductGallery;
 ?>
 
 <div class="add-form">
@@ -68,6 +70,8 @@ use unclead\multipleinput\TabularInput;
             ],
         ]) ?>
     </div>
+
+    <?=$form->field($model, 'galleryArray')->checkBoxList(ProductGallery::getGalleryArray(), ['multiple'=>'multiple']);?>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
+        <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?= Html::a('Ban', ['ban', 'id' => $model->id], ['class' => 'btn btn-danger']) ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
@@ -54,23 +55,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'image',
                 'format' => 'raw',
                 'value' => function($model) {
-                    if($model->is_from_ig) {
-                        switch ($model->image_orientation) {
-                            case Post::IMAGE_SQUARE:
-                                $style = 'width: 280px; height: 280px';
-                                break;
-                            case Post::IMAGE_HORIZONTAL:
-                                $style = 'width: 600px; height: 280px';
-                                break;
-                            case Post::IMAGE_VERTICAL:
-                                $style = 'width: 280px; height: 600px';
-                                break;
-                        }
-
-                        return Html::img($model->igImageUrl, ['style' => $style]);
-                    } else {
-                        return Html::img($model->frontImageUrl, ['width' => '300px']).Html::img($model->backImageUrl, ['width' => '300px']);
-                    }
+                    return Html::img($model->imageUrl, ['width' => '140px']);
                 }
             ],
             [

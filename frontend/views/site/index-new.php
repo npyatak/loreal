@@ -1,5 +1,8 @@
 <?php
 use yii\helpers\Url;
+use yii\widgets\ListView;
+use kop\y2sp\ScrollPager;
+use yii\widgets\Pjax;
 
 $this->registerJsFile(Url::toRoute('js/test.js'), ['depends' => [\yii\web\JqueryAsset::className()]]);
 
@@ -83,7 +86,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container st__container">
         <div class="st__title">Этап 1</div>
         <div class="st__subtitle">8 марта - 21 марта</div>
-        <div class="st__full-reg"><a href="#">Полные правила</a></div>
+        <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></div>
 
         <div class="st__blocks">
             <div class="st__block st__block-1">
@@ -246,57 +249,50 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>
 
+            <?php Pjax::begin(); ?> 
             <div class="view view-voting">
-
                 <div class="view-filter">
-                    
                     <div class="sorting">
-                        <div class="date sort-param"><a href="?params=1">По дате</a></div>
-                        <div class="point sort-param active"><a href="?params=2">По баллам</a></div>
+                        <div class="date sort-param <?=in_array($sort, ['-created_at', 'created_at']) ? 'active' : '';?>">
+                            <a href="<?=Url::current(['sort' => $sort == '-created_at' ? 'created_at' : '-created_at']);?>">По дате</a>
+                        </div>
+                        <div class="point sort-param <?=$sort == '-score' ? 'active' : '';?>">
+                            <a href="<?=Url::current(['sort' => '-score']);?>">По баллам</a>
+                        </div>
                     </div>
 
                     <div class="upload-file">
-                        <form action="">
-                          <input id="main-upload" type="file" name="pic" accept="image/*">
-                          <label for="main-upload"><span class="button-title">Загрузи свое фото на проект +</span></label>
-                          <input type="submit" name="op">
-                        </form>
+                        <a href="<?=Url::toRoute(['site/participate']);?>" class="link">Загрузи свое фото на проект +</a>
                     </div>
-
                 </div>
 
-                <div class="view-content">
-
-                    <?php for($i = 1;$i <= 4; $i++ ) {?>
-                        <div class="view-row view-row-<?php print $i; ?>">
-                            <div class="field-points-label">1234</div>
-                            <div class="field-image">
-                                <img src="/images/new-index/nate-vasileva.jpg" alt="">
-                            </div>
-                            <div class="field-name">
-                                НаТаЛЬЯ ВАСИЛЬЕВА
-                            </div>
-                            <div class="field-points">
-                                Баллы: 1234
-                            </div>
-                            <div class="field-shape">
-                                Название созданного образа 1
-                            </div>
-
-                            <div class="field-vote">
-                                <a href="#">ГОлосовать</a>
-                            </div>
-
-                        </div>
-                    <?php } ?>
-
-                </div>
-                
+                <?= ListView::widget([
+                    'dataProvider' => $dataProvider,
+                    'layout' => "{items} {pager}",
+                    'itemOptions' => ['class' => 'view-row'],
+                    'itemView' => '_post',
+                    'options' => ['class' => 'view-content'],
+                    'pager' => [
+                        'class' => ScrollPager::className(), 
+                        'triggerText' => 'Загрузить ещё',
+                        'triggerTemplate' => '<div class="ias-trigger"><a class="link">{text}</a></div>',
+                        //'noneLeftTemplate' => '',
+                        'container' => '.view-content',
+                        'item' => '.view-row',
+                        'negativeMargin' => 100,
+                        'delay' => 10,
+                        'paginationSelector' => '.view-content .pagination',
+                        'enabledExtensions' => [
+                            ScrollPager::EXTENSION_TRIGGER,
+                            //ScrollPager::EXTENSION_SPINNER,
+                            //ScrollPager::EXTENSION_NONE_LEFT,
+                            //ScrollPager::EXTENSION_PAGING,
+                            //ScrollPager::EXTENSION_HISTORY
+                        ]
+                    ],
+                ]);?>
             </div>
-            
-            <div class="see-all">
-                <a href="/videos">Смотреть все</a>
-            </div>
+            <?php Pjax::end(); ?>
 
         </div>
 
@@ -339,6 +335,14 @@ $script = "
 
         window.history.pushState(null, '', '/?res='+res);
     }
+    
+    $(document).on('pjax:beforeReplace', function() {
+        $.ias().destroy();
+    });
+
+    $(document).on('pjax:end', function() {
+        $.ias().reinitialize();
+    });
 ";
 
 $this->registerJs($script, yii\web\View::POS_END);

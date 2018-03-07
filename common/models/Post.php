@@ -40,7 +40,7 @@ class Post extends \yii\db\ActiveRecord
     {
         return [
             [['user_id', 'imageFile'], 'required'],
-            [['user_id', 'score', 'status', 'created_at', 'updated_at', 'is_from_ig', 'ig_parse_data_id', 'image_orientation'], 'integer'],
+            [['user_id', 'score', 'status', 'created_at', 'updated_at', 'is_from_ig', 'ig_parse_data_id', 'image_orientation', 'type'], 'integer'],
             [['image'], 'string', 'max' => 255],
             [['user_id'], 'exist', 'skipOnError' => true, 'targetClass' => User::className(), 'targetAttribute' => ['user_id' => 'id']],
 
@@ -79,6 +79,7 @@ class Post extends \yii\db\ActiveRecord
             'image' => 'Изображение',
             'created_at' => 'Дата/Время создания',
             'updated_at' => 'Время последнего изменения',
+            'type' => 'Тип',
         ];
     }
 
@@ -137,6 +138,17 @@ class Post extends \yii\db\ActiveRecord
 
     public function getStatusLabel() {
         return self::getStatusArray()[$this->status];
+    }
+
+    public static function getTypeArray() {
+        return [
+            1 => 'МЭЙКАП ДЛЯ ХЭЛЛОУИНА',
+            2 => 'МЭЙКАП В СТИЛЕ КОМИКСОВ',
+        ];
+    }
+
+    public function getTypeLabel() {
+        return self::getTypeArray()[$this->type];
     }
 
     public function getLastUserActions() {

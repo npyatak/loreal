@@ -7,6 +7,7 @@ use Yii;
 class Product extends \yii\db\ActiveRecord
 {
     public $productLinksArray;
+    public $galleryArray;
     /**
      * @inheritdoc
      */
@@ -25,6 +26,7 @@ class Product extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['show_on_main', 'test'], 'integer'],
             [['title', 'image', 'ga_param'], 'string', 'max' => 255],
+            ['galleryArray', 'safe'],
         ];
     }
 
@@ -41,6 +43,7 @@ class Product extends \yii\db\ActiveRecord
             'show_on_main' => 'Показать на главной',
             'test' => 'Задание',
             'ga_param' => 'GA параметр',
+            'galleryArray' => 'Галереи',
         ];
     }
 
@@ -57,6 +60,16 @@ class Product extends \yii\db\ActiveRecord
 
         foreach (array_diff($oldIds, $linkIds) as $idToDel) {
             ProductLink::findOne($idToDel)->delete();
+        }
+
+        ProductGallery::deleteAll(['product_id' => $this->id]);
+        foreach ($this->galleryArray as $key => $gallery_id) {
+            echo $gallery_id;
+            $productGallery = new ProductGallery;
+            $productGallery->product_id = $this->id;
+            $productGallery->gallery = $gallery_id;
+
+            $productGallery->save();
         }
 
         return parent::afterSave($insert, $changedAttributes);
@@ -84,5 +97,10 @@ class Product extends \yii\db\ActiveRecord
     public function getProductLinks()
     {
         return $this->hasMany(ProductLink::className(), ['product_id' => 'id']);
+    }
+
+    public function getProductGalleries()
+    {
+        return $this->hasMany(ProductGallery::className(), ['product_id' => 'id']);
     }
 }
