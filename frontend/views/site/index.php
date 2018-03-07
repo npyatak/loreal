@@ -175,7 +175,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container s2__container">
         <div class="s2__title">Брось вызов вместе с</div>
         <div class="s2__lp">
-            <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
+            <a href="http://ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=ficvq&pr=%random%" target="_blank"><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
         </div>
         <div class="product-union scroll-pane horizontal-only">
             <?php if($products):?>

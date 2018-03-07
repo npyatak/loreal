@@ -74,7 +74,7 @@ $typeArr = [
 					<div class="close">X</div>
 					<img src="<?=$typeArr[$type]['preview'];?>" alt="">
 					<a class="play-btn" href="<?=$typeArr[$type]['video'];?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
-					<video id="video-main">
+					<video id="video-main" controls>
 					    <source src="/video/<?=$typeArr[$type]['video'];?>" type="video/mp4">
 					    Your browser does not support the video tag.
 					</video>
@@ -98,7 +98,7 @@ $typeArr = [
 		<div class="screen-2">
 			<div class="s2__title">Брось вызов вместе с</div>
 			<div class="s2__lp">
-			    <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
+			    <a href="http://ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=ficvq&pr=%random%" target="_blank"><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
 			</div>
 
 			<div class="product-union scroll-pane horizontal-only" vg="prod-1">

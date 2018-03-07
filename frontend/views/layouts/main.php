@@ -71,7 +71,7 @@ AppAsset::register($this);
 
             <footer id="footer">
                 <div class="container f__container">
-                    <div class="copyright">&copy; friday.ru 2018</div>
+                    <div class="copyright">&copy; friday.ru 2018, 18+</div>
                 </div>
             </footer>       
 
