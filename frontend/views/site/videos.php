@@ -5,8 +5,8 @@ use yii\helpers\Html;
 $this->params['bodyClass'] = 'page-video page-new-video';
 
 $typeArr = [
-	1 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'hell.mp4', 'preview' => '/images/video/preview_2.jpg'],
-	2 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'superwoman_on_5.mp4', 'preview' => '/images/video/preview_1.jpg'],
+	1 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'comic_30mb.mp4', 'preview' => '/images/video/preview_2.jpg'],
+	2 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'halloween_30mb.mp4', 'preview' => '/images/video/preview_1.jpg'],
 ];
 ?>
 
