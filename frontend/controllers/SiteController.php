@@ -16,6 +16,7 @@ use common\models\User;
 use common\models\Question;
 use common\models\TestResult;
 use common\models\Product;
+use common\models\ProductGallery;
 use common\models\Video;
 use common\models\Share;
 use common\models\Post;
@@ -97,27 +98,6 @@ class SiteController extends Controller
 
     public function actionIndex($res = 1)
     {
-        $postsLimit = 8;
-
-        $count = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->count();
-
-        $query = Post::find()
-            ->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])
-            ->limit($postsLimit)
-            ->orderBy(new \yii\db\Expression('rand()'));
-
-        if (Yii::$app->request->isAjax && isset($_GET['ids'])) {
-            $posts = $query->andWhere(['not in', 'id', $_GET['ids']])->all();
-
-            return $this->renderPartial('_posts', [
-                'posts' => $posts,
-                'noMorePosts' => $count + count($_GET['ids']) >= $postsLimit ? false : true,
-            ]);
-        }
-
-        $posts = $query->all();
-        $noMorePosts = $count >= $postsLimit ? false : true;
-
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
             $share = Share::find()->where(['uri' => $uri])->asArray()->one();
@@ -127,7 +107,29 @@ class SiteController extends Controller
             return $share;
         }
 
-        $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
+        $sort = Yii::$app->getRequest()->getQueryParam('sort', '-created_at');
+
+        $searchModel = new PostSearch();
+        $params = Yii::$app->request->queryParams;
+        $params['PostSearch']['status'] = Post::STATUS_ACTIVE;
+        $params['PostSearch']['week_id'] = $this->currentWeek->id;
+
+        $dataProvider = $searchModel->search($params);
+        $dataProvider->sort = [
+            //'defaultOrder' => ['score'=>SORT_DESC],
+            'defaultOrder' => ['created_at'=>SORT_DESC],
+            'attributes' => ['created_at', 'score'],
+        ];
+        $dataProvider->pagination = [
+            'pageSize' => 8,
+        ];
+
+        $products = Product::find()
+            ->joinWith('productGalleries')
+            ->joinWith('productLinks')
+            ->where(['show_on_main' => 1])
+            ->andWhere(['product_gallery.gallery' => ProductGallery::INDEX])
+            ->all();
 
         $results = [];
         $questions = [];
@@ -169,9 +171,10 @@ class SiteController extends Controller
             'scores' => $scores,
             'comments' => $comments,
             'res' => $res,
-            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),
-            'posts' => $posts,
-            'noMorePosts' => $noMorePosts,
+            //'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),       
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+            'sort' => $sort,
         ]);
     }
 
@@ -180,9 +183,25 @@ class SiteController extends Controller
         $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
 
-        return $this->render('videos', [
+        $productsTop = Product::find()
+            ->joinWith('productGalleries')
+            ->joinWith('productLinks')
+            ->where(['show_on_main' => 1])
+            ->andWhere(['product_gallery.gallery' => ProductGallery::VIDEO_1])
+            ->all();
+
+        $productsBottom = Product::find()
+            ->joinWith('productGalleries')
+            ->joinWith('productLinks')
+            ->where(['show_on_main' => 1])
+            ->andWhere(['product_gallery.gallery' => ProductGallery::VIDEO_2])
+            ->all();
+
+        return $this->render('video-new', [
             'videosTop' => $videosTop,
             'videosBottom' => $videosBottom,
+            'productsTop' => $productsTop,
+            'productsBottom' => $productsBottom,
         ]);
     }
 
@@ -369,83 +388,6 @@ class SiteController extends Controller
         return $this->render('post', [
             'userPost' => $userPost,
             'posts' => $posts,
-        ]);
-    }
-
-    public function actionIndexNew($res = 1)
-    {
-        $sort = Yii::$app->getRequest()->getQueryParam('sort');
-
-        $searchModel = new PostSearch();
-        $params = Yii::$app->request->queryParams;
-        $params['PostSearch']['status'] = Post::STATUS_ACTIVE;
-        $params['PostSearch']['week_id'] = $this->currentWeek->id;
-
-        $dataProvider = $searchModel->search($params);
-        $dataProvider->sort = [
-            //'defaultOrder' => ['score'=>SORT_DESC],
-            'defaultOrder' => ['created_at'=>SORT_DESC],
-            'attributes' => ['created_at', 'score'],
-        ];
-        $dataProvider->pagination = [
-            'pageSize' => 8,
-        ];
-
-        if (Yii::$app->request->isAjax && isset($_GET['res'])) {
-            $uri = Url::to(['site/index', 'res' => $_GET['res']]);
-            $share = Share::find()->where(['uri' => $uri])->asArray()->one();
-            $share['uri'] = Url::to($uri, $_SERVER['REQUEST_SCHEME']);
-            $share['image'] = $share['image'] ? Url::to($share['image'], $_SERVER['REQUEST_SCHEME']) : '';
-            Yii::$app->response->format = Response::FORMAT_JSON;
-            return $share;
-        }
-
-        $products = Product::find()->joinWith('productLinks')->where(['show_on_main' => 1])->all();
-
-        $results = [];
-        $questions = [];
-        $scores = [];
-        $comments = [];
-
-        foreach (Question::find()->with('answers')->all() as $key => $q) {
-            $key++;
-            $variants = [];
-            foreach ($q->answers as $a) {
-                $variants[] = $a->title;
-                $scores[$key][] = $a->score;
-                $comments[$key][] = ['comment' => $a->comment, 'comment_title' => $a->comment_title];
-            }
-            $questions[$key] = [
-                'number' => $key,
-                'vopros' => $q->title,
-                'image' => $q->image,
-                'variant' => $variants,
-            ];
-        }
-
-        foreach (TestResult::find()->all() as $r) {
-            $results[$r->id] = [
-                'min' => $r->range_start,
-                'max' => $r->range_end,
-                'title' => $r->title,
-                'description' => $r->description,
-                'image' => $r->image,
-                'image_2' => $r->image_2,
-                'id' => $r->id,
-            ];
-        }
-
-        return $this->render('index-new', [
-            'products' => $products,
-            'results' => $results,
-            'questions' => $questions,
-            'scores' => $scores,
-            'comments' => $comments,
-            'res' => $res,
-            'video' => Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one(),       
-            'searchModel' => $searchModel,
-            'dataProvider' => $dataProvider,
-            'sort' => $sort,
         ]);
     }
 
