@@ -13,7 +13,7 @@ use common\models\Post;
 
 class ParserController extends Controller {
 
-    public function actionIg($hashtag = 'lorealhair') {
+    public function actionIg($hashtag = 'lorealparis_мейкаперы') {
         $baseUrl = "https://www.instagram.com/explore/tags/$hashtag/?__a=1";
         $url = $baseUrl;
         $igParseDataIds = IgParseData::find()->select('ig_post_id')->asArray()->column();
@@ -97,7 +97,7 @@ class ParserController extends Controller {
         Yii::info('Image. '.count($parseData).' processed. '.$imagesCount.' images saved. '.$newUsersCount.' new users added.', 'parser');
     }
 
-    public function actionVk($hashtag = 'lorealhair', $time = 1800) {
+    public function actionVk($hashtag = 'lorealparis_мейкаперы', $time = 1800) {
         $url = 'https://api.vk.com/method/photos.search';
         $start_time = time() - $time;
 
@@ -163,7 +163,7 @@ class ParserController extends Controller {
         Yii::info('VK parse '.$hashtag.'. Added photos: '.$imagesCount, 'parser');
     }
 
-    public function actionVkPost($hashtag = 'lorealhair', $time = 1800) {
+    public function actionVkPost($hashtag = 'lorealparis_мейкаперы', $time = 1800) {
         $url = 'https://api.vk.com/method/newsfeed.search';
         $start_time = time() - $time;
 

@@ -63,13 +63,15 @@ class Product extends \yii\db\ActiveRecord
         }
 
         ProductGallery::deleteAll(['product_id' => $this->id]);
-        foreach ($this->galleryArray as $key => $gallery_id) {
-            echo $gallery_id;
-            $productGallery = new ProductGallery;
-            $productGallery->product_id = $this->id;
-            $productGallery->gallery = $gallery_id;
+        if(!empty($this->galleryArray)) {
+            foreach ($this->galleryArray as $key => $gallery_id) {
+                echo $gallery_id;
+                $productGallery = new ProductGallery;
+                $productGallery->product_id = $this->id;
+                $productGallery->gallery = $gallery_id;
 
-            $productGallery->save();
+                $productGallery->save();
+            }
         }
 
         return parent::afterSave($insert, $changedAttributes);

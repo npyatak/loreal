@@ -61,9 +61,9 @@ class ProductGallery extends \yii\db\ActiveRecord
 
     public static function getGalleryArray() {
         return [
-            1 => 'Главная',
-            2 => 'Видео 1',
-            3 => 'Видео 2',
+            self::INDEX => 'Главная',
+            self::VIDEO_1 => 'Видео 1',
+            self::VIDEO_2 => 'Видео 2',
         ];
     }
 }
