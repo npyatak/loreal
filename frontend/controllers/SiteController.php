@@ -395,4 +395,8 @@ class SiteController extends Controller
             'posts' => $posts,
         ]);
     }
+
+    public function actionRules() {
+        return $this->render('rules');
+    }
 }
