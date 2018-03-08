@@ -1224,7 +1224,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
 }
 /* line 1146, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"]:checked + label:after {
-  content: '✔';
+  content: '✔'!important;
 }
 /* line 1151, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .right {
