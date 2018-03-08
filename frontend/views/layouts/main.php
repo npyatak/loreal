@@ -60,6 +60,10 @@ AppAsset::register($this);
                     <li><a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Смотреть тьюториалы</a></li>
                     <!-- <li><a href="<?=Url::toRoute(['site/videos', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li> -->
                     <li><a href="https://makeupers.friday.ru/" target="_blank">Смотри шоу МЕЙКАПЕРЫ на Пятнице!</a></li>
+                    <li><a href="<?=Url::toRoute(['site/participate']);?>">Загрузить фото на проект</a></li>
+                    <li><a href="<?=Url::toRoute(['site/index', '#' => 'posts']);?>">Голосовать</a></li>
+                    <li><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></li>
+                    <li><a href="<?=Url::toRoute(['site/contact']);?>">Обратная связь</a></li>
                 </ul>
             </header>
 

@@ -102,14 +102,14 @@ class ParserController extends Controller {
         $start_time = time() - $time;
 
         $params = [
-            'q' => $hashtag,
+            'v' => 5.73,
             'extended' => 1,
             //'count' => 3,
             //'params[start_from]' => '6%2F-65395224_8404',
-            'start_time' => $start_time,
-            'fields' => 'profiles%20',
-            'v' => 5.69,
-            'access_token' => 'af918e5daf918e5daf918e5d25aff1911caaf91af918e5df5a2130d3e85b32a77eea3d4',
+            //'start_time' => $start_time,
+            'fields' => 'profiles',
+            'access_token' => '2509171925091719250917190c2568b68122509250917197f9781655007676e4619ee5d',
+            'q' => '%23'.$hashtag,
         ];
 
         $postParams = [];
@@ -168,15 +168,14 @@ class ParserController extends Controller {
         $start_time = time() - $time;
 
         $params = [
-            'q' => $hashtag,
+            'v' => 5.73,
             'extended' => 1,
             //'count' => 3,
             //'params[start_from]' => '6%2F-65395224_8404',
-            'start_time' => $start_time,
-            'fields' => 'profiles%20',
-            'count' => 2,
-            'v' => 5.69,
-            'access_token' => 'af918e5daf918e5daf918e5d25aff1911caaf91af918e5df5a2130d3e85b32a77eea3d4',
+            //'start_time' => $start_time,
+            'fields' => 'profiles',
+            'access_token' => '2509171925091719250917190c2568b68122509250917197f9781655007676e4619ee5d',
+            'q' => '%23'.$hashtag,
         ];
 
         $postParams = [];

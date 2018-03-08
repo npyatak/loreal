@@ -405,4 +405,14 @@ class SiteController extends Controller
 
         return $this->goHome();
     }
+
+    private function findPost($id) {
+        $post = Post::findOne($id);
+
+        if($post === null || $post->status === Post::STATUS_BANNED) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
+        return $post;
+    }
 }
