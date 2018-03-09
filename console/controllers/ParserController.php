@@ -97,7 +97,7 @@ class ParserController extends Controller {
         Yii::info('Image. '.count($parseData).' processed. '.$imagesCount.' images saved. '.$newUsersCount.' new users added.', 'parser');
     }
 
-    public function actionVk($hashtag = 'lorealparis_мейкаперы', $time = 1800) {
+    public function actionVk($hashtag = 'lorealparis_мейкаперы', $time = 3600) {
         $url = 'https://api.vk.com/method/photos.search';
         $start_time = time() - $time;
 
@@ -163,7 +163,7 @@ class ParserController extends Controller {
         Yii::info('VK parse '.$hashtag.'. Added photos: '.$imagesCount, 'parser');
     }
 
-    public function actionVkPost($hashtag = 'lorealparis_мейкаперы', $time = 1800) {
+    public function actionVkPost($hashtag = 'lorealparis_мейкаперы', $time = 3600) {
         $url = 'https://api.vk.com/method/newsfeed.search';
         $start_time = time() - $time;
 
