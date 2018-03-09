@@ -23,6 +23,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'rowOptions' => function($model) {
                 if($model->status === Post::STATUS_BANNED) {
                     return ['class' => 'danger'];
+                } elseif($model->status === Post::STATUS_ACTIVE) {
+                    return ['class' => 'success'];
                 }
             },
             'columns' => [
