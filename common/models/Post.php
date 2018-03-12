@@ -148,7 +148,7 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public function getTypeLabel() {
-        return self::getTypeArray()[$this->type];
+        return $this->type ? self::getTypeArray()[$this->type] : null;
     }
 
     public function getLastUserActions() {

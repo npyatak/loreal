@@ -75,9 +75,21 @@ $this->params['breadcrumbs'][] = $this->title;
                         'data' => Post::getStatusArray(),
                         'displayValueConfig' => Post::getStatusArray(),
                     ],
-                    // 'afterInput'=>function ($form, $widget) use ($data, $index) {
-                    //     return $data->statusLabel;
-                    // },
+                ],
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute' => 'type',
+                    'headerOptions'=>['class'=>'kv-sticky-column'],
+                    'contentOptions'=>['class'=>'kv-sticky-column'],
+                    'value' => function($data) {
+                        return $data->typeLabel;
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'type', Post::getTypeArray(), ['prompt'=>'']),
+                    'editableOptions' => [
+                        'inputType' => kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                        'data' => Post::getTypeArray(),
+                        'displayValueConfig' => Post::getTypeArray(),
+                    ],
                 ],
                 [
                     'attribute' => 'created_at',
