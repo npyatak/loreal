@@ -44,9 +44,9 @@ class Week extends \yii\db\ActiveRecord
         return [
             [['number', 'name', 'dateStartFormatted', 'dateEndFormatted'], 'required'],
             [['number'], 'integer'],
-            [['description_1', 'description_2', 'winners'], 'string'],
+            [['description_1', 'description_2'], 'string'],
             [['name'], 'string', 'max' => 100],
-            [['image', 'hint_1', 'hint_2'], 'string', 'max' => 255],
+            [['image'], 'string', 'max' => 255],
             [['number'], 'unique'],
             
             [['imageFile'], 'file', 'extensions'=>'jpg, jpeg, png', 'maxSize'=>1024 * 1024 * 5, 'mimeTypes' => 'image/jpg, image/jpeg, image/png'],
@@ -68,9 +68,6 @@ class Week extends \yii\db\ActiveRecord
             'status' => 'Статус',
             'date_start' => 'Дата начала этапа',
             'date_end' => 'Дата окончания этапа',
-            'hint_1' => 'Подсказка 1',
-            'hint_2' => 'Подсказка 2',
-            'winners' => 'Победители',
         ];
     }
 
