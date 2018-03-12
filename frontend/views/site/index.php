@@ -117,7 +117,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     </div>
 </div>
 
-<div id="stage-popup">
+<!-- <div id="stage-popup">
     <div class="sp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
     <div class="sp__content">
         
@@ -166,7 +166,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         </div>
 
     </div>
-</div>
+</div> -->
 
 <div id="overlay-stagepopup" class="overlay">&nbsp;</div>
 

@@ -40,6 +40,19 @@ class UserController extends CController
 
         return $this->redirect(['index']);
     }
+    
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
+    }
 
     public function actionDelete($id) {
         $this->findModel($id)->delete();

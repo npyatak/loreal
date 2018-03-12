@@ -116,8 +116,8 @@ class SiteController extends Controller
 
         $dataProvider = $searchModel->search($params);
         $dataProvider->sort = [
-            //'defaultOrder' => ['score'=>SORT_DESC],
-            'defaultOrder' => ['created_at'=>SORT_DESC],
+            'defaultOrder' => ['score'=>SORT_DESC],
+            //'defaultOrder' => ['created_at'=>SORT_DESC],
             'attributes' => ['created_at', 'score'],
         ];
         $dataProvider->pagination = [
