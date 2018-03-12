@@ -3,24 +3,52 @@
 namespace backend\controllers;
 
 use Yii;
-use common\models\Post;
-use common\models\search\PostSearch;
+use yii\helpers\ArrayHelper;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use kartik\grid\EditableColumnAction;
+
+use common\models\Post;
+use common\models\search\PostSearch;
 
 /**
  * PostController implements the CRUD actions for Post model.
  */
 class PostController extends CController
-{
+{ 
+    public function actions()
+    {
+        return ArrayHelper::merge(parent::actions(), [
+            'editable' => [                                       // identifier for your editable action
+                'class' => EditableColumnAction::className(),     // action class name
+                'modelClass' => Post::className(),                // the update model class
+            ]
+        ]);
+    }
+
     /**
      * Lists all Post models.
      * @return mixed
      */
     public function actionIndex()
     {
+        $model = new Post;
         $searchModel = new PostSearch();
         $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+
+        if (Yii::$app->request->post('hasEditable')) {
+            $post = Yii::$app->request->post();
+            $model = $this->findModel($post['editableKey']);
+            $model[$post['editableAttribute']] = $post['Post'][$post['editableIndex']][$post['editableAttribute']];
+            $out = json_encode(['output'=>'', 'message'=>'']);
+            if ($model->save(false, [$post['editableAttribute']])) {
+                $output = '';
+                $out = json_encode(['output'=>$output, 'message'=>'']); 
+            }
+            echo $out;
+            return;
+        }
+
 
         return $this->render('index', [
             'searchModel' => $searchModel,

@@ -25,7 +25,9 @@
         "yiisoft/yii2-imagine": "*",
         "nodge/yii2-eauth": "~2.0",
         "kartik-v/yii2-widget-datepicker": "@dev",
-        "kop/yii2-scroll-pager": "dev-master"
+        "kop/yii2-scroll-pager": "dev-master",
+        "kartik-v/yii2-grid": "@dev",
+        "kartik-v/yii2-editable": "*"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.0.0",

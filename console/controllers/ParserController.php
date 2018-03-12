@@ -236,8 +236,8 @@ class ParserController extends Controller {
         if(!file_exists($path)) {
             mkdir($path, 0775, true);
         }
-        
-        $post->image = md5('ig'.time()).'.jpg';
+        $exp = explode('/', $image);
+        $post->image = end($exp);
         $fileName = $path.$post->image;
 
         $ch = curl_init($image);

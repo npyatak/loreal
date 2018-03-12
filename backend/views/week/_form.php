@@ -29,33 +29,9 @@ use kartik\date\DatePicker;
         DatePicker::className()
     );?>
 
-    <?= $form->field($model, 'description_1')->widget(CustomCKEditor::className(),[
-        'editorOptions' => [
-            'preset' => 'basic',
-            'allowedContent' => true,
-        ],
-    ]);
-    ?>
-
-    <?= $form->field($model, 'description_2')->widget(CustomCKEditor::className(),[
-        'editorOptions' => [
-            'preset' => 'basic',
-            'allowedContent' => true,
-        ],
-    ]);
-    ?>
-
-    <?= $form->field($model, 'hint_1')->textInput() ?>
-
-    <?= $form->field($model, 'hint_2')->textInput() ?>
-
-    <?= $form->field($model, 'winners')->widget(CustomCKEditor::className(),[
-        'editorOptions' => [
-            'preset' => 'basic',
-            'allowedContent' => true,
-        ],
-    ]);
-    ?>
+    <?= $form->field($model, 'description_1')->textarea() ?>
+    
+    <?= $form->field($model, 'description_2')->textarea() ?>
 
     <?//= $form->field($model, 'status')->dropDownList(get_class($model)::getStatusArray(), ['class'=>'']) ?>
 
