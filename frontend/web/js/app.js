@@ -48,12 +48,16 @@ function videoGallery() {
     });
 
     $('.video-gallery.youtube .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail').on('click', function () {
+        oldId = $(this).closest('.vg__union').find('.vg__big-video .play-btn').attr('href');
+        oldImage = $(this).closest('.vg__union').find('.vg__big-video img').attr('src');
+
         $(this).closest('.vg__union').find('.vg__big-video .close').hide();
-        $(this).closest('.vg__union').find('.vg__big-video > img').attr('src',$(this).find('img').attr('src'));
-        $(this).closest('.vg__union').find('.vg__big-video > img').show();
+        $(this).closest('.vg__union').find('.vg__big-video img').show().attr('src',$(this).find('img').attr('src'));
         $(this).closest('.vg__union').find('.vg__big-video iframe').remove();
-        $(this).closest('.vg__union').find('.vg__big-video .play-btn').show();
-        $(this).closest('.vg__union').find('.vg__big-video .play-btn').attr('href',$(this).attr('video-id'));
+        $(this).closest('.vg__union').find('.vg__big-video .play-btn').show().attr('href',$(this).attr('video-id'));
+
+        $(this).attr('video-id', oldId);
+        $(this).find('img').attr('src', oldImage);
     });
 
     //Галерея без ютуба

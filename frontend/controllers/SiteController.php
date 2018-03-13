@@ -184,7 +184,8 @@ class SiteController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
-        //$video = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->one();
+        $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
+        //print_r($videosBottom);exit;
 
         $productsTop = Product::find()
             ->joinWith('productGalleries')
@@ -204,7 +205,7 @@ class SiteController extends Controller
             'productsTop' => $productsTop,
             'productsBottom' => $productsBottom,
             'type' => $type,
-            //'video' => $video,
+            'videosBottom' => $videosBottom,
         ]);
     }
 
