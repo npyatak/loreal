@@ -21,7 +21,7 @@ class AppAsset extends AssetBundle
         'js/jquery.colorbox.js',
         'js/jquery.mousewheel.js',
         'js/jquery.jscrollpane.min.js',
-        'js/app.js?v=08032018',
+        'js/app.js?v=12032018',
     ];
     public $depends = [
         'yii\web\YiiAsset',

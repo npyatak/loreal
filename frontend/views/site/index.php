@@ -89,7 +89,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container st__container">
         <div class="st__title">Этап 1</div>
         <div class="st__subtitle">8 марта - 21 марта</div>
-        <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></div>
+        <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">
             <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
@@ -117,7 +117,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     </div>
 </div>
 
-<!-- <div id="stage-popup">
+<div id="stage-popup">
     <div class="sp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
     <div class="sp__content">
         
@@ -166,7 +166,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         </div>
 
     </div>
-</div> -->
+</div>
 
 <div id="overlay-stagepopup" class="overlay">&nbsp;</div>
 
