@@ -1,6 +1,5 @@
 <?php
 use yii\helpers\Url;
-use yii\helpers\Html;
 use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
 use yii\widgets\Pjax;
@@ -24,7 +23,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Вдохновляйся и<br/> покажи, на что<br/> ты способен!</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/video', '#' => 'tutorial']);?>">Тьюториалы</a>
                 </div>
             </div>
             <div class="s1__tc-2">
@@ -32,7 +31,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Сделай мейк круче, чем участники проекта, и получай призы!</a>
                 </div>
                 <div class="go-participate">
-                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Участвовать</a>
+                    <a href="#screen-3" class="anchor-link">Участвовать</a>
                 </div>
             </div>
         </div>
@@ -51,16 +50,14 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="step step-2">
                     <div class="s-number">2</div>
                     <div class="s-body">
-                        ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
-                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
-                        ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
-                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
+                        Выполняй задание<br/> 
+                        и размещай фото в <a href="#"><i class="vk">&nbsp;</i></a> и <a href="#"><i class="insta">&nbsp;</i></a>
                     </div>
                 </div>
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
+                        Получай призы от L’OrÉal Paris
                     </div>
                 </div>
             </div>
@@ -77,22 +74,22 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">
-            <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
+            <div class="st__block st__block-1">
                 <div class="stb-img" style="background-image: url('/images/new-index/super-woman.png');"><img src="/images/new-index/super-woman.png" alt=""></div>
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С 8 марта по 21 марта</div>
-                    <div class="stb-subtitle">МЭЙКАП В СТИЛЕ КОМИКСОВ</div>
+                    <div class="stb-subtitle">Супер-женщина</div>
                 </div>
-            </a>
-            <a class="st__block st__block-2" href="<?=Url::toRoute(['site/videos', 'type'=>2]);?>">
+            </div>
+            <div class="st__block st__block-2">
                 <div class="stb-img" style="background-image: url('/images/new-index/from-pic.png');"><img src="/images/new-index/from-pic.png" alt=""></div>
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С 8 марта по 21 марта</div>
-                    <div class="stb-subtitle">МЭЙКАП НА ХЭЛЛОУИН</div>
+                    <div class="stb-subtitle">Как с картины</div>
                 </div>
-            </a>
+            </div>
         </div>
 
         <div class="st__see-all-tutor">
@@ -160,7 +157,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container s2__container">
         <div class="s2__title">Брось вызов вместе с</div>
         <div class="s2__lp">
-            <a href="http://ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=ficvq&pr=%random%" target="_blank"><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
+            <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
         </div>
         <div class="product-union scroll-pane horizontal-only">
             <?php if($products):?>
@@ -178,9 +175,28 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                             <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
-                                        <?=$link->logo ? Html::img($link->logo) : $link->title;?>
-                                    </a>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+                                <?php endforeach;?>
+                            </div>
+                        </div>
+                        <?php endif;?>
+                    </div>
+                </div>
+                <?php endforeach;?>
+                <?php foreach ($products as $product):?>
+                <div class="product">
+                    <div class="product-img">
+                        <img src="<?=$product->image;?>" alt="">
+                    </div>
+                    <div class="product-info">
+                        <div class="description"><?=$product->description;?></div>
+                        <div class="title"><?=$product->title;?></div>
+                        <?php if($product->productLinks):?>
+                        <div class="buy">
+                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
+                            <div class="links">
+                                <?php foreach ($product->productLinks as $link):?>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
                                 <?php endforeach;?>
                             </div>
                         </div>
@@ -213,7 +229,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             </div>
         </div>
 
-        <div class="gallery-his-turn" id="posts">
+        <div class="gallery-his-turn">
             
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>

@@ -6,22 +6,6 @@ use yii\widgets\ActiveForm;
 $this->params['bodyClass'] = 'page-participate';
 ?>
 
-<!-- Less js  -->
-<link rel="stylesheet/less" type="text/css" href="/frontend/web/css/styles.less" />
-<script>
-  less = {
-    env: "development",
-    async: false,
-    fileAsync: false,
-    poll: 1000,
-    functions: {},
-    dumpLineNumbers: "comments",
-    relativeUrls: false,
-    rootpath: ":/loreal2018.promo-group.org/"
-  };
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-
 <div class="participate-screen">
 
     <div class="participate_bg-top">&nbsp;</div>
@@ -113,7 +97,7 @@ $this->params['bodyClass'] = 'page-participate';
             <?php ActiveForm::end(); ?>
         </div>
 
-        <div class="full-rules"><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></div>
+        <div class="full-rules"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="style-comics"><a href="#">Выбрать мэйкап <span>в стиле комиксов</span></a></div>
 

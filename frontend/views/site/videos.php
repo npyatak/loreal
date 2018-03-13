@@ -10,22 +10,6 @@ $typeArr = [
 ];
 ?>
 
-<!-- Less js  -->
-<link rel="stylesheet/less" type="text/css" href="/frontend/web/css/styles.less" />
-<script>
-  less = {
-    env: "development",
-    async: false,
-    fileAsync: false,
-    poll: 1000,
-    functions: {},
-    dumpLineNumbers: "comments",
-    relativeUrls: false,
-    rootpath: ":/loreal2018.promo-group.org/"
-  };
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
-
 <div class="video-screen">
 	<div class="video_bg-top">&nbsp;</div>
 	<div class="video_bgr-test">&nbsp;</div>
@@ -92,7 +76,7 @@ $typeArr = [
 		</div>
 
 		<div class="full-rules">
-			<a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a>
+			<a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a>
 		</div>
 		
 		<div class="screen-2">
