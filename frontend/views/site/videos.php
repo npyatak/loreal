@@ -36,9 +36,9 @@ $typeArr = [
 	                <div class="s-number">2</div>
 	                <div class="s-body">
 	                    ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
-                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        И РАЗМЕЩАЙ ФОТО В <i class="vk">&nbsp;</i> И <i class="insta">&nbsp;</i> <br/>
                         ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
-                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
+                        ИЛИ <a href="<?=Url::toRoute(['site/participate']);?>">ЗАГРУЖАЙ НА САЙТ</a>
 	                </div>
 	            </div>
 	            <div class="step step-3">
@@ -78,6 +78,10 @@ $typeArr = [
 		<div class="full-rules">
 			<a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a>
 		</div>
+
+		<div class="go-participate">
+            <a href="/videos#tutorial">Участвовать</a>
+        </div>
 		
 		<div class="screen-2">
 			<div class="s2__title">Брось вызов вместе с</div>

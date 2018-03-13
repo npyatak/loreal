@@ -45,7 +45,7 @@ AppAsset::register($this);
     <link rel="stylesheet/less" type="text/css" href="/frontend/web/css/styles.less" />
     <script>
       less = {
-        env: "development",
+        env: "production",
         async: false,
         fileAsync: false,
         poll: 1000,

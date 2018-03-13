@@ -51,7 +51,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <div class="s-number">2</div>
                     <div class="s-body">
                         Выполняй задание<br/> 
-                        и размещай фото в <a href="#"><i class="vk">&nbsp;</i></a> и <a href="#"><i class="insta">&nbsp;</i></a>
+                        и размещай фото в <i class="vk">&nbsp;</i>и <i class="insta">&nbsp;</i>
                     </div>
                 </div>
                 <div class="step step-3">

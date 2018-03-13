@@ -52,9 +52,9 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <div class="s-number">2</div>
                     <div class="s-body">
                         ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
-                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        И РАЗМЕЩАЙ ФОТО В <i class="vk">&nbsp;</i> И <i class="insta">&nbsp;</i> <br/>
                         ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
-                        ИЛИ ЗАГРУЖАЙ НА САЙТ 
+                        ИЛИ <a href="<?=Url::toRoute(['site/participate']);?>">ЗАГРУЖАЙ НА САЙТ</a>
                     </div>
                 </div>
                 <div class="step step-3">

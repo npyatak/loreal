@@ -44,7 +44,7 @@ $this->params['bodyClass'] = 'page-participate';
                     <div class="s-number">2</div>
                     <div class="s-body">
                         ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
-                        И РАЗМЕЩАЙ ФОТО В <a href="#"><i class="vk">&nbsp;</i></a> И <a href="#"><i class="insta">&nbsp;</i></a> <br/>
+                        И РАЗМЕЩАЙ ФОТО В <i class="vk">&nbsp;</i> И <i class="insta">&nbsp;</i> <br/>
                         ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
                         ИЛИ ЗАГРУЖАЙ НА САЙТ 
                     </div>
