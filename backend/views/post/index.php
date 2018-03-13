@@ -3,8 +3,9 @@
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
-use yii\grid\GridView;
+use kartik\grid\GridView;
 use yii\widgets\Pjax;
+use kartik\editable\Editable;
 
 use common\models\Post;
 use common\models\Week;
@@ -23,6 +24,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'rowOptions' => function($model) {
                 if($model->status === Post::STATUS_BANNED) {
                     return ['class' => 'danger'];
+                } elseif($model->status === Post::STATUS_ACTIVE) {
+                    return ['class' => 'success'];
                 }
             },
             'columns' => [
@@ -59,11 +62,34 @@ $this->params['breadcrumbs'][] = $this->title;
                     },
                 ], 
                 [
+                    'class' => 'kartik\grid\EditableColumn',
                     'attribute' => 'status',
+                    'headerOptions'=>['class'=>'kv-sticky-column'],
+                    'contentOptions'=>['class'=>'kv-sticky-column'],
                     'value' => function($data) {
                         return $data->statusLabel;
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'status', Post::getStatusArray(), ['prompt'=>'']),
+                    'editableOptions' => [
+                        'inputType' => kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                        'data' => Post::getStatusArray(),
+                        'displayValueConfig' => Post::getStatusArray(),
+                    ],
+                ],
+                [
+                    'class' => 'kartik\grid\EditableColumn',
+                    'attribute' => 'type',
+                    'headerOptions'=>['class'=>'kv-sticky-column'],
+                    'contentOptions'=>['class'=>'kv-sticky-column'],
+                    'value' => function($data) {
+                        return $data->typeLabel;
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'type', Post::getTypeArray(), ['prompt'=>'']),
+                    'editableOptions' => [
+                        'inputType' => kartik\editable\Editable::INPUT_DROPDOWN_LIST,
+                        'data' => Post::getTypeArray(),
+                        'displayValueConfig' => Post::getTypeArray(),
+                    ],
                 ],
                 [
                     'attribute' => 'created_at',

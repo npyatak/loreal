@@ -1223,10 +1223,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   height: 30px;
   background-color: black;
   border-radius: 3px;
+  line-height: 30px;
+  font-size: 30px;
 }
 /* line 1147, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"]:checked + label:after {
-  content: '';
+  content: '✔'!important;
 }
 /* line 1152, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .right {

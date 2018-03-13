@@ -1,5 +1,6 @@
 <?php
 use yii\helpers\Url;
+use yii\helpers\Html;
 use yii\widgets\ListView;
 use kop\y2sp\ScrollPager;
 use yii\widgets\Pjax;
@@ -31,7 +32,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Сделай мейк круче, чем участники проекта, и получай призы!</a>
                 </div>
                 <div class="go-participate">
-                    <a href="#posts" class="anchor-link">Участвовать</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Участвовать</a>
                 </div>
             </div>
         </div>
@@ -101,7 +102,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     </div>
 </div>
 
-<div id="stage-popup">
+<!-- <div id="stage-popup">
     <div class="sp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
     <div class="sp__content">
         
@@ -150,7 +151,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         </div>
 
     </div>
-</div>
+</div> -->
 
 <div id="overlay-stagepopup" class="overlay">&nbsp;</div>
 
@@ -159,7 +160,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container s2__container">
         <div class="s2__title">Брось вызов вместе с</div>
         <div class="s2__lp">
-            <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
+            <a href="http://ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=ficvq&pr=%random%" target="_blank"><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
         </div>
         <div class="product-union scroll-pane horizontal-only">
             <?php if($products):?>
@@ -177,7 +178,9 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                             <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
                             <div class="links">
                                 <?php foreach ($product->productLinks as $link):?>
-                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
+                                        <?=$link->logo ? Html::img($link->logo) : $link->title;?>
+                                    </a>
                                 <?php endforeach;?>
                             </div>
                         </div>

@@ -5,7 +5,6 @@ namespace backend\controllers;
 use Yii;
 use common\models\Week;
 use common\models\search\WeekSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\web\UploadedFile;
@@ -13,23 +12,8 @@ use yii\web\UploadedFile;
 /**
  * WeekController implements the CRUD actions for Week model.
  */
-class WeekController extends Controller
+class WeekController extends CController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Week models.
      * @return mixed

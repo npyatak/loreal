@@ -116,8 +116,8 @@ class SiteController extends Controller
 
         $dataProvider = $searchModel->search($params);
         $dataProvider->sort = [
-            //'defaultOrder' => ['score'=>SORT_DESC],
-            'defaultOrder' => ['created_at'=>SORT_DESC],
+            'defaultOrder' => ['score'=>SORT_DESC],
+            //'defaultOrder' => ['created_at'=>SORT_DESC],
             'attributes' => ['created_at', 'score'],
         ];
         $dataProvider->pagination = [
@@ -213,9 +213,9 @@ class SiteController extends Controller
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             if ($model->sendEmail(Yii::$app->params['adminEmail'])) {
-                Yii::$app->session->setFlash('success', 'Thank you for contacting us. We will respond to you as soon as possible.');
+                Yii::$app->session->setFlash('success', 'Спасибо за ваше сообщение. Мы свяжемся с вами в ближайшее время');
             } else {
-                Yii::$app->session->setFlash('error', 'There was an error sending your message.');
+                Yii::$app->session->setFlash('error', 'При отправке сообщения произошла ошибка.');
             }
             return $this->refresh();
         } else {
@@ -253,6 +253,8 @@ class SiteController extends Controller
                     'scale' => $model->scale,
                     'degrees' => $model->angle,
                 ]);
+
+                Yii::$app->getSession()->setFlash('success', 'Твоя работа отправлена на модерацию');
 
                 return $this->redirect(['participate']);
             }
@@ -398,5 +400,21 @@ class SiteController extends Controller
 
     public function actionRules() {
         return $this->render('rules');
+    }
+
+    public function actionLogout() {
+        Yii::$app->user->logout();
+
+        return $this->goHome();
+    }
+
+    private function findPost($id) {
+        $post = Post::findOne($id);
+
+        if($post === null || $post->status === Post::STATUS_BANNED) {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
+
+        return $post;
     }
 }

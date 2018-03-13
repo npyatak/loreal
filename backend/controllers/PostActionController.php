@@ -5,30 +5,14 @@ namespace backend\controllers;
 use Yii;
 use common\models\PostAction;
 use common\models\search\PostActionSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
 /**
  * PostActionController implements the CRUD actions for PostAction model.
  */
-class PostActionController extends Controller
+class PostActionController extends CController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all PostAction models.
      * @return mixed

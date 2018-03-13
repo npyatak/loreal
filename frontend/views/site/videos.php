@@ -1,11 +1,12 @@
 <?php 
 use yii\helpers\Url;
+use yii\helpers\Html;
 
 $this->params['bodyClass'] = 'page-video page-new-video';
 
 $typeArr = [
-	1 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'hell.mp4', 'preview' => '/images/video/preview_2.jpg'],
-	2 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'superwoman_on_5.mp4', 'preview' => '/images/video/preview_1.jpg'],
+	1 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'comic_30mb.mp4', 'preview' => '/images/video/preview_2.jpg'],
+	2 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'halloween_30mb.mp4', 'preview' => '/images/video/preview_1.jpg'],
 ];
 ?>
 
@@ -51,13 +52,13 @@ $typeArr = [
 		</div>
 
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
-			<div class="vg__title vg1__title">8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН</div>
+			<div class="vg__title vg1__title"><?=$typeArr[$type]['title'];?></div>
 			<div class="vg__union vg1__union">
 				<div class="vg__big-video vg1__big-video" video-id="<?=$typeArr[$type]['video'];?>" vg="prod-<?=$type;?>">
 					<div class="close">X</div>
 					<img src="<?=$typeArr[$type]['preview'];?>" alt="">
 					<a class="play-btn" href="<?=$typeArr[$type]['video'];?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
-					<video id="video-main">
+					<video id="video-main" controls>
 					    <source src="/video/<?=$typeArr[$type]['video'];?>" type="video/mp4">
 					    Your browser does not support the video tag.
 					</video>
@@ -81,7 +82,7 @@ $typeArr = [
 		<div class="screen-2">
 			<div class="s2__title">Брось вызов вместе с</div>
 			<div class="s2__lp">
-			    <a href=""><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
+			    <a href="http://ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=ficvq&pr=%random%" target="_blank"><img src="/images/s2__lp-eb2ed34ae8.svg" alt=""></a>
 			</div>
 
 			<div class="product-union scroll-pane horizontal-only" vg="prod-1">
@@ -100,7 +101,9 @@ $typeArr = [
 		                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
 		                            <div class="links">
 		                                <?php foreach ($product->productLinks as $link):?>
-		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
+		                                    	<?=$link->logo ? Html::img($link->logo) : $link->title;?>
+		                                    </a>
 		                                <?php endforeach;?>
 		                            </div>
 		                        </div>
@@ -128,7 +131,9 @@ $typeArr = [
 		                            <a href="#" target="_blank" <?=$product->ga_param ? 'data-event="click" data-param="'.$product->ga_param.'"' : '';?>>Купить</a>
 		                            <div class="links">
 		                                <?php foreach ($product->productLinks as $link):?>
-		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>><?=$link->title;?></a>
+		                                    <a href="<?=$link->url;?>" target="_blank" <?=$link->ga_param ? 'data-event="click" data-param="'.$link->ga_param.'"' : '';?>>
+		                                    	<?=$link->logo ? Html::img($link->logo) : $link->title;?>
+		                                    </a>
 		                                <?php endforeach;?>
 		                            </div>
 		                        </div>
@@ -167,7 +172,7 @@ $typeArr = [
 				<div class="sm1-img-mob"><img src="/images/s3__sm-a7c4007519.png" alt=""></div>
 				<div class="sm1-body">Можно ли назвать тебя гуру макияжа и специалистом в области <br>современных косметических средств, или твоя женская суперсила <br>вовсе не в мэйкапе? Стоит ли подругам доверять твоим <br>рекомендациям? Давай узнаем!</div>
 				<div class="go-test">
-					<a href="<?=Url::toRoute(['site/index', '#' => 'screen-3']);?>" class="test-link">Пройти тест</a>
+					<a href="<?=Url::toRoute(['site/index', '#' => 'test']);?>" class="test-link">Пройти тест</a>
 				</div>
 			</div>
 			<div class="sm sm-2">

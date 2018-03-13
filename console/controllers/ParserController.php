@@ -97,19 +97,19 @@ class ParserController extends Controller {
         Yii::info('Image. '.count($parseData).' processed. '.$imagesCount.' images saved. '.$newUsersCount.' new users added.', 'parser');
     }
 
-    public function actionVk($hashtag = 'lorealparis_мейкаперы', $time = 1800) {
+    public function actionVk($hashtag = 'lorealparis_мейкаперы', $time = 3600) {
         $url = 'https://api.vk.com/method/photos.search';
         $start_time = time() - $time;
 
         $params = [
-            'q' => $hashtag,
+            'v' => 5.73,
             'extended' => 1,
             //'count' => 3,
             //'params[start_from]' => '6%2F-65395224_8404',
             'start_time' => $start_time,
-            'fields' => 'profiles%20',
-            'v' => 5.69,
-            'access_token' => 'af918e5daf918e5daf918e5d25aff1911caaf91af918e5df5a2130d3e85b32a77eea3d4',
+            'fields' => 'profiles',
+            'access_token' => '2509171925091719250917190c2568b68122509250917197f9781655007676e4619ee5d',
+            'q' => '%23'.$hashtag,
         ];
 
         $postParams = [];
@@ -163,20 +163,19 @@ class ParserController extends Controller {
         Yii::info('VK parse '.$hashtag.'. Added photos: '.$imagesCount, 'parser');
     }
 
-    public function actionVkPost($hashtag = 'lorealparis_мейкаперы', $time = 1800) {
+    public function actionVkPost($hashtag = 'lorealparis_мейкаперы', $time = 3600) {
         $url = 'https://api.vk.com/method/newsfeed.search';
         $start_time = time() - $time;
 
         $params = [
-            'q' => $hashtag,
+            'v' => 5.73,
             'extended' => 1,
             //'count' => 3,
             //'params[start_from]' => '6%2F-65395224_8404',
             'start_time' => $start_time,
-            'fields' => 'profiles%20',
-            'count' => 2,
-            'v' => 5.69,
-            'access_token' => 'af918e5daf918e5daf918e5d25aff1911caaf91af918e5df5a2130d3e85b32a77eea3d4',
+            'fields' => 'profiles',
+            'access_token' => '2509171925091719250917190c2568b68122509250917197f9781655007676e4619ee5d',
+            'q' => '%23'.$hashtag,
         ];
 
         $postParams = [];
@@ -237,8 +236,8 @@ class ParserController extends Controller {
         if(!file_exists($path)) {
             mkdir($path, 0775, true);
         }
-        
-        $post->image = md5('ig'.time()).'.jpg';
+        $exp = explode('/', $image);
+        $post->image = end($exp);
         $fileName = $path.$post->image;
 
         $ch = curl_init($image);

@@ -31,16 +31,6 @@ $this->params['breadcrumbs'][] = $this->title;
                 'sid',
                 'name',
                 'surname',
-                'ig_id',
-                [
-                    'attribute' => 'ig_username',
-                    'format' => 'raw',
-                    'value' => function($data) {
-                        if($data->ig_username) {
-                            return Html::a($data->ig_username, 'https://instagram.com/'.$data->ig_username);
-                        }
-                    }
-                ],
                 [
                     'attribute' => 'image',
                     'format' => 'raw',
@@ -63,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 [
                     'class' => 'yii\grid\ActionColumn',
-                    'template' => '{view} {ban}',
+                    'template' => '{view} {update} {ban}',
                     'buttons' => [
                         'ban' => function ($url, $model) {
                             $url = Url::toRoute(['/user/ban', 'id'=>$model->id]);

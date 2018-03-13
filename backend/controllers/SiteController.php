@@ -2,7 +2,6 @@
 namespace backend\controllers;
 
 use Yii;
-use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use backend\models\LoginForm;
@@ -10,7 +9,7 @@ use backend\models\LoginForm;
 /**
  * Site controller
  */
-class SiteController extends Controller
+class SiteController extends CController
 {
     /**
      * @inheritdoc
@@ -37,18 +36,6 @@ class SiteController extends Controller
                 'actions' => [
                     'logout' => ['post'],
                 ],
-            ],
-        ];
-    }
-
-    /**
-     * @inheritdoc
-     */
-    public function actions()
-    {
-        return [
-            'error' => [
-                'class' => 'yii\web\ErrorAction',
             ],
         ];
     }

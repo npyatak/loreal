@@ -76,6 +76,10 @@ AppAsset::register($this);
                     <li><a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Смотреть тьюториалы</a></li>
                     <!-- <li><a href="<?=Url::toRoute(['site/videos', '#' => 'backstage']);?>">Смотреть бекстейджи</a></li> -->
                     <li><a href="https://makeupers.friday.ru/" target="_blank">Смотри шоу МЕЙКАПЕРЫ на Пятнице!</a></li>
+                    <li><a href="<?=Url::toRoute(['site/participate']);?>">Загрузить фото на проект</a></li>
+                    <li><a href="<?=Url::toRoute(['site/index', '#' => 'posts']);?>">Голосовать</a></li>
+                    <li><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></li>
+                    <li><a href="<?=Url::toRoute(['site/contact']);?>">Обратная связь</a></li>
                 </ul>
             </header>
 
@@ -87,7 +91,7 @@ AppAsset::register($this);
 
             <footer id="footer">
                 <div class="container f__container">
-                    <div class="copyright">&copy; friday.ru 2018</div>
+                    <div class="copyright">&copy; friday.ru 2018, 18+</div>
                 </div>
             </footer>       
 
@@ -143,7 +147,7 @@ AppAsset::register($this);
             
             <div id="overlay" class="overlay">&nbsp;</div>
 
-            <?php if(Yii::$app->user->isGuest && !in_array(Yii::$app->controller->action->id, ['video', 'index'])):?>
+            <?php if(Yii::$app->user->isGuest):?>
             <div id="login-popup">
                 <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="bp__content">
@@ -153,6 +157,7 @@ AppAsset::register($this);
             <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
 
+<<<<<<< HEAD
             <div id="rules-popup">
                 <div class="rp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="rp__content">
@@ -161,6 +166,20 @@ AppAsset::register($this);
             </div>
 
             <div id="overlay-rulespopup" class="overlay">&nbsp;</div>
+=======
+            <?php if(!empty(Yii::$app->session->allFlashes)):?>
+            <div id="info-popup">
+                <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
+                <div class="bp__content">
+                    <?php foreach (Yii::$app->session->allFlashes as $class => $message):?>
+                        <p class="message <?=$class;?>"><?=$message;?></p>
+                    <?php endforeach;?>
+                </div>
+            </div>
+            <?php endif;?>
+
+            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
+>>>>>>> 5e94de48930fb0497dff510c7d40d8e9cec1bbbb
 
         </div>
 

@@ -322,7 +322,7 @@ $(document).on('click', 'a', function(e) {
     }
 });
 
-$(document).on('click', '.login-modal-btn' ,function (e) {
+$(document).on('click', '.login-modal-btn', function(e) {
     e.preventDefault();
     $('#login-popup').addClass('active');
     window.scrollTo(0, 0);
@@ -350,4 +350,13 @@ $(document).on('click', '.vote-btn', function (e) {
             link.remove();
         }
     });
+});
+    
+$('.eauth-service-link').on('click', function (e) {
+    if(!$('#rules').is(':checked')) {
+        $('.site-login__second span.alert').html('Пожалуйста, подтвердите свое согласие с полными правилами');
+        return false;
+    } else {
+        $('.site-login__second span.alert').html('');
+    }
 });

@@ -134,4 +134,8 @@ $(document).ready(function () {
             window.scrollTo(0, 0);
         }
     });
+
+    if(window.location.hash == '#test') {
+        $('.test-link').trigger('click');
+    }
 });

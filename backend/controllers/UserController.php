@@ -5,26 +5,11 @@ namespace backend\controllers;
 use Yii;
 use common\models\User;
 use common\models\search\UserSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 
-class UserController extends Controller
+class UserController extends CController
 {
-    /**
-     * @inheritdoc
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
 
     public function actionIndex()
     {
@@ -54,6 +39,19 @@ class UserController extends Controller
         $model->save(false, ['status', 'updated_at']);
 
         return $this->redirect(['index']);
+    }
+    
+    public function actionUpdate($id)
+    {
+        $model = $this->findModel($id);
+
+        if ($model->load(Yii::$app->request->post()) && $model->save()) {
+            return $this->redirect(['index']);
+        } else {
+            return $this->render('update', [
+                'model' => $model,
+            ]);
+        }
     }
 
     public function actionDelete($id) {
