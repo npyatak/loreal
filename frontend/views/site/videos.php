@@ -152,10 +152,33 @@ $typeArr = [
 			    <div class="v__lp">
 			        <a href="#"><img src="/images/s3__v__lp-502e83f397.svg" alt=""></a>
 			    </div>
-			    <div class="v__img">
-			        <img src="/images/preview.jpg" alt="">
-			        <a class="y-video play-btn" href="http://www.youtube-nocookie.com/embed/zFw3lUtfU5g?rel=0&amp;iframe=true"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
-			    </div>
+
+				<?php if(isset($videosBottom[0])):?>
+				<div class="video-gallery youtube video-gallery-2" id="videosBottom">
+					<div class="vg__union vg1__union">
+						<div class="vg__big-video vg1__big-video" video-id="<?=$videosBottom[0]->key;?>">
+							<div class="close">X</div>
+							<img src="<?=$videosBottom[0]->imageUrl;?>" alt="">
+							<a class="play-btn" href="<?=$videosBottom[0]->key;?>"><img src="<?=$videosBottom[0]->imageUrl;?>" alt=""></a>
+							<video id="video-main" controls>
+							    <source src="http://www.youtube-nocookie.com/embed/<?=$videosBottom[0]->key;?>?rel=0&amp;iframe=true" type="video/mp4">
+							    Your browser does not support the video tag.
+							</video>
+						</div>
+						<div class="vg__thumbnail-union vg2__thumbnail-union">
+							<div class="vg__thumbnails vg2__thumbnails">
+							<?php foreach ($videosBottom as $key => $video):?>
+								<?php if($key != 0):?>
+									<div class="vg__thumbnail vg__thumbnail-2" video-id="<?=$video->key;?>">
+										<img src="<?=$video->imageUrl;?>" alt="">
+									</div>
+								<?php endif;?>
+							<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php endif;?>
 
 			    <div class="after-video">
 			        <div class="av__title">Курс молодого мейкапера - День Святого Валентина</div>
@@ -164,6 +187,7 @@ $typeArr = [
 
 			</div>
 		</div>
+
 
 		<div class="strobing-maning">
 			<div class="sm sm-1">

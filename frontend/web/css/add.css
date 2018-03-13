@@ -379,3 +379,7 @@ body.page-login .ps__makeup {
     margin: 100px;
     font-size: 28px;
 }
+.play-btn img {
+    max-width: 1111px;
+    max-height: 624px;
+}

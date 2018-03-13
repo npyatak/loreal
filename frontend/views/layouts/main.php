@@ -25,7 +25,7 @@ AppAsset::register($this);
         ga('create', 'UA-114928625-1', 'auto');
         ga('send', 'pageview');
     </script>
-    <?php //if($_SERVER['HTTP_HOST'] !== 'loreal.local'):?>
+    <?php if($_SERVER['HTTP_HOST'] !== 'loreal.local'):?>
         <!-- Global site tag (gtag.js) - Google Analytics -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=UA-114928625-1"></script>
         <script>
@@ -34,7 +34,7 @@ AppAsset::register($this);
             gtag('js', new Date());
             gtag('config', 'UA-114928625-1');
         </script>
-    <?php //endif;?>
+    <?php endif;?>
 </head>
 <body class="<?=isset($this->params['bodyClass']) ? $this->params['bodyClass'] : '';?>">
 <?php $this->beginBody() ?>
