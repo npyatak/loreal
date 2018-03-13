@@ -157,7 +157,6 @@ AppAsset::register($this);
             <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
 
-<<<<<<< HEAD
             <div id="rules-popup">
                 <div class="rp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="rp__content">
@@ -166,7 +165,7 @@ AppAsset::register($this);
             </div>
 
             <div id="overlay-rulespopup" class="overlay">&nbsp;</div>
-=======
+
             <?php if(!empty(Yii::$app->session->allFlashes)):?>
             <div id="info-popup">
                 <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
@@ -190,8 +189,6 @@ AppAsset::register($this);
             <?php endif;?>
 
             <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
->>>>>>> 5e94de48930fb0497dff510c7d40d8e9cec1bbbb
-
         </div>
 
     </div>
