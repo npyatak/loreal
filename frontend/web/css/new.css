@@ -938,21 +938,47 @@ body.feedback .site-contact .required-fields {
   text-align: center;
   margin-top: 45px;
 }
-/* line 870, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 868, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.rules-block {
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 1.5;
+}
+/* line 873, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.rules-block a {
+  color: white;
+}
+/* line 876, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.rules-block .gold-style {
+  color: #a48c68;
+  font-size: 24px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+/* line 882, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.rules-block .text-block {
+  margin-bottom: 35px;
+}
+/* line 884, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.rules-block .text-block p {
+  margin: 0;
+}
+/* line 892, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region {
   background: url('/frontend/web/images/rules/rr__bg-1.png') left top no-repeat, url('/frontend/web/images/rules/rr__bg-2.png') right top no-repeat;
 }
-/* line 872, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 894, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region > .rr__container {
   padding-top: 98px;
   padding-bottom: 100px;
 }
-/* line 876, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 898, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region .rr__makeup {
   text-align: center;
   margin-bottom: 19px;
 }
-/* line 880, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 902, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region .rr__title {
   color: #dd1980;
   font-family: Intro;
@@ -963,7 +989,7 @@ body.rules .rules-region .rr__title {
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-/* line 890, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 912, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region .rr__subtitle {
   color: #fff;
   font-size: 22px;
@@ -974,7 +1000,7 @@ body.rules .rules-region .rr__subtitle {
   letter-spacing: .9px;
   margin-bottom: 43px;
 }
-/* line 900, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 922, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region .rr__intro {
   color: #fff;
   font-family: Intro;
@@ -984,7 +1010,7 @@ body.rules .rules-region .rr__intro {
   text-align: center;
   letter-spacing: 1.4px;
 }
-/* line 910, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 932, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.rules .rules-region h1.rules-title {
   color: white;
   font-size: 36px;
@@ -994,32 +1020,6 @@ body.rules .rules-region h1.rules-title {
   text-align: center;
   letter-spacing: 2px;
   margin: 39px 0 48px 0;
-}
-/* line 921, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
-body.rules .rules-region .rules-block {
-  color: white;
-  font-size: 20px;
-  font-weight: 300;
-  line-height: 1.5;
-}
-/* line 926, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
-body.rules .rules-region .rules-block a {
-  color: white;
-}
-/* line 929, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
-body.rules .rules-region .rules-block .gold-style {
-  color: #a48c68;
-  font-size: 24px;
-  font-weight: 400;
-  text-transform: uppercase;
-}
-/* line 935, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
-body.rules .rules-region .rules-block .text-block {
-  margin-bottom: 35px;
-}
-/* line 937, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
-body.rules .rules-region .rules-block .text-block p {
-  margin: 0;
 }
 /* line 949, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.page-new-video .screen-2 {
@@ -1043,7 +1043,6 @@ body.page-new-video .screen-2 .product-union {
 /* line 964, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.page-new-video .step-region {
   margin-top: 39px;
-  background: none;
 }
 /* line 966, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 body.page-new-video .step-region .steps {
@@ -1128,8 +1127,9 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
 /* line 1046, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first {
   margin-bottom: 78px;
+  text-align: center;
 }
-/* line 1048, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1049, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .title-lg {
   color: white;
   font-family: "Intro";
@@ -1140,7 +1140,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   padding: 0px 90px;
   margin: 0 0 68px 0;
 }
-/* line 1060, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1061, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-list .eauth-service-link {
   width: 86px;
   height: 86px;
@@ -1150,7 +1150,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   font-size: 0;
   text-indent: -9999px;
 }
-/* line 1068, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1069, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-list .eauth-service-link:before {
   width: 100%;
   height: 100%;
@@ -1159,46 +1159,50 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   left: 0;
   background-position: center center;
 }
-/* line 1076, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1077, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-list .eauth-service-link:after {
   content: none!important;
   display: none!important;
 }
-/* line 1084, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1085, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-service-id-facebook .eauth-service-link:before {
   background: url('/frontend/web/images/login/login__fb.png') center center no-repeat;
 }
-/* line 1092, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1093, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-service-id-vkontakte .eauth-service-link:before {
   background: url('/frontend/web/images/login/login__vk.png') center center no-repeat;
 }
-/* line 1098, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1099, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-service {
   margin: 18px 0px 0 0;
 }
-/* line 1100, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1101, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__first .eauth-service:not(:last-child) {
   margin-right: 47px;
 }
-/* line 1111, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1108, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.site-login__second {
+  text-align: center;
+}
+/* line 1112, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left {
   position: relative;
 }
-/* line 1113, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1114, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
   margin: 10px 0 0 20px;
 }
-/* line 1119, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1120, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] + label {
   position: relative;
   padding: 0 0 0 40px;
   height: 40px;
   cursor: pointer;
 }
-/* line 1125, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1126, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] + label:before {
   content: '';
   position: absolute;
@@ -1210,7 +1214,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-/* line 1136, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1137, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] + label:after {
   position: absolute;
   top: 5px;
@@ -1220,31 +1224,31 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-color: black;
   border-radius: 3px;
 }
-/* line 1146, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1147, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"]:checked + label:after {
   content: '';
 }
-/* line 1151, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1152, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .right {
   margin: 43px 0 0 0;
 }
-/* line 1153, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1154, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .right p {
   color: white;
   font-size: 18px;
   font-weight: 300;
   margin: 0 0 10px 0;
 }
-/* line 1159, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1160, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .site-login__second form .form-group .right a {
   color: white;
 }
-/* line 1168, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1169, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen {
   position: relative;
   overflow: hidden;
 }
-/* line 1171, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1172, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .participate_bg-top {
   position: absolute;
   top: 0;
@@ -1256,7 +1260,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background: url('/frontend/web/images/participate/participate_bg-top.png') no-repeat;
   background-size: cover;
 }
-/* line 1182, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1183, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .participate_bgr-test {
   display: none;
   position: absolute;
@@ -1269,7 +1273,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background: url('/frontend/web/images/participate/participate_bgr-test.png') no-repeat;
   background-size: cover;
 }
-/* line 1194, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1195, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .participate_bulbs {
   position: absolute;
   top: 1111px;
@@ -1282,12 +1286,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-size: initial;
 }
 @media all and (max-width: 1279px) {
-  /* line 1204, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1205, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
   .participate-screen .participate_bulbs {
     top: 1379px;
   }
 }
-/* line 1208, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1209, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .participate_glow-red {
   position: absolute;
   top: 909px;
@@ -1298,7 +1302,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background: url('/frontend/web/images/participate/participate_glow-red.png') no-repeat;
   background-size: cover;
 }
-/* line 1219, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1220, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen > .ps__container {
   position: relative;
   z-index: 1;
@@ -1306,12 +1310,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   padding-left: 0;
   padding-right: 0;
 }
-/* line 1227, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1228, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ps__makeup {
   text-align: center;
   margin-bottom: 19px;
 }
-/* line 1231, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1232, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ps__title {
   color: #dd1980;
   font-family: Intro;
@@ -1322,7 +1326,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-/* line 1241, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1242, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ps__subtitle {
   color: #fff;
   font-size: 22px;
@@ -1333,7 +1337,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: .9px;
   margin-bottom: 43px;
 }
-/* line 1251, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1252, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ps__intro {
   color: #fff;
   font-family: Intro;
@@ -1344,12 +1348,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 1.4px;
   margin-bottom: 47px;
 }
-/* line 1262, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1263, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .user {
   text-align: center;
   margin-bottom: 55px;
 }
-/* line 1265, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1266, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .user .user__name {
   color: white;
   font-family: "Intro";
@@ -1359,30 +1363,30 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   text-transform: uppercase;
   margin-bottom: 53px;
 }
-/* line 1275, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1276, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .user .user__img img {
   max-width: 100%;
 }
-/* line 1281, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1282, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .step-region {
   padding: 0 0 0 27px;
   margin-bottom: 48px;
 }
-/* line 1284, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1285, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .step-region .steps {
   height: 81px;
 }
 @media all and (max-width: 1279px) {
-  /* line 1286, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1287, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
   .participate-screen .step-region .steps {
     height: initial;
   }
 }
-/* line 1292, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1293, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo {
   margin-bottom: 35px;
 }
-/* line 1294, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1295, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__title {
   color: white;
   font-family: "Intro";
@@ -1395,12 +1399,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   margin-bottom: 76px;
 }
 @media all and (max-width: 1279px) {
-  /* line 1304, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1305, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
   .participate-screen .upload-makeup-photo .ump__title {
     padding: 0;
   }
 }
-/* line 1308, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1309, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__img {
   position: relative;
   margin: 0 auto 32px auto;
@@ -1410,14 +1414,14 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   border: 1px solid #869dba;
   box-shadow: 0 0 81px rgba(252, 223, 181, 0.25);
 }
-/* line 1316, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1317, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__img img {
   max-width: 100%;
   max-height: 100%;
   position: relative;
   z-index: 2;
 }
-/* line 1322, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1323, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__img .upload-lbl {
   color: white;
   font-size: 18px;
@@ -1428,7 +1432,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-/* line 1333, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1334, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls {
   display: flex;
   flex-direction: row;
@@ -1436,7 +1440,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   margin-left: auto;
   margin-right: auto;
 }
-/* line 1339, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1340, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls > * {
   width: 49px;
   height: 49px;
@@ -1444,11 +1448,11 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* line 1345, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1346, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls > *:not(:last-child) {
   margin-right: 1px;
 }
-/* line 1349, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1350, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls a {
   display: block;
   width: 100%;
@@ -1456,20 +1460,20 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   font-size: 0;
   text-indent: -9999px;
 }
-/* line 1356, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1357, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls .btn__upload {
   background-image: url('/frontend/web/images/participate/icon__upload.png');
 }
-/* line 1359, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1360, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls .btn__repeat {
   background-image: url('/frontend/web/images/participate/icon__repeat.png');
   margin-left: auto;
 }
-/* line 1363, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1364, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls .btn__edit {
   background-image: url('/frontend/web/images/participate/icon__edit.png');
 }
-/* line 1370, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1371, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .full-rules {
   text-align: center;
   color: #a68c69;
@@ -1481,17 +1485,17 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 1px;
   margin-bottom: 26px;
 }
-/* line 1380, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1381, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .full-rules a {
   color: #a68c69;
   text-decoration: none;
   border-bottom: 1px dotted #a68c69;
 }
-/* line 1384, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1385, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .full-rules a:hover {
   text-decoration: none;
 }
-/* line 1389, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1390, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .style-comics {
   text-align: center;
   color: #a68c69;
@@ -1503,17 +1507,17 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 1px;
   margin-bottom: 43px;
 }
-/* line 1399, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1400, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .style-comics a {
   color: #a68c69;
   text-decoration: none;
   border-bottom: 1px dotted #a68c69;
 }
-/* line 1403, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1404, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .style-comics a:hover {
   text-decoration: none;
 }
-/* line 1409, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1410, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ready {
   text-align: center;
   position: relative;
@@ -1525,11 +1529,11 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-repeat: no-repeat;
   transition: all 0.3s linear;
 }
-/* line 1419, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1420, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ready:hover {
   background-image: url('/frontend/web/images/participate/ready_hover.png');
 }
-/* line 1422, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1423, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .ready a {
   display: block;
   width: 100%;
@@ -1543,7 +1547,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 1437, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1438, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .title-gallery {
   color: white;
   font-family: "Intro";
@@ -1554,7 +1558,62 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   text-align: center;
   margin: 0 0 58px 0;
 }
-/* line 1448, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1449, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
 .participate-screen .gallery-his-turn {
   margin-top: -54px;
+}
+/* line 1455, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+#rules-popup {
+  display: none;
+  background-color: #040208;
+  box-shadow: 0 0 81px rgba(252, 223, 181, 0.22);
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1110px;
+  height: 100vh;
+  z-index: 5;
+}
+/* line 1467, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+#rules-popup.active {
+  display: block;
+}
+/* line 1470, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+#rules-popup .rp__close {
+  position: absolute;
+  top: 44px;
+  right: 50%;
+  transform: translateX(50%);
+  cursor: pointer;
+}
+/* line 1477, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+#rules-popup .rp__content {
+  padding: 147px 35px 35px 35px;
+}
+/* line 1479, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+#rules-popup .rp__content .rules-block {
+  overflow-y: auto;
+  height: calc(100vh - 182px);
+}
+/* line 1486, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+#rules-popup.active + #overlay-rulespopup {
+  display: block;
+}
+/* line 1490, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.jspVerticalBar {
+  width: 3px;
+  background: none;
+}
+/* line 1493, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.jspVerticalBar .jspTrack {
+  background: #e8e8e8;
+  width: 1px;
+}
+/* line 1496, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+.jspVerticalBar .jspTrack .jspDrag {
+  background: #a48c68;
+  width: 3px;
+  left: -1px;
 }

@@ -8,21 +8,6 @@ $this->registerJsFile(Url::toRoute('js/test.js'), ['depends' => [\yii\web\Jquery
 
 $this->params['bodyClass'] = 'page-front page-new-front';
 ?>
-<!-- Less js  -->
-<link rel="stylesheet/less" type="text/css" href="/frontend/web/css/styles.less" />
-<script>
-  less = {
-    env: "development",
-    async: false,
-    fileAsync: false,
-    poll: 1000,
-    functions: {},
-    dumpLineNumbers: "comments",
-    relativeUrls: false,
-    rootpath: ":/loreal2018.promo-group.org/"
-  };
-</script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
 
 <div class="screen-1">
     <div class="s1__bg-woman">&nbsp;</div>
@@ -88,7 +73,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container st__container">
         <div class="st__title">Этап 1</div>
         <div class="st__subtitle">8 марта - 21 марта</div>
-        <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>">Полные правила</a></div>
+        <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">
             <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">

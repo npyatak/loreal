@@ -186,6 +186,24 @@ function StagePoppup(data){
 
 }
 
+
+//Попап для правил
+function RulesPoppup(){
+
+    $('.popup-rules').on('click',function(e){
+        e.preventDefault();
+        window.scrollTo(0, 0);
+        $('#rules-popup').addClass('active');
+
+    });
+
+    $('#rules-popup .rp__close').on('click',function(){
+        $('#rules-popup').removeClass('active');
+    });
+
+}
+
+
 //Попап для логина
 function LoginPopup() {
     
@@ -210,6 +228,11 @@ $(document).ready(function () {
 
     //Попап логина
     LoginPopup();
+
+    //Попап для правил
+    if ( $('#rules-popup').length != 0 ) {
+        RulesPoppup();
+    }
 
     //Покупка продуктов
     if ($('.product-union .products').length != 0) {
@@ -262,6 +285,16 @@ $(document).ready(function () {
         if ($('#stage-popup').length != 0) {
             //StagePoppup(apiJsp);
         }
+    } );
+
+    $( function() {
+        //Вертикальный скролл
+        $('.vertical-scroll').jScrollPane({
+          autoReinitialise: true,
+          verticalDragMinHeight: 124,
+          verticalDragMaxHeight: 124,
+          hideFocus:true
+        });
     } );
     
 });

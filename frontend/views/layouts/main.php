@@ -41,6 +41,22 @@ AppAsset::register($this);
     <img src="https://4233289.fls.doubleclick.net/activityi;src=4233289;type=main;cat=ru_oa00a;dc_lat=;dc_rdid=;tag_for_child_directed_treatment=;ord=1?" style="display:block;width:0;height:0;position:absolute;visibility:hidden;" alt="">
     <img src="http://ads.adfox.ru/240113/getCode?p1=bztph&p2=frfe&pfc=bruwy&pfb=ficvq&pr=%random%&ptrc=b" alt="" style="display:block;">
     
+    <!-- Less js  -->
+    <link rel="stylesheet/less" type="text/css" href="/frontend/web/css/styles.less" />
+    <script>
+      less = {
+        env: "development",
+        async: false,
+        fileAsync: false,
+        poll: 1000,
+        functions: {},
+        dumpLineNumbers: "comments",
+        relativeUrls: false,
+        rootpath: ":/loreal2018.promo-group.org/"
+      };
+    </script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.0.0/less.min.js" ></script>
+
     <div id="page-wrapper">
         <div id="all-wrapper">
             <header id="header">
@@ -134,9 +150,17 @@ AppAsset::register($this);
                     <?=$this->render('../site/_login');?>
                 </div>
             </div>
+            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
 
-            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
+            <div id="rules-popup">
+                <div class="rp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
+                <div class="rp__content">
+                    <?=$this->render('../site/_rules');?>
+                </div>
+            </div>
+
+            <div id="overlay-rulespopup" class="overlay">&nbsp;</div>
 
         </div>
 
