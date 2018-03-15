@@ -6,6 +6,9 @@ use Yii;
 
 class Question extends \yii\db\ActiveRecord
 {
+    const STATUS_INACTIVE = 0;
+    const STATUS_ACTIVE = 1;
+
     public $answersArray;
     /**
      * @inheritdoc
@@ -23,6 +26,7 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title', 'comment', 'image'], 'string'],
+            ['status', 'integer'],
             ['answersArray', function($attribute, $params) {
                 if(count($this->answersArray) < 2) {
                     $this->addError($attribute, 'Не менее двух вариантов ответов');
@@ -83,6 +87,7 @@ class Question extends \yii\db\ActiveRecord
             'title' => 'Заголовок',
             'comment' => 'Комментарий',
             'image' => 'Изображение',
+            'status' => 'Статус',
         ];
     }
 
@@ -96,5 +101,12 @@ class Question extends \yii\db\ActiveRecord
 
     public function getImageUrl() {
         return Yii::$app->urlManagerFrontEnd->createAbsoluteUrl($this->image);
+    }
+
+    public function getStatusArray() {
+        return [
+            self::STATUS_ACTIVE => 'Активен',
+            self::STATUS_INACTIVE => 'Не активен',
+        ];
     }
 }

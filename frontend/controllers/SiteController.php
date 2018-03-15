@@ -136,7 +136,7 @@ class SiteController extends Controller
         $scores = [];
         $comments = [];
 
-        foreach (Question::find()->with('answers')->all() as $key => $q) {
+        foreach (Question::find()->with('answers')->where(['status' => Question::STATUS_ACTIVE])->all() as $key => $q) {
             $key++;
             $variants = [];
             foreach ($q->answers as $a) {

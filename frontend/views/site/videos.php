@@ -158,6 +158,11 @@ $typeArr = [
 			    </div>
 
 				<?php if(isset($videosBottom[0])):?>
+			    <div class="after-video">
+			        <div class="av__title"><?=$videosBottom[0]->title;?></div>
+			        <div class="av__body"><?=$videosBottom[0]->text;?></div>
+			    </div>
+
 				<div class="video-gallery youtube video-gallery-2" id="videosBottom">
 					<div class="vg__union vg1__union">
 						<div class="vg__big-video vg1__big-video" video-id="<?=$videosBottom[0]->key;?>">
@@ -172,23 +177,15 @@ $typeArr = [
 						<div class="vg__thumbnail-union vg2__thumbnail-union">
 							<div class="vg__thumbnails vg2__thumbnails">
 							<?php foreach ($videosBottom as $key => $video):?>
-								<?php if($key != 0):?>
-									<div class="vg__thumbnail vg__thumbnail-2" video-id="<?=$video->key;?>">
-										<img src="<?=$video->imageUrl;?>" alt="">
-									</div>
-								<?php endif;?>
+								<div style="<?=$key == 0 ? 'display: none;' : '';?>" class="vg__thumbnail vg__thumbnail-2" video-id="<?=$video->key;?>" data-title="<?=$video->title;?>" data-text="<?=$video->text;?>">
+									<img src="<?=$video->imageUrl;?>" alt="">
+								</div>
 							<?php endforeach;?>
 							</div>
 						</div>
 					</div>
 				</div>
 				<?php endif;?>
-
-			    <div class="after-video">
-			        <div class="av__title">Курс молодого мейкапера - День Святого Валентина</div>
-			        <div class="av__body">Смотри мастер-класс от официального визажиста L'Oréal Paris в России Милы Клименко и узнай, как создать чувственный макияж с акцентом на губы к Дню святого Валентина. Хочешь узнать больше мейкап-лайфхаков? Не пропусти шоу «Мейкаперы»!</div>
-			    </div>
-
 			</div>
 		</div>
 

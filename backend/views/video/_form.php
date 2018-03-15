@@ -26,6 +26,10 @@ use common\components\ElfinderInput;
         </div>
     </div>
 
+    <?= $form->field($model, 'title')->textInput();?>
+
+    <?= $form->field($model, 'text')->textarea(['rows' => 4]) ?>
+
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>
     </div>

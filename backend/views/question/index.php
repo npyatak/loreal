@@ -3,6 +3,8 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 
+use common\models\Question;
+
 $this->title = 'Вопросы';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -21,7 +23,15 @@ $this->params['breadcrumbs'][] = $this->title;
                 ['class' => 'yii\grid\SerialColumn'],
 
                 'id',
-                'title',
+                'title',   
+                [
+                    'attribute' => 'status',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return $data->getStatusArray()[$data->status];
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'status', Question::getStatusArray(), ['prompt'=>''])
+                ],
                 [
                     'attribute' => 'image',
                     'header' => 'Изображение',

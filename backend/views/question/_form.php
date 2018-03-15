@@ -13,7 +13,14 @@ use common\components\ElfinderInput;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
+    <div class="row">
+        <div class="col-sm-6">
+            <?= $form->field($model, 'status')->dropDownList($model->getStatusArray()) ?>
+        </div>
+        <div class="col-sm-6">
+    		<?= $form->field($model, 'image')->widget(ElfinderInput::className());?>
+    	</div>
+    </div>
 
     <?= $form->field($model, 'comment')->textarea(['rows' => 4]) ?>
 

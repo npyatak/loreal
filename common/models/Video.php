@@ -24,7 +24,7 @@ class Video extends \yii\db\ActiveRecord
         return [
             [['status', 'gallery'], 'integer'],
             [['key'], 'required'],
-            [['key', 'image'], 'string', 'max' => 255],
+            [['key', 'image', 'title', 'text'], 'string', 'max' => 255],
         ];
     }
 
@@ -39,6 +39,8 @@ class Video extends \yii\db\ActiveRecord
             'key' => 'Id YouTube',
             'gallery' => 'Галерея',
             'image' => 'Превью',
+            'title' => 'Заголовок',
+            'text' => 'Текст',
         ];
     }
 
