@@ -150,7 +150,18 @@ $script = "
 
         return false;
     });
+
+    $(document).ready(function(e) {
+        ga('send', 'event', 'way', 'upload_page');
+    });
 ";
+if(Yii::$app->getSession()->getFlash('success')) {
+    $script .= "
+        $(document).ready(function(e) {
+            ga('send', 'event', 'way', 'upload');
+        });
+    ";
+}
 
 $this->registerJs($script, yii\web\View::POS_END);
 ?>

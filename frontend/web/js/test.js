@@ -15,6 +15,8 @@ function GoFinal(data) {
 
     var res = Number(data[2]);
     updateShare(res);
+
+    ga('send', 'event', 'test_result', res);
 }
 //Обрабочик вызова след. вопроса
 function GoNext(data) {
@@ -31,6 +33,7 @@ function GoNext(data) {
     $('#test .next-template .n__res1').html(html);
     $('#test .next-template .n__qbtn span').html(NextQ);
 
+    ga('send', 'event', 'test', NextQ);
 }
 //Сгенерировать вопрос
 function GenerateQuestion(data) {
