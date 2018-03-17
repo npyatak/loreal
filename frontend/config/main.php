@@ -10,7 +10,7 @@ return [
     'id' => 'app-frontend',
     'language' => 'ru-RU',
     'sourceLanguage' => 'en-US',
-    'name' => 'Loreal',
+    'name' => 'Лореаль - Брось вызов мейкаперам!',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'controllerNamespace' => 'frontend\controllers',

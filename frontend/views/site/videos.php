@@ -3,6 +3,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 
 $this->params['bodyClass'] = 'page-video page-new-video';
+$this->title = 'Тьюториалы';
 
 $typeArr = [
 	1 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'comic_30mb.mp4', 'preview' => '/images/video/preview_2.jpg'],

@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
 $this->params['bodyClass'] = 'page-participate';
+$this->title = 'Участвовать в конкурсе';
 ?>
 
 <div class="participate-screen">
