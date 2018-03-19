@@ -31,6 +31,14 @@ $this->params['breadcrumbs'][] = $this->title;
                         return $data->getStatusArray()[$data->status];
                     },
                     'filter' => Html::activeDropDownList($searchModel, 'status', Question::getStatusArray(), ['prompt'=>''])
+                ], 
+                [
+                    'attribute' => 'type',
+                    'format' => 'raw',
+                    'value' => function($data) {
+                        return $data->getTypeArray()[$data->type];
+                    },
+                    'filter' => Html::activeDropDownList($searchModel, 'type', Question::getTypeArray(), ['prompt'=>''])
                 ],
                 [
                     'attribute' => 'image',

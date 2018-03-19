@@ -136,7 +136,17 @@ class SiteController extends Controller
         $scores = [];
         $comments = [];
 
-        foreach (Question::find()->with('answers')->where(['status' => Question::STATUS_ACTIVE])->all() as $key => $q) {
+        $query = Question::find()
+            ->with('answers')
+            ->where(['status' => Question::STATUS_ACTIVE])
+            ->orderBy(new \yii\db\Expression('rand()'));
+
+        $qestionsType1 = $query->where(['type' => Question::TYPE_COMMON])->limit(4)->all();
+        $qestionsType2 = $query->where(['type' => Question::TYPE_LOREAL])->limit(1)->all();
+        $questionsArr = array_merge($qestionsType1, $qestionsType2);
+        shuffle($questionsArr);
+
+        foreach ($questionsArr as $key => $q) {
             $key++;
             $variants = [];
             foreach ($q->answers as $a) {

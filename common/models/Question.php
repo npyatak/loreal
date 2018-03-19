@@ -9,6 +9,9 @@ class Question extends \yii\db\ActiveRecord
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
 
+    const TYPE_COMMON = 1;
+    const TYPE_LOREAL = 2;
+
     public $answersArray;
     /**
      * @inheritdoc
@@ -26,7 +29,7 @@ class Question extends \yii\db\ActiveRecord
         return [
             [['title'], 'required'],
             [['title', 'comment', 'image'], 'string'],
-            ['status', 'integer'],
+            [['status', 'type'], 'integer'],
             ['answersArray', function($attribute, $params) {
                 if(count($this->answersArray) < 2) {
                     $this->addError($attribute, 'Не менее двух вариантов ответов');
@@ -88,6 +91,7 @@ class Question extends \yii\db\ActiveRecord
             'comment' => 'Комментарий',
             'image' => 'Изображение',
             'status' => 'Статус',
+            'type' => 'Тип',
         ];
     }
 
@@ -107,6 +111,13 @@ class Question extends \yii\db\ActiveRecord
         return [
             self::STATUS_ACTIVE => 'Активен',
             self::STATUS_INACTIVE => 'Не активен',
+        ];
+    }
+
+    public function getTypeArray() {
+        return [
+            self::TYPE_COMMON => 'Общие вопросы',
+            self::TYPE_LOREAL => 'Вопросы Лореаль',
         ];
     }
 }

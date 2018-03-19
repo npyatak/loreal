@@ -18,7 +18,7 @@ class QuestionSearch extends Question
     public function rules()
     {
         return [
-            [['id'], 'integer'],
+            [['id', 'status', 'type'], 'integer'],
             [['title'], 'safe'],
         ];
     }
@@ -60,6 +60,8 @@ class QuestionSearch extends Question
         // grid filtering conditions
         $query->andFilterWhere([
             'id' => $this->id,
+            'status' => $this->status,
+            'type' => $this->type,
         ]);
 
         $query->andFilterWhere(['like', 'title', $this->title]);
