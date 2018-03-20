@@ -51,9 +51,9 @@ class ParserController extends Controller {
         }
 
         if($count != 0) {
-            Yii::info('Data. '.$hashtag.': new rows added - '.$count.'. Total rows - '.$totalCount, 'parser');
+            Yii::info('Instagram parse. '.$hashtag.': new rows added - '.$count.'. Total rows - '.$totalCount, 'parser');
         } else {
-            Yii::info('Data. '.$hashtag.': no new data. Total rows - '.$totalCount, 'parser');
+            Yii::info('Instagram parse. '.$hashtag.': no new data. Total rows - '.$totalCount, 'parser');
         }
     }
 
@@ -160,7 +160,7 @@ class ParserController extends Controller {
             }
         }
     
-        Yii::info('VK parse '.$hashtag.'. Added photos: '.$imagesCount, 'parser');
+        Yii::info('VK parse from images'.$hashtag.'. Added photos: '.$imagesCount, 'parser');
     }
 
     public function actionVkPost($hashtag = 'lorealparis_мейкаперы', $time = 3600) {
@@ -228,7 +228,7 @@ class ParserController extends Controller {
             }
         }
     
-        Yii::info('VK parse '.$hashtag.'. Added photos: '.$imagesCount, 'parser');
+        Yii::info('VK parse from newsfeed'.$hashtag.'. Added photos: '.$imagesCount, 'parser');
     }
 
     private function saveImage($post, $image) {
