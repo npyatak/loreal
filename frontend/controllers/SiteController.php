@@ -411,7 +411,7 @@ class SiteController extends Controller
 
     public function actionRules() {
         return $this->render('rules');
-    }
+    }  
 
     public function actionLogout() {
         Yii::$app->user->logout();
