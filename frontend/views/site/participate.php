@@ -23,8 +23,7 @@ $this->title = 'Участвовать в конкурсе';
         <div class="ps__subtitle">#lorealparis_мейкаперы</div>
         <div class="ps__intro">Вдохновляйся и Покажи, на что <br>ты способен!</div>
         
-        <div class="user">
-            
+        <div class="user">    
             <div class="user__name"><?=$user->fullName;?></div>
             <?php if($user->image):?>
                 <div class="user__img">
