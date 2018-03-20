@@ -1,10 +1,10 @@
 @media all and (max-width: 1279px) {
-  /* line 2, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 2, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .gallery-his-turn {
     padding-top: 20px;
   }
 }
-/* line 5, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 5, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .ght__title {
   font-weight: 400;
   color: white;
@@ -15,7 +15,7 @@
   letter-spacing: 1.8px;
   margin-bottom: 8px;
 }
-/* line 15, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 15, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .ght__subtitle {
   font-weight: 400;
   color: #a48c68;
@@ -24,12 +24,12 @@
   text-align: center;
   letter-spacing: 0.9px;
 }
-/* line 24, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 24, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting {
   margin-top: 42px;
   margin-bottom: 49px;
 }
-/* line 27, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 27, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter {
   display: flex;
   flex-direction: row;
@@ -37,16 +37,16 @@
   padding-left: 30px;
   margin-bottom: 48px;
 }
-/* line 33, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 33, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .sorting {
   display: flex;
   flex-direction: row;
 }
-/* line 36, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 36, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .sorting .sort-param {
   margin-right: 26px;
 }
-/* line 38, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 38, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .sorting .sort-param a {
   display: flex;
   flex-direction: row;
@@ -61,30 +61,30 @@
   border: 1px solid rgba(250, 250, 250, 0.1);
   letter-spacing: 0.6px;
 }
-/* line 51, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 51, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .sorting .sort-param a:hover {
   background-color: #040404;
   border: 1px solid #3e3e3e;
   box-shadow: 0 0 49px rgba(252, 223, 181, 0.2);
 }
-/* line 59, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 59, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .sorting .sort-param.active a,
 .gallery-his-turn .view-voting .view-filter .sorting .sort-param:hover a {
   background-color: #040404;
   border: 1px solid #3e3e3e;
   box-shadow: 0 0 49px rgba(252, 223, 181, 0.2);
 }
-/* line 67, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 67, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .upload-file {
   padding-left: 22px;
   padding-bottom: 5px;
 }
-/* line 71, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 71, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .upload-file form #main-upload,
 .gallery-his-turn .view-voting .view-filter .upload-file form input[type="submit"] {
   display: none;
 }
-/* line 75, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 75, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-filter .upload-file form label {
   color: #a68c69;
   font-size: 14px;
@@ -95,7 +95,7 @@
   cursor: pointer;
   letter-spacing: 0.62px;
 }
-/* line 89, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 89, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content {
   display: flex;
   flex-direction: row;
@@ -103,14 +103,14 @@
   justify-content: space-between;
   padding: 0 32px;
 }
-/* line 95, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 95, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row {
   width: 253px;
   position: relative;
   text-align: center;
   margin-bottom: 75px;
 }
-/* line 100, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 100, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row .field-points-label {
   position: absolute;
   top: -1px;
@@ -126,11 +126,11 @@
   padding: 17px 0 0 19px;
   letter-spacing: 2.9px;
 }
-/* line 115, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 115, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row .field-image {
   margin-bottom: 25px;
 }
-/* line 121, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 121, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row .field-name {
   font-size: 16px;
   color: white;
@@ -139,7 +139,7 @@
   line-height: 1.875;
   letter-spacing: 1.2px;
 }
-/* line 129, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 129, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row .field-points {
   color: #a68b6d;
   font-weight: 300;
@@ -147,7 +147,7 @@
   line-height: 1.875;
   letter-spacing: 1.1px;
 }
-/* line 136, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 136, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row .field-shape {
   color: white;
   font-weight: 300;
@@ -156,7 +156,7 @@
   letter-spacing: 0.7px;
   margin-bottom: 5px;
 }
-/* line 145, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 145, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .view-voting .view-content .view-row .field-vote a {
   color: #a68b6d;
   font-weight: 700;
@@ -168,7 +168,7 @@
   letter-spacing: 0.9px;
   cursor: pointer;
 }
-/* line 162, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 162, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .see-all {
   text-align: center;
   width: 278px;
@@ -179,7 +179,7 @@
   margin-left: auto;
   margin-right: auto;
 }
-/* line 171, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 171, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .see-all a {
   display: block;
   width: 100%;
@@ -193,54 +193,54 @@
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 184, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 184, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .gallery-his-turn .see-all:hover {
   background: url(/frontend/web/images/see-all-081db1e550_hover.png) top no-repeat;
 }
-/* line 191, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 191, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region {
   background-color: black;
   position: relative;
 }
 @media all and (max-width: 1279px) {
-  /* line 194, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 194, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region {
     margin-top: 7px;
     background-color: transparent;
   }
 }
-/* line 198, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 198, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region > .sr__container {
   min-height: 81px;
   padding-right: 0px;
 }
 @media all and (min-width: 1280px) {
-  /* line 201, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 201, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region > .sr__container {
     padding-top: 15px;
     padding-bottom: 15px;
   }
 }
 @media all and (max-width: 1279px) {
-  /* line 205, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 205, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region > .sr__container {
     height: initial;
     min-height: initial;
   }
 }
-/* line 210, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 210, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps {
   display: flex;
   flex-direction: row;
   height: 100%;
 }
 @media all and (max-width: 1279px) {
-  /* line 214, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 214, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region .steps {
     flex-direction: column;
   }
 }
-/* line 217, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 217, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps .step {
   display: flex;
   flex-direction: row;
@@ -248,16 +248,16 @@
   width: calc(100% / 3);
 }
 @media all and (max-width: 1279px) {
-  /* line 222, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 222, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region .steps .step {
     width: 100%;
   }
-  /* line 224, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 224, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region .steps .step:not(:last-child) {
     margin-bottom: 52px;
   }
 }
-/* line 228, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 228, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps .step .s-number {
   color: black;
   font-size: 30px;
@@ -273,7 +273,7 @@
   padding: 0 15px 9px 0;
   margin: 0 11px 0 0;
 }
-/* line 243, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 243, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps .step .s-body {
   color: white;
   font-family: "Open Sans";
@@ -285,17 +285,17 @@
   line-height: 1.35;
 }
 @media all and (min-width: 1280px) {
-  /* line 252, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 252, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .step-region .steps .step .s-body {
     width: calc(100% - 83px);
   }
 }
-/* line 255, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 255, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps .step .s-body a {
   color: #a68c69;
   text-decoration: underline;
 }
-/* line 260, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 260, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps .step .vk {
   display: inline-block;
   width: 22px;
@@ -304,7 +304,7 @@
   position: relative;
   top: 5px;
 }
-/* line 268, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 268, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .step-region .steps .step .insta {
   display: inline-block;
   width: 15px;
@@ -315,77 +315,77 @@
   margin-left: 2px;
 }
 @media all and (max-width: 1279px) {
-  /* line 284, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 284, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 {
     padding-bottom: 10px;
   }
 }
-/* line 287, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 287, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 > .s1__container {
   min-height: 769px;
 }
 @media all and (min-width: 1280px) {
-  /* line 292, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 292, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__bg-woman {
     bottom: -97px;
     left: 31px;
   }
 }
 @media all and (max-width: 1279px) {
-  /* line 296, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 296, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__bg-woman {
     bottom: auto;
     top: 396px;
   }
 }
-/* line 302, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 302, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col {
   margin-top: 42px;
 }
 @media all and (max-width: 1279px) {
-  /* line 305, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 305, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__two-col .s1__tc-1 {
     margin-top: 37px;
   }
 }
-/* line 309, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 309, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col .s1__tc-1 .tc1-block1 a {
   background: url("/frontend/web/images/new-index/tc1-block1.png") center top no-repeat;
   width: 292px;
   height: 115px;
 }
 @media all and (min-width: 1280px) {
-  /* line 316, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 316, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__two-col .s1__tc-1 .tc1-block2 {
     margin-top: -12px;
     left: -25px;
   }
 }
 @media all and (max-width: 1279px) {
-  /* line 324, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 324, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__two-col .s1__tc-2 {
     margin-top: 17px;
   }
 }
-/* line 327, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 327, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .tc2-block1 {
   margin-right: 1px;
 }
-/* line 329, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 329, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .tc2-block1 a {
   background: url("/frontend/web/images/new-index/tc2-block1.png") center top no-repeat;
   width: 287px;
   height: 170px;
 }
 @media all and (max-width: 1279px) {
-  /* line 333, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 333, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .tc2-block1 a {
     background: url("/frontend/web/images/new-index/mobile/tc2-block1.png") center top no-repeat;
     width: 226px;
     height: 200px;
   }
 }
-/* line 340, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 340, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate {
   position: relative;
   text-align: center;
@@ -396,12 +396,12 @@ body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate {
   background: url("/frontend/web/images/new-index/particip_large.png") top center no-repeat;
   transition: all 0.3s linear;
 }
-/* line 349, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 349, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate:hover {
   background: url("/frontend/web/images/new-index/particip_large_hover.png") top center no-repeat;
 }
 @media all and (max-width: 1279px) {
-  /* line 352, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 352, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate {
     width: 271px;
     height: 184px;
@@ -409,12 +409,12 @@ body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate:hover {
     left: -24px;
     background: url("/frontend/web/images/new-index/mobile/participate.png") top center no-repeat;
   }
-  /* line 358, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 358, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate:hover {
     background: url("/frontend/web/images/new-index/mobile/participate_hover.png") top center no-repeat;
   }
 }
-/* line 362, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 362, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate a {
   display: block;
   width: 100%;
@@ -428,11 +428,11 @@ body.page-new-front .screen-1 .s1__two-col .s1__tc-2 .go-participate a {
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 382, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 382, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage {
   padding: 55px 0 0 0;
 }
-/* line 387, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 387, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__title {
   font-weight: 400;
   color: white;
@@ -443,7 +443,7 @@ body.page-new-front .stage .st__title {
   margin-bottom: 7px;
   line-height: 1;
 }
-/* line 397, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 397, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__subtitle {
   font-weight: 400;
   color: #a48c68;
@@ -453,11 +453,11 @@ body.page-new-front .stage .st__subtitle {
   letter-spacing: 1.2px;
   margin-bottom: 16px;
 }
-/* line 406, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 406, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__full-reg {
   margin-bottom: 54px;
 }
-/* line 408, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 408, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__full-reg a {
   display: block;
   font-weight: 400;
@@ -467,7 +467,7 @@ body.page-new-front .stage .st__full-reg a {
   text-align: center;
   letter-spacing: 0.8px;
 }
-/* line 418, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 418, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks {
   display: flex;
   flex-direction: row;
@@ -475,61 +475,61 @@ body.page-new-front .stage .st__blocks {
   margin-bottom: 32px;
 }
 @media all and (max-width: 1279px) {
-  /* line 423, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 423, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .stage .st__blocks {
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
   }
 }
-/* line 428, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 428, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block {
   width: 542px;
   position: relative;
 }
 @media all and (max-width: 1279px) {
-  /* line 431, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 431, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .stage .st__blocks .st__block {
     margin-bottom: 53px;
   }
 }
-/* line 434, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 434, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block .stb-img {
   background-repeat: no-repeat;
   background-position: center top;
 }
-/* line 437, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 437, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block .stb-img img {
   opacity: 0;
   max-width: 100%;
 }
-/* line 442, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 442, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block .stb-play {
   position: absolute;
   left: 48px;
   bottom: 140px;
   cursor: pointer;
 }
-/* line 448, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 448, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block .stb-tit-wrap {
   position: absolute;
   left: 51px;
   bottom: 50px;
 }
-/* line 453, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 453, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block .stb-title {
   color: white;
   font-weight: 400;
   font-size: 15px;
 }
-/* line 458, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 458, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__blocks .st__block .stb-subtitle {
   color: white;
   font-weight: 400;
   font-size: 24px;
   margin-top: -2px;
 }
-/* line 468, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 468, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .stage .st__see-all-tutor a {
   display: block;
   color: #a48c68;
@@ -541,25 +541,25 @@ body.page-new-front .stage .st__see-all-tutor a {
   text-decoration: underline;
   letter-spacing: 3px;
 }
-/* line 483, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 483, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-2 {
   margin-top: 0px;
 }
 @media all and (min-width: 1280px) {
-  /* line 485, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 485, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-front .screen-2 {
     background: url('/frontend/web/images/new-index/s2-bg.png') bottom 69px center / 100% 299px no-repeat;
   }
 }
-/* line 488, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 488, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-2 .s2__zasvet {
   display: none;
 }
-/* line 491, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 491, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-2 > .s2__container {
   padding-top: 115px;
 }
-/* line 496, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 496, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup {
   display: none;
   background-color: #040208;
@@ -573,11 +573,11 @@ body.page-new-front #stage-popup {
   min-height: 1895px;
   z-index: 5;
 }
-/* line 508, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 508, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup.active {
   display: block;
 }
-/* line 511, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 511, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .sp__close {
   position: absolute;
   top: 44px;
@@ -585,11 +585,11 @@ body.page-new-front #stage-popup .sp__close {
   transform: translateX(50%);
   cursor: pointer;
 }
-/* line 518, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 518, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .sp__content {
   padding-top: 147px;
 }
-/* line 521, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 521, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .number {
   display: flex;
   flex-direction: row;
@@ -607,15 +607,15 @@ body.page-new-front #stage-popup .number {
   margin-right: auto;
   text-align: center;
 }
-/* line 538, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 538, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first {
   margin-bottom: 75px;
 }
-/* line 540, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 540, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__number {
   margin-bottom: 42px;
 }
-/* line 543, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 543, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__title {
   color: white;
   font-family: Intro;
@@ -626,7 +626,7 @@ body.page-new-front #stage-popup .first .first__title {
   letter-spacing: 2px;
   margin-bottom: 13px;
 }
-/* line 553, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 553, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__date {
   color: white;
   font-weight: 400;
@@ -634,7 +634,7 @@ body.page-new-front #stage-popup .first .first__date {
   text-align: center;
   margin-bottom: 3px;
 }
-/* line 560, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 560, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__name {
   color: white;
   font-weight: 400;
@@ -643,21 +643,21 @@ body.page-new-front #stage-popup .first .first__name {
   line-height: 1;
   margin-bottom: 34px;
 }
-/* line 568, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 568, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__video {
   position: relative;
   margin-bottom: 39px;
 }
-/* line 571, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 571, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__video .video-back {
   background-repeat: no-repeat;
 }
-/* line 573, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 573, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__video .video-back img {
   max-width: 100%;
   opacity: 0;
 }
-/* line 578, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 578, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__video .video-play {
   position: absolute;
   top: 50%;
@@ -665,21 +665,21 @@ body.page-new-front #stage-popup .first .first__video .video-play {
   transform: translate(-50%, -50%);
   cursor: pointer;
 }
-/* line 585, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 585, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__video video {
   width: 100%;
   height: 625px;
 }
-/* line 589, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 589, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__video #video1 {
   display: none;
 }
-/* line 593, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 593, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__see-tutor {
   text-align: center;
   font-size: 0;
 }
-/* line 596, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 596, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__see-tutor a {
   display: inline-block;
   color: #a48c68;
@@ -690,11 +690,11 @@ body.page-new-front #stage-popup .first .first__see-tutor a {
   letter-spacing: 3px;
   border-bottom: 1px dotted #a48c68;
 }
-/* line 605, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 605, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .first .first__see-tutor a:hover {
   text-decoration: none;
 }
-/* line 612, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 612, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .content-style {
   font-size: 48px;
   font-weight: 400;
@@ -704,7 +704,7 @@ body.page-new-front #stage-popup .content-style {
   text-align: center;
   letter-spacing: 2.4px;
 }
-/* line 620, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 620, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .content-style .vk {
   display: inline-block;
   width: 47px;
@@ -713,7 +713,7 @@ body.page-new-front #stage-popup .content-style .vk {
   position: relative;
   top: 14px;
 }
-/* line 628, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 628, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .content-style .insta {
   display: inline-block;
   width: 30px;
@@ -722,32 +722,32 @@ body.page-new-front #stage-popup .content-style .insta {
   position: relative;
   top: 10px;
 }
-/* line 638, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 638, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .second {
   margin-bottom: 61px;
 }
-/* line 640, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 640, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .second .second__number {
   margin-bottom: 39px;
 }
-/* line 653, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 653, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .third {
   margin-bottom: 15px;
 }
-/* line 655, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 655, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .third .third__number {
   margin-bottom: 39px;
 }
-/* line 663, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 663, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .lp {
   text-align: center;
   margin-bottom: 47px;
 }
-/* line 666, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 666, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .lp a {
   display: block;
 }
-/* line 672, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 672, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #stage-popup .full-reg a {
   display: block;
   text-align: center;
@@ -759,35 +759,42 @@ body.page-new-front #stage-popup .full-reg a {
   text-decoration: underline;
   letter-spacing: 3px;
 }
-/* line 687, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 687, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front div#stage-popup.active + #overlay-stagepopup {
   display: block;
 }
-/* line 691, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 691, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front #overlay-stagepopup {
   display: none;
   top: 0;
   width: 100%;
 }
-/* line 697, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 697, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-front .screen-3 {
   min-height: initial;
 }
-/* line 708, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 708, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact {
   background: url('/frontend/web/images/feedback/sc__bg-1.png') left top no-repeat, url('/frontend/web/images/feedback/sc__bg-2.png') right top no-repeat;
 }
-/* line 710, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 710, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact > .sc__container {
   padding-top: 98px;
   padding-bottom: 100px;
 }
-/* line 714, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+@media all and (max-width: 1279px) {
+  /* line 713, http://lorealparis.friday.ru/frontend/web/css/styles.less */
+  body.feedback .site-contact > .sc__container {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+}
+/* line 718, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact .sc__makeup {
   text-align: center;
   margin-bottom: 19px;
 }
-/* line 718, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 722, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact .sc__title {
   color: #dd1980;
   font-family: Intro;
@@ -798,7 +805,7 @@ body.feedback .site-contact .sc__title {
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-/* line 728, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 732, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact .sc__subtitle {
   color: #fff;
   font-size: 22px;
@@ -809,7 +816,7 @@ body.feedback .site-contact .sc__subtitle {
   letter-spacing: .9px;
   margin-bottom: 43px;
 }
-/* line 738, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 742, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact .sc__intro {
   color: #fff;
   font-family: Intro;
@@ -819,7 +826,7 @@ body.feedback .site-contact .sc__intro {
   text-align: center;
   letter-spacing: 1.4px;
 }
-/* line 748, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 752, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact h1.form-title {
   color: white;
   font-size: 36px;
@@ -830,7 +837,7 @@ body.feedback .site-contact h1.form-title {
   letter-spacing: 2px;
   margin: 39px 0 48px 0;
 }
-/* line 760, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 764, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact form input[type="text"] {
   width: 460px;
   height: 40px;
@@ -839,11 +846,11 @@ body.feedback .site-contact form input[type="text"] {
   border-radius: 5px;
   color: #000;
 }
-/* line 767, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 771, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact form input[type="text"]:focus {
   outline: 0;
 }
-/* line 771, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 775, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact form textarea {
   width: 460px;
   height: 130px;
@@ -853,21 +860,21 @@ body.feedback .site-contact form textarea {
   color: #000;
   resize: none;
 }
-/* line 779, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 783, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact form textarea:focus {
   outline: 0;
 }
-/* line 783, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 787, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact form button[type="submit"] {
   background: none;
   padding: 0;
   border: 0;
 }
-/* line 787, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 791, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact form button[type="submit"]:focus {
   outline: 0;
 }
-/* line 794, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 798, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .form-group {
   display: flex;
   flex-direction: row;
@@ -875,7 +882,7 @@ body.feedback .site-contact #contact-form .form-group {
   justify-content: center;
   margin-bottom: 10px;
 }
-/* line 800, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 804, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .form-group label {
   color: white;
   font-size: 14px;
@@ -884,17 +891,17 @@ body.feedback .site-contact #contact-form .form-group label {
   width: 120px;
   padding: 7px 0 0 0;
 }
-/* line 809, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 813, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .form-group .help-block {
   width: 100%;
   text-align: center;
   margin: 0px 0 0 0;
 }
-/* line 815, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 819, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .form-group.has-error .help-block {
   margin: 10px 0 0 0;
 }
-/* line 820, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 824, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form button[type="submit"] {
   color: #c2954e;
   font-size: 18px;
@@ -904,45 +911,51 @@ body.feedback .site-contact #contact-form button[type="submit"] {
   letter-spacing: 2px;
   margin: 38px 0 0 0;
 }
-/* line 830, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 834, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .field-contactform-verifycode .row {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
-/* line 835, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 839, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .field-contactform-verifycode .row > *:nth-child(1) {
   width: 102px;
 }
-/* line 837, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 841, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .field-contactform-verifycode .row > *:nth-child(1) img {
   max-width: 100%;
 }
-/* line 841, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 845, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .field-contactform-verifycode .row > *:nth-child(2) {
   margin-left: 16px;
   width: 106px;
 }
-/* line 844, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 848, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .field-contactform-verifycode .row > *:nth-child(2) input[type="text"] {
   width: 100%;
 }
-/* line 848, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 852, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .field-contactform-verifycode .row > *:nth-child(3) {
   width: 354px;
   padding: 0 0 0 10px;
 }
-/* line 855, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 859, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .captcha-text {
   color: white;
   font-size: 14px;
   font-weight: 300;
 }
-/* line 860, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 864, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact #contact-form .form-wrap {
   padding-right: 130px;
 }
-/* line 865, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+@media all and (max-width: 1279px) {
+  /* line 866, http://lorealparis.friday.ru/frontend/web/css/styles.less */
+  body.feedback .site-contact #contact-form .form-wrap {
+    padding-right: 0px;
+  }
+}
+/* line 872, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.feedback .site-contact .required-fields {
   color: white;
   font-size: 14px;
@@ -951,47 +964,47 @@ body.feedback .site-contact .required-fields {
   text-align: center;
   margin-top: 45px;
 }
-/* line 877, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 884, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .rules-block {
   color: white;
   font-size: 20px;
   font-weight: 300;
   line-height: 1.5;
 }
-/* line 882, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 889, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .rules-block a {
   color: white;
 }
-/* line 885, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 892, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .rules-block .gold-style {
   color: #a48c68;
   font-size: 24px;
   font-weight: 400;
   text-transform: uppercase;
 }
-/* line 891, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 898, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .rules-block .text-block {
   margin-bottom: 35px;
 }
-/* line 893, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 900, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .rules-block .text-block p {
   margin: 0;
 }
-/* line 901, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 908, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region {
   background: url('/frontend/web/images/rules/rr__bg-1.png') left top no-repeat, url('/frontend/web/images/rules/rr__bg-2.png') right top no-repeat;
 }
-/* line 903, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 910, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region > .rr__container {
   padding-top: 98px;
   padding-bottom: 100px;
 }
-/* line 907, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 914, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region .rr__makeup {
   text-align: center;
   margin-bottom: 19px;
 }
-/* line 911, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 918, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region .rr__title {
   color: #dd1980;
   font-family: Intro;
@@ -1002,7 +1015,7 @@ body.rules .rules-region .rr__title {
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-/* line 921, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 928, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region .rr__subtitle {
   color: #fff;
   font-size: 22px;
@@ -1013,7 +1026,7 @@ body.rules .rules-region .rr__subtitle {
   letter-spacing: .9px;
   margin-bottom: 43px;
 }
-/* line 931, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 938, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region .rr__intro {
   color: #fff;
   font-family: Intro;
@@ -1023,7 +1036,7 @@ body.rules .rules-region .rr__intro {
   text-align: center;
   letter-spacing: 1.4px;
 }
-/* line 941, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 948, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.rules .rules-region h1.rules-title {
   color: white;
   font-size: 36px;
@@ -1034,7 +1047,7 @@ body.rules .rules-region h1.rules-title {
   letter-spacing: 2px;
   margin: 39px 0 48px 0;
 }
-/* line 958, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 965, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .screen-2 {
   margin: 0 0 54px 0!important;
   background: none;
@@ -1043,31 +1056,31 @@ body.page-new-video .screen-2 {
   padding-right: 30px;
 }
 @media all and (max-width: 1279px) {
-  /* line 964, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 971, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-video .screen-2 {
     padding-left: 0px;
     padding-right: 0px;
   }
 }
-/* line 968, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 975, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .screen-2 .product-union {
   display: none;
 }
-/* line 973, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 980, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .step-region {
   margin-top: 39px;
 }
-/* line 975, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 982, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .step-region .steps {
   height: 81px;
 }
 @media all and (max-width: 1279px) {
-  /* line 977, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 984, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-video .step-region .steps {
     height: initial;
   }
 }
-/* line 983, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 990, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .full-rules {
   text-align: center;
   color: #a68c69;
@@ -1079,49 +1092,49 @@ body.page-new-video .full-rules {
   letter-spacing: 1px;
   margin-bottom: 26px;
 }
-/* line 993, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1000, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .full-rules a {
   color: #a68c69;
   text-decoration: none;
   border-bottom: 1px dotted #a68c69;
 }
-/* line 997, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1004, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .full-rules a:hover {
   text-decoration: none;
 }
-/* line 1003, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1010, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .screen-3 {
   margin: 0!important;
   background: none;
   min-height: initial;
 }
-/* line 1010, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1017, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .video-screen .video-gallery {
   margin-top: 39px;
   margin-bottom: 14px;
 }
-/* line 1013, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1020, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .video-screen .video-gallery .vg__title {
   margin-bottom: 17px;
 }
-/* line 1018, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1025, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .video-screen .video-gallery .vg__union .vg__big-video video#video-main {
   display: none;
   width: 100%;
   height: 625px;
 }
 @media all and (max-width: 1279px) {
-  /* line 1022, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1029, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-new-video .video-screen .video-gallery .vg__union .vg__big-video video#video-main {
     height: 303px;
   }
 }
-/* line 1028, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1035, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails {
   min-width: 100%;
   justify-content: center;
 }
-/* line 1039, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1046, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #login-popup .bp__close {
   position: absolute;
   top: 34px;
@@ -1129,20 +1142,20 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   transform: translateX(50%);
   cursor: pointer;
 }
-/* line 1046, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1053, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #login-popup .bp__content {
   padding-top: 152px;
 }
-/* line 1051, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1058, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #login-popup.active + #overlay-loginpopup {
   display: block;
 }
-/* line 1055, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1062, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first {
   margin-bottom: 78px;
   text-align: center;
 }
-/* line 1058, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1065, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .title-lg {
   color: white;
   font-family: "Intro";
@@ -1153,7 +1166,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   padding: 0px 90px;
   margin: 0 0 68px 0;
 }
-/* line 1070, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1077, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-list .eauth-service-link {
   width: 86px;
   height: 86px;
@@ -1163,7 +1176,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   font-size: 0;
   text-indent: -9999px;
 }
-/* line 1078, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1085, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-list .eauth-service-link:before {
   width: 100%;
   height: 100%;
@@ -1172,50 +1185,50 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   left: 0;
   background-position: center center;
 }
-/* line 1086, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1093, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-list .eauth-service-link:after {
   content: none!important;
   display: none!important;
 }
-/* line 1094, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1101, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-service-id-facebook .eauth-service-link:before {
   background: url('/frontend/web/images/login/login__fb.png') center center no-repeat;
 }
-/* line 1102, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1109, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-service-id-vkontakte .eauth-service-link:before {
   background: url('/frontend/web/images/login/login__vk.png') center center no-repeat;
 }
-/* line 1108, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1115, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-service {
   margin: 18px 0px 0 0;
 }
-/* line 1110, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1117, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__first .eauth-service:not(:last-child) {
   margin-right: 47px;
 }
-/* line 1117, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1124, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second {
   text-align: center;
 }
-/* line 1121, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1128, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .left {
   position: relative;
 }
-/* line 1123, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1130, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] {
   position: absolute;
   z-index: -1;
   opacity: 0;
   margin: 10px 0 0 20px;
 }
-/* line 1129, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1136, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] + label {
   position: relative;
   padding: 0 0 0 40px;
   height: 40px;
   cursor: pointer;
 }
-/* line 1135, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1142, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] + label:before {
   content: '';
   position: absolute;
@@ -1227,7 +1240,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   border: 1px solid #ccc;
   border-radius: 3px;
 }
-/* line 1146, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1153, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"] + label:after {
   position: absolute;
   top: 5px;
@@ -1237,31 +1250,31 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-color: black;
   border-radius: 3px;
 }
-/* line 1156, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1163, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .left input[type="checkbox"]:checked + label:after {
   content: '';
 }
-/* line 1161, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1168, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .right {
   margin: 43px 0 0 0;
 }
-/* line 1163, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1170, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .right p {
   color: white;
   font-size: 18px;
   font-weight: 300;
   margin: 0 0 10px 0;
 }
-/* line 1169, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1176, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .site-login__second form .form-group .right a {
   color: white;
 }
-/* line 1178, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1185, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen {
   position: relative;
   overflow: hidden;
 }
-/* line 1181, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1188, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .participate_bg-top {
   position: absolute;
   top: 0;
@@ -1273,7 +1286,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background: url('/frontend/web/images/participate/participate_bg-top.png') no-repeat;
   background-size: cover;
 }
-/* line 1192, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1199, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .participate_bgr-test {
   display: none;
   position: absolute;
@@ -1286,7 +1299,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background: url('/frontend/web/images/participate/participate_bgr-test.png') no-repeat;
   background-size: cover;
 }
-/* line 1204, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1211, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .participate_bulbs {
   position: absolute;
   top: 1111px;
@@ -1299,12 +1312,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-size: initial;
 }
 @media all and (max-width: 1279px) {
-  /* line 1214, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1221, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .participate-screen .participate_bulbs {
     top: 1379px;
   }
 }
-/* line 1218, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1225, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .participate_glow-red {
   position: absolute;
   top: 909px;
@@ -1315,7 +1328,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background: url('/frontend/web/images/participate/participate_glow-red.png') no-repeat;
   background-size: cover;
 }
-/* line 1229, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1236, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen > .ps__container {
   position: relative;
   z-index: 1;
@@ -1323,12 +1336,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   padding-left: 0;
   padding-right: 0;
 }
-/* line 1237, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1244, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ps__makeup {
   text-align: center;
   margin-bottom: 19px;
 }
-/* line 1241, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1248, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ps__title {
   color: #dd1980;
   font-family: Intro;
@@ -1339,7 +1352,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 2px;
   margin-bottom: 8px;
 }
-/* line 1251, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1258, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ps__subtitle {
   color: #fff;
   font-size: 22px;
@@ -1350,7 +1363,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: .9px;
   margin-bottom: 43px;
 }
-/* line 1261, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1268, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ps__intro {
   color: #fff;
   font-family: Intro;
@@ -1361,12 +1374,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 1.4px;
   margin-bottom: 47px;
 }
-/* line 1272, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1279, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .user {
   text-align: center;
   margin-bottom: 55px;
 }
-/* line 1275, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1282, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .user .user__name {
   color: white;
   font-family: "Intro";
@@ -1376,30 +1389,30 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   text-transform: uppercase;
   margin-bottom: 53px;
 }
-/* line 1285, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1292, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .user .user__img img {
   max-width: 100%;
 }
-/* line 1291, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1298, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .step-region {
   padding: 0 0 0 27px;
   margin-bottom: 48px;
 }
-/* line 1294, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1301, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .step-region .steps {
   height: 81px;
 }
 @media all and (max-width: 1279px) {
-  /* line 1296, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1303, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .participate-screen .step-region .steps {
     height: initial;
   }
 }
-/* line 1302, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1309, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo {
   margin-bottom: 35px;
 }
-/* line 1304, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1311, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__title {
   color: white;
   font-family: "Intro";
@@ -1412,12 +1425,12 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   margin-bottom: 76px;
 }
 @media all and (max-width: 1279px) {
-  /* line 1314, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1321, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   .participate-screen .upload-makeup-photo .ump__title {
     padding: 0;
   }
 }
-/* line 1318, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1325, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__img {
   position: relative;
   margin: 0 auto 32px auto;
@@ -1427,14 +1440,14 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   border: 1px solid #869dba;
   box-shadow: 0 0 81px rgba(252, 223, 181, 0.25);
 }
-/* line 1326, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1333, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__img img {
   max-width: 100%;
   max-height: 100%;
   position: relative;
   z-index: 2;
 }
-/* line 1332, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1339, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__img .upload-lbl {
   color: white;
   font-size: 18px;
@@ -1445,7 +1458,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-/* line 1343, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1350, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls {
   display: flex;
   flex-direction: row;
@@ -1453,7 +1466,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   margin-left: auto;
   margin-right: auto;
 }
-/* line 1349, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1356, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls > * {
   width: 49px;
   height: 49px;
@@ -1461,11 +1474,11 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-repeat: no-repeat;
   background-position: center center;
 }
-/* line 1355, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1362, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls > *:not(:last-child) {
   margin-right: 1px;
 }
-/* line 1359, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1366, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls a {
   display: block;
   width: 100%;
@@ -1473,20 +1486,20 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   font-size: 0;
   text-indent: -9999px;
 }
-/* line 1366, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1373, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls .btn__upload {
   background-image: url('/frontend/web/images/participate/icon__upload.png');
 }
-/* line 1369, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1376, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls .btn__repeat {
   background-image: url('/frontend/web/images/participate/icon__repeat.png');
   margin-left: auto;
 }
-/* line 1373, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1380, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .upload-makeup-photo .ump__controls .btn__edit {
   background-image: url('/frontend/web/images/participate/icon__edit.png');
 }
-/* line 1380, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1387, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .full-rules {
   text-align: center;
   color: #a68c69;
@@ -1498,17 +1511,17 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 1px;
   margin-bottom: 26px;
 }
-/* line 1390, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1397, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .full-rules a {
   color: #a68c69;
   text-decoration: none;
   border-bottom: 1px dotted #a68c69;
 }
-/* line 1394, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1401, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .full-rules a:hover {
   text-decoration: none;
 }
-/* line 1399, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1406, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .style-comics {
   text-align: center;
   color: #a68c69;
@@ -1520,17 +1533,17 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   letter-spacing: 1px;
   margin-bottom: 43px;
 }
-/* line 1409, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1416, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .style-comics a {
   color: #a68c69;
   text-decoration: none;
   border-bottom: 1px dotted #a68c69;
 }
-/* line 1413, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1420, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .style-comics a:hover {
   text-decoration: none;
 }
-/* line 1419, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1426, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ready {
   text-align: center;
   position: relative;
@@ -1542,11 +1555,11 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   background-repeat: no-repeat;
   transition: all 0.3s linear;
 }
-/* line 1429, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1436, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ready:hover {
   background-image: url('/frontend/web/images/participate/ready_hover.png');
 }
-/* line 1432, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1439, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .ready a {
   display: block;
   width: 100%;
@@ -1560,7 +1573,7 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   text-transform: uppercase;
   letter-spacing: 2px;
 }
-/* line 1447, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1454, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .title-gallery {
   color: white;
   font-family: "Intro";
@@ -1571,11 +1584,11 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   text-align: center;
   margin: 0 0 58px 0;
 }
-/* line 1458, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1465, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .participate-screen .gallery-his-turn {
   margin-top: -54px;
 }
-/* line 1464, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1471, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #rules-popup {
   display: none;
   background-color: #040208;
@@ -1589,11 +1602,11 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   height: 100vh;
   z-index: 5;
 }
-/* line 1476, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1483, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #rules-popup.active {
   display: block;
 }
-/* line 1479, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1486, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #rules-popup .rp__close {
   position: absolute;
   top: 44px;
@@ -1601,80 +1614,80 @@ body.page-new-video .video-screen .video-gallery .vg__union .vg__thumbnail-union
   transform: translateX(50%);
   cursor: pointer;
 }
-/* line 1486, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1493, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #rules-popup .rp__content {
   padding: 147px 35px 35px 35px;
 }
-/* line 1488, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1495, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #rules-popup .rp__content .rules-block {
   overflow-y: auto;
   height: calc(100vh - 182px);
 }
-/* line 1495, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1502, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #rules-popup.active + #overlay-rulespopup {
   display: block;
 }
-/* line 1499, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1506, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspVerticalBar {
   width: 3px;
   background: none;
 }
-/* line 1502, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1509, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspVerticalBar .jspTrack {
   background: #e8e8e8;
   width: 1px;
 }
-/* line 1505, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1512, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspVerticalBar .jspTrack .jspDrag {
   background: #a48c68;
   width: 3px;
   left: -1px;
 }
-/* line 1513, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1520, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspHorizontalBar {
   height: 24px;
 }
-/* line 1515, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1522, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspHorizontalBar .jspTrack {
   height: 8px;
   margin-top: 8px;
 }
-/* line 1518, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1525, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspHorizontalBar .jspTrack .jspDrag {
   height: 24px;
   top: -8px;
 }
-/* line 1523, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1530, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspHorizontalBar .jspArrow {
   height: 24px;
 }
-/* line 1526, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1533, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspHorizontalBar .jspArrowLeft {
   background-position: right 36px center;
 }
-/* line 1529, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1536, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 .jspHorizontalBar .jspArrowRight {
   background-position: left 36px center;
 }
-/* line 1535, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1542, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 #header #main-menu {
   padding: 74px 0 74px 0;
   height: initial;
   min-height: 416px;
 }
 @media all and (min-width: 1280px) {
-  /* line 1545, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1552, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-video .video-screen .vs__subtitle {
     margin-bottom: 115px;
   }
 }
 @media all and (min-width: 1280px) {
-  /* line 1550, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1557, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-video .video-screen .video-gallery {
     margin-top: 115px;
   }
 }
-/* line 1555, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1562, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-video .video-screen .go-participate {
   position: relative;
   text-align: center;
@@ -1684,11 +1697,11 @@ body.page-video .video-screen .go-participate {
   background: url('/frontend/web/images/new-index/particip_large.png') top center no-repeat;
   transition: all 0.3s linear;
 }
-/* line 1563, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1570, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-video .video-screen .go-participate:hover {
   background: url('/frontend/web/images/new-index/particip_large_hover.png') top center no-repeat;
 }
-/* line 1566, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+/* line 1573, http://lorealparis.friday.ru/frontend/web/css/styles.less */
 body.page-video .video-screen .go-participate a {
   display: block;
   width: 100%;
@@ -1703,13 +1716,13 @@ body.page-video .video-screen .go-participate a {
   letter-spacing: 2px;
 }
 @media all and (max-width: 1279px) {
-  /* line 1579, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1586, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-video .video-screen .go-participate {
     width: 271px;
     height: 184px;
     background: url('/frontend/web/images/new-index/mobile/participate.png') top center no-repeat;
   }
-  /* line 1583, http://oxanavasil.uw-t.com/frontend/web/css/styles.less */
+  /* line 1590, http://lorealparis.friday.ru/frontend/web/css/styles.less */
   body.page-video .video-screen .go-participate:hover {
     background: url('/frontend/web/images/new-index/mobile/participate_hover.png') top center no-repeat;
   }
