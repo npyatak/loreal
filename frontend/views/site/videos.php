@@ -45,7 +45,7 @@ $typeArr = [
 	            <div class="step step-3">
 	                <div class="s-number">3</div>
 	                <div class="s-body">
-	                    ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
+	                     ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS. ГЛАВНЫЙ ПРИЗ - МАСТЕР-КЛАСС С МИЛОЙ КЛИМЕНКО
 	                </div>
 	            </div>
 	        </div>

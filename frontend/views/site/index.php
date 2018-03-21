@@ -60,7 +60,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
+                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS. ГЛАВНЫЙ ПРИЗ - МАСТЕР-КЛАСС С МИЛОЙ КЛИМЕНКО
                     </div>
                 </div>
             </div>
@@ -102,7 +102,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     </div>
 </div>
 
-<div id="stage-popup">
+<!-- <div id="stage-popup">
     <div class="sp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
     <div class="sp__content">
         
@@ -153,7 +153,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     </div>
 </div>
 
-<div id="overlay-stagepopup" class="overlay">&nbsp;</div>
+<div id="overlay-stagepopup" class="overlay">&nbsp;</div> -->
 
 <div class="screen-2">
     <div class="s2__zasvet">&nbsp;</div>

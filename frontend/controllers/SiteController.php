@@ -419,6 +419,15 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
+    public function actionTestMail() {
+        return Yii::$app->mailer->compose()
+            ->setTo('hellofatso@mail.ru')
+            ->setFrom(['hellofatso@mail.ru' => 'das'])
+            ->setSubject('test')
+            ->setTextBody('test')
+            ->send();
+    }
+
     private function findPost($id) {
         $post = Post::findOne($id);
 
