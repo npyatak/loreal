@@ -6,8 +6,8 @@ $this->params['bodyClass'] = 'page-video page-new-video';
 $this->title = 'Тьюториалы';
 
 $typeArr = [
-	1 => ['title' => '8-21 МАРТА: МЭЙКАП В СТИЛЕ КОМИКСОВ', 'video' => 'comic_30mb.mp4', 'preview' => '/images/video/preview_2.jpg'],
-	2 => ['title' => '8-21 МАРТА: МЕЙКАП НА ХЕЛЛУИН', 'video' => 'halloween_30mb.mp4', 'preview' => '/images/video/preview_1.jpg'],
+	1 => ['title' => $week->startDate.' - '.$week->endDate.': '.$week->description_1, 'video' => 'comic_30mb.mp4', 'preview' => '/images/video/preview_2.jpg'],
+	2 => ['title' => $week->startDate.' - '.$week->endDate.': '.$week->description_2, 'video' => 'halloween_30mb.mp4', 'preview' => '/images/video/preview_1.jpg'],
 ];
 ?>
 

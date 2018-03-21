@@ -60,7 +60,7 @@ $this->title = 'Участвовать в конкурсе';
         </div>
         
         <div class="upload-makeup-photo">
-            <div class="ump__title">Загрузи фото мэйкапа <span>на хэллоуин</span></div>
+            <div class="ump__title">Загрузи фото мэйкапа <span><?=$week->description_1;?></span></div>
             <?php $form = ActiveForm::begin([
                 'options' => [
                     'enctype' => 'multipart/form-data',
@@ -71,7 +71,7 @@ $this->title = 'Участвовать в конкурсе';
 
                 <?=$form->field($model, "imageFile")->widget(frontend\widgets\cropimage\ImageCropSection::className(), [
                     'form' => $form,
-                    //'label' => $currentWeek->hint_2,
+                    //'label' => $week->hint_2,
                     'options' => [
                         'id' => 'post-imagefile',
                         'class' => 'hidden',
@@ -99,7 +99,7 @@ $this->title = 'Участвовать в конкурсе';
 
         <div class="full-rules"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
-        <div class="style-comics"><a href="#">Выбрать мэйкап <span>в стиле комиксов</span></a></div>
+        <div class="style-comics"><a href="#">Выбрать мэйкап <span>в стиле <?=$week->description_2;?></span></a></div>
 
         <div class="ready"><a href="#">Готово!</a></div>
 
@@ -134,8 +134,8 @@ $script = "
         return false;
     });
 
-    var type1 = 'на хэллоуин';
-    var type2 = 'в стиле комиксов';
+    var type1 = '".$week->description_1."';
+    var type2 = '".$week->description_2."';
 
     $(document).on('click', '.style-comics a', function(e) {
         if($('#post-type').val() == 1) {

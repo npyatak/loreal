@@ -153,4 +153,40 @@ class Week extends \yii\db\ActiveRecord
     public function isFinished() {
         return $this->date_end < time();
     }
+
+    public function getStartDate() {
+        $dateTimeStart = new \DateTime;
+        $dateTimeStart->setTimestamp($this->date_start);
+
+        return $dateTimeStart->format('j').' '.$this->getMonth($dateTimeStart->format('n'), true);
+    }
+
+    public function getEndDate() {
+        $dateTimeEnd = new \DateTime;
+        $dateTimeEnd->setTimestamp($this->date_end);
+
+        return $dateTimeEnd->format('j').' '.$this->getMonth($dateTimeEnd->format('n'), true);
+    }
+
+
+    public function getMonth($monthId, $secondForm=false) {
+        return $secondForm ? $this->monthsArray[$monthId][1] : $this->monthsArray[$monthId][0];
+    }
+
+    public function getMonthsArray() {
+        return [
+            1 => ['январь', 'января'],
+            2 => ['февраль', 'февраля'],
+            3 => ['март', 'марта'],
+            4 => ['апрель', 'апреля'],
+            5 => ['май', 'мая'],
+            6 => ['июнь', 'июня'],
+            7 => ['июль', 'июля'],
+            8 => ['август', 'августа'],
+            9 => ['сентябрь', 'сентября'],
+            10 => ['октябрь', 'октября'],
+            11 => ['ноябрь', 'ноября'],
+            12 => ['декабрь', 'декабря'],
+        ];
+    }
 }

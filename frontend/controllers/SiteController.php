@@ -185,6 +185,7 @@ class SiteController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'sort' => $sort,
+            'week' => $this->currentWeek,
         ]);
     }
 
@@ -216,6 +217,7 @@ class SiteController extends Controller
             'productsBottom' => $productsBottom,
             'type' => $type,
             'videosBottom' => $videosBottom,
+            'week' => $this->currentWeek,
         ]);
     }
 
@@ -272,7 +274,7 @@ class SiteController extends Controller
         } 
         
         return $this->render('participate', [
-            'currentWeek' => $this->currentWeek,
+            'week' => $this->currentWeek,
             'weeks' => Week::find()->all(),
             'model' => $model,
             'user' => Yii::$app->user->identity,
