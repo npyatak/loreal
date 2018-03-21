@@ -60,7 +60,7 @@ $this->title = 'Участвовать в конкурсе';
         </div>
         
         <div class="upload-makeup-photo">
-            <div class="ump__title">Загрузи фото мэйкапа <span><?=$week->description_1;?></span></div>
+            <div class="ump__title">Загрузи фото <span><?=$week->description_1;?></span></div>
             <?php $form = ActiveForm::begin([
                 'options' => [
                     'enctype' => 'multipart/form-data',
@@ -99,7 +99,7 @@ $this->title = 'Участвовать в конкурсе';
 
         <div class="full-rules"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
-        <div class="style-comics"><a href="#">Выбрать мэйкап <span>в стиле <?=$week->description_2;?></span></a></div>
+        <div class="style-comics"><a href="#">Выбрать <span>в стиле <?=$week->description_2;?></span></a></div>
 
         <div class="ready"><a href="#">Готово!</a></div>
 
