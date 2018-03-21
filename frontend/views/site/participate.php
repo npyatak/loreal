@@ -99,7 +99,7 @@ $this->title = 'Участвовать в конкурсе';
 
         <div class="full-rules"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
-        <div class="style-comics"><a href="#">Выбрать <span>в стиле <?=$week->description_2;?></span></a></div>
+        <div class="style-comics"><a href="#">Выбрать <span><?=$week->description_2;?></span></a></div>
 
         <div class="ready"><a href="#">Готово!</a></div>
 
