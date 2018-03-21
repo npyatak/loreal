@@ -33,7 +33,7 @@ $this->params['bodyClass'] = 'feedback';
                 <?= $form->field($model, 'body')->textarea(['rows' => 6]) ?>
 
                 <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
-                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-3">{input}</div><div class="col-lg-6 captcha-text">Напишите ответ (цифрами) на наш простой вопрос,<br/> чтобы мы были уверены, что вы не робот!</div></div>',
+                    'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-3">{input}</div><div class="col-lg-6 captcha-text">Напишите ответ на наш простой вопрос,<br/> чтобы мы были уверены, что вы не робот!</div></div>',
                 ])->label(false) ?>
             </div>
             <div class="form-group">

@@ -10,7 +10,14 @@ return [
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
-            'viewPath' => '@common/mail',
+            'transport' => [
+                'class' => 'Swift_SmtpTransport',
+                'host' => 'smtp.gmail.com',
+                'username' => 'vasilyeva.test@gmail.com',
+                'password' => 'vasilyeva.test121212',
+                'port' => '587',
+                'encryption' => 'tls',
+            ],
         ],
     ],
 ];
