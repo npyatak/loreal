@@ -61,6 +61,15 @@ use common\components\ElfinderInput;
         </div>
     </div>
 
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'preview_main_1')->widget(ElfinderInput::className()) ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'preview_main_2')->widget(ElfinderInput::className()) ?>
+        </div>
+    </div>
+
     <?= $form->field($model, 'description_1')->textarea() ?>
     
     <?= $form->field($model, 'description_2')->textarea() ?>

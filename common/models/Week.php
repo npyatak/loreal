@@ -42,9 +42,9 @@ class Week extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['number', 'name', 'dateStartFormatted', 'dateEndFormatted', 'video_1', 'video_2', 'preview_1', 'preview_2'], 'required'],
+            [['number', 'name', 'dateStartFormatted', 'dateEndFormatted', 'video_1', 'video_2', 'preview_1', 'preview_2', 'preview_main_1', 'preview_main_2'], 'required'],
             [['number'], 'integer'],
-            [['description_1', 'description_2', 'video_1', 'video_2', 'preview_1', 'preview_2'], 'string'],
+            [['description_1', 'description_2', 'video_1', 'video_2', 'preview_1', 'preview_2', 'preview_main_1', 'preview_main_2'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['image'], 'string', 'max' => 255],
             [['number'], 'unique'],
@@ -72,6 +72,8 @@ class Week extends \yii\db\ActiveRecord
             'video_2' => 'Видео 2',
             'preview_1' => 'Превью 1',
             'preview_2' => 'Превью 2',
+            'preview_main_1' => 'Превью на главную 1',
+            'preview_main_2' => 'Превью на главную 2',
         ];
     }
 
