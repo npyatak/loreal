@@ -20,7 +20,7 @@ function videoGallery() {
         $('div[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').show();
     }
 
-    $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[video-id="' + $('.video-gallery .vg__union .vg__big-video').attr('video-id') + '"]').hide();
+    $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').hide();
 
     //Расчет ширины галерей
     $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails').each(function () {
@@ -65,7 +65,7 @@ function videoGallery() {
         $(this).hide();
         $(this).parent().find('> img').hide();
         $(this).parent().find('.close').show();
-        $(this).parent().find('#video-main source').attr('src','/video/' + $(this).attr('href'));
+        $(this).parent().find('#video-main source').attr('src', $(this).attr('href'));
         $(this).parent().find('#video-main').show();
         var myVideo = document.getElementById("video-main"); 
         myVideo.play();
@@ -87,7 +87,7 @@ function videoGallery() {
         $('#video-main').hide();
         var myVideo = document.getElementById("video-main"); 
         myVideo.pause();
-        $('#video-main source').attr('src','/video/' + $(this).attr('video-id'));
+        $('#video-main source').attr('src', $(this).attr('video-id'));
         myVideo.load();
         $(this).closest('.vg__union').find('.vg__big-video .play-btn').show();
         $(this).closest('.vg__union').find('.vg__big-video .play-btn').attr('href',$(this).attr('video-id'));
@@ -103,7 +103,7 @@ function videoGallery() {
         //Правки со скрытием превьюх
         $('.video-gallery .vg__union .vg__big-video').attr('video-id',$(this).attr('video-id'));
         $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail').show();
-        $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[video-id="' + $('.video-gallery .vg__union .vg__big-video').attr('video-id') + '"]').hide();
+        $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').hide();
 
     });
 

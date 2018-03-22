@@ -195,6 +195,8 @@ class SiteController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
 
+        $activeWeeks = Week::find()->where(['<', 'date_start', time()])->orderBy('id DESC')->all();
+
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         //print_r($videosBottom);exit;
 
@@ -218,6 +220,7 @@ class SiteController extends Controller
             'type' => $type,
             'videosBottom' => $videosBottom,
             'week' => $this->currentWeek,
+            'activeWeeks' => $activeWeeks,
         ]);
     }
 

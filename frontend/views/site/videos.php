@@ -5,10 +5,14 @@ use yii\helpers\Html;
 $this->params['bodyClass'] = 'page-video page-new-video';
 $this->title = 'Тьюториалы';
 
-$typeArr = [
-	1 => ['title' => $week->startDate.' - '.$week->endDate.': '.$week->description_1, 'video' => 'comic_30mb.mp4', 'preview' => '/images/video/preview_2.jpg'],
-	2 => ['title' => $week->startDate.' - '.$week->endDate.': '.$week->description_2, 'video' => 'halloween_30mb.mp4', 'preview' => '/images/video/preview_1.jpg'],
-];
+$typeArr = [];
+$key = 0;
+foreach ($activeWeeks as $w) {
+	$key++;
+	$typeArr[$key] = ['title' => $w->startDate.' - '.$w->endDate.': '.$w->description_1, 'video' => $w->video_1, 'preview' => $w->preview_1];
+	$key++;
+	$typeArr[$key] = ['title' => $w->startDate.' - '.$w->endDate.': '.$w->description_2, 'video' => $w->video_2, 'preview' => $w->preview_2];
+} 
 ?>
 
 <div class="video-screen">
@@ -60,7 +64,7 @@ $typeArr = [
 					<img src="<?=$typeArr[$type]['preview'];?>" alt="">
 					<a class="play-btn" href="<?=$typeArr[$type]['video'];?>"><img src="/images/s3__v__play-2d59db206b.png" alt=""></a>
 					<video id="video-main" controls>
-					    <source src="/video/<?=$typeArr[$type]['video'];?>" type="video/mp4">
+					    <source src="<?=$typeArr[$type]['video'];?>" type="video/mp4">
 					    Your browser does not support the video tag.
 					</video>
 				</div>

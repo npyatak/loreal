@@ -141,9 +141,14 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public static function getTypeArray() {
+        $week = Week::getCurrent();
+        if($week === null) {
+            return [];
+        }
+        
         return [
-            1 => 'МЭЙКАП ДЛЯ ХЭЛЛОУИНА',
-            2 => 'МЭЙКАП В СТИЛЕ КОМИКСОВ',
+            1 => $week['description_1'],
+            2 => $week['description_2'],
         ];
     }
 

@@ -72,13 +72,13 @@ $this->params['bodyClass'] = 'page-front page-new-front';
 
 <div class="stage">
     <div class="container st__container">
-        <div class="st__title">Этап 1</div>
+        <div class="st__title">Этап <?=$week->number;?></div>
         <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">
             <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
-                <div class="stb-img" style="background-image: url('/images/new-index/super-woman.png');"><img src="/images/new-index/super-woman.png" alt=""></div>
+                <div class="stb-img" style="background-image: url('<?=$week->preview_1;?>');"><img src="<?=$week->preview_1;?>" alt=""></div>
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С <?=$week->startDate;?> по <?=$week->endDate;?></div>
@@ -86,7 +86,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 </div>
             </a>
             <a class="st__block st__block-2" href="<?=Url::toRoute(['site/videos', 'type'=>2]);?>">
-                <div class="stb-img" style="background-image: url('/images/new-index/from-pic.png');"><img src="/images/new-index/from-pic.png" alt=""></div>
+                <div class="stb-img" style="background-image: url('<?=$week->preview_2;?>');"><img src="<?=$week->preview_2;?>" alt=""></div>
                 <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
                 <div class="stb-tit-wrap">
                     <div class="stb-title">С <?=$week->startDate;?> по <?=$week->endDate;?></div>

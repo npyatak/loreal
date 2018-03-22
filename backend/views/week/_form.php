@@ -5,29 +5,61 @@ use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\components\CustomCKEditor;
 use kartik\date\DatePicker;
-
-/* @var $this yii\web\View */
-/* @var $model common\models\Week */
-/* @var $form yii\widgets\ActiveForm */
+use common\components\ElfinderInput;
 ?>
 
 <div class="week-form">
 
     <?php $form = ActiveForm::begin(); ?>
 
-    <?= $form->field($model, 'number')->textInput() ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'number')->textInput() ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'imageFile')->fileInput() ?>
+        </div>
+        <div class="col-md-3">
+            <?= $form->field($model, 'dateStartFormatted')->widget(
+                DatePicker::className()
+            );?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'dateEndFormatted')->widget(
+                DatePicker::className()
+            );?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'imageFile')->fileInput() ?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'video_1')->widget(ElfinderInput::className(), [
+                'path' => 'video',
+                'filter' => 'video'
+            ]) ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'video_2')->widget(ElfinderInput::className(), [
+                'path' => 'video',
+                'filter' => 'video'
+            ]) ?>
+        </div>
+    </div>
 
-    <?= $form->field($model, 'dateStartFormatted')->widget(
-        DatePicker::className()
-    );?>
-
-    <?= $form->field($model, 'dateEndFormatted')->widget(
-        DatePicker::className()
-    );?>
+    <div class="row">
+        <div class="col-md-6">
+            <?= $form->field($model, 'preview_1')->widget(ElfinderInput::className()) ?>
+        </div>
+        <div class="col-md-6">
+            <?= $form->field($model, 'preview_2')->widget(ElfinderInput::className()) ?>
+        </div>
+    </div>
 
     <?= $form->field($model, 'description_1')->textarea() ?>
     
