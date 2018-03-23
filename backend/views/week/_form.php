@@ -6,6 +6,11 @@ use yii\widgets\ActiveForm;
 use common\components\CustomCKEditor;
 use kartik\date\DatePicker;
 use common\components\ElfinderInput;
+
+use common\models\Post;
+
+//$postsIds = ArrayHelper::map(Post::find()->where(['week_id' => $this->id, 'status' => Post::STATUS_ACTIVE])->all(), 'id', 'id');
+$postsIds = Post::find()->select(['id'])->where(['week_id' => $model->id, 'status' => Post::STATUS_ACTIVE])->column();
 ?>
 
 <div class="week-form">
@@ -30,7 +35,7 @@ use common\components\ElfinderInput;
                 DatePicker::className()
             );?>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-3">
             <?= $form->field($model, 'dateEndFormatted')->widget(
                 DatePicker::className()
             );?>
@@ -74,7 +79,14 @@ use common\components\ElfinderInput;
     
     <?= $form->field($model, 'description_2')->textarea() ?>
 
-    <?//= $form->field($model, 'status')->dropDownList(get_class($model)::getStatusArray(), ['class'=>'']) ?>
+    <div class="row">
+        <div class="col-sm-6">
+            <?= $form->field($model, 'winner_post_id_1')->dropDownList($postsIds, ['prompt' => '...']) ?>
+        </div>
+        <div class="col-sm-6">
+            <?= $form->field($model, 'winner_post_id_2')->dropDownList($postsIds, ['prompt' => '...']) ?>
+        </div>
+    </div>
 
     <div class="form-group">
         <?= Html::submitButton($model->isNewRecord ? 'Создать' : 'Обновить', ['class' => $model->isNewRecord ? 'btn btn-success' : 'btn btn-primary']) ?>

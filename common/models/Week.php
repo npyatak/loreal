@@ -43,7 +43,7 @@ class Week extends \yii\db\ActiveRecord
     {
         return [
             [['number', 'name', 'dateStartFormatted', 'dateEndFormatted', 'video_1', 'video_2', 'preview_1', 'preview_2', 'preview_main_1', 'preview_main_2'], 'required'],
-            [['number'], 'integer'],
+            [['number', 'winner_post_id_1', 'winner_post_id_2'], 'integer'],
             [['description_1', 'description_2', 'video_1', 'video_2', 'preview_1', 'preview_2', 'preview_main_1', 'preview_main_2'], 'string'],
             [['name'], 'string', 'max' => 100],
             [['image'], 'string', 'max' => 255],
@@ -74,6 +74,8 @@ class Week extends \yii\db\ActiveRecord
             'preview_2' => 'Превью 2',
             'preview_main_1' => 'Превью на главную 1',
             'preview_main_2' => 'Превью на главную 2',
+            'winner_post_id_1' => 'Id поста победителя 1',
+            'winner_post_id_2' => 'Id поста победителя 2',
         ];
     }
 

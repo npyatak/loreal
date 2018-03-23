@@ -72,13 +72,9 @@ $this->params['bodyClass'] = 'page-front page-new-front';
 
 <div class="stage">
     <div class="container st__container">
-<<<<<<< HEAD
-        <div class="st__title">Этап 1</div>
-        <div class="st__subtitle">8 марта - 21 марта</div>
-=======
         <div class="st__title">Этап <?=$week->number;?></div>
         <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
->>>>>>> 5e7bad3e3401f301814cef945fe7aef7ab420b13
+
         <div class="st__extra-price">Дополнительный приз от Рив Гош – шопинг на 20 тыс рублей с участником проекта Мэйкаперы.</div>
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
@@ -171,33 +167,31 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>
             
-            <div class="wfs-title">Победители первого этапа</div>
+            <?php if(!empty($winnersPosts)):?>
+                <?php foreach ($winnersPosts as $key => $ps):?>
+                    <?php $key++;?>
+                    <div class="wfs-title">Победители <?=$key;?>-го этапа</div>
 
-            <div class="view view-voting view-wfs">
-                <div class="view-content">
-                    <div class="view-row" data-key="">
-                        <div class="field-image">
-                            <img src="http://lorealparis.friday.ru/uploads/post/138/ab003f65ac9b777611c24fecfb9d1bfe.jpg" alt="">
+                    <div class="view view-voting view-wfs">
+                        <div class="view-content">
+                            <?php foreach ($ps as $i => $p):?>
+                                <?php $i++;?>
+                                <div class="view-row" data-key="">
+                                    <div class="field-image">
+                                        <img src="<?=$p->imageUrl;?>" alt="">
+                                    </div>
+                                    <div class="field-name"><?=$p->user->fullName;?></div>
+                                    <div class="field-points">
+                                        Победитель этапа <?=$key;?>
+                                    </div>
+                                    <?php $attr = 'description_'.$i;?>
+                                    <div class="field-shape"><?=$completedWeekIds[$p->week_id]->$attr;?></div>
+                                </div>
+                            <?php endforeach;?>
                         </div>
-                        <div class="field-name">Наталья Васильева</div>
-                        <div class="field-points">
-                            Победитель этапа 1
-                        </div>
-                        <div class="field-shape">Мейкап на хеллоуин</div>
                     </div>
-                    <div class="view-row" data-key="">
-                        <div class="field-image">
-                            <img src="http://lorealparis.friday.ru/uploads/post/138/ab003f65ac9b777611c24fecfb9d1bfe.jpg" alt="">
-                        </div>
-                        <div class="field-name">Наталья Васильева</div>
-                        <div class="field-points">
-                            Победитель этапа 1
-                        </div>
-                        <div class="field-shape">Мейкап в стиле комиксов</div>
-                    </div>
-                </div>
-            </div>
-
+                <?php endforeach;?>
+            <?php endif;?>
 
             <?php Pjax::begin(); ?> 
             <div class="view view-voting">
@@ -216,7 +210,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     </div>
                 </div>
 
-                <?/*= ListView::widget([
+                <?= ListView::widget([
                     'dataProvider' => $dataProvider,
                     'layout' => "{items} {pager}",
                     'itemOptions' => ['class' => 'view-row'],
@@ -226,7 +220,6 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                         'class' => ScrollPager::className(), 
                         'triggerText' => 'Загрузить ещё',
                         'triggerTemplate' => '<div class="ias-trigger"><a class="link">{text}</a></div>',
-                        //'noneLeftTemplate' => '',
                         'container' => '.view-content',
                         'item' => '.view-row',
                         'negativeMargin' => 1000,
@@ -234,140 +227,12 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                         'paginationSelector' => '.view-content .pagination',
                         'enabledExtensions' => [
                             ScrollPager::EXTENSION_TRIGGER,
-                            //ScrollPager::EXTENSION_SPINNER,
-                            //ScrollPager::EXTENSION_NONE_LEFT,
-                            //ScrollPager::EXTENSION_PAGING,
-                            //ScrollPager::EXTENSION_HISTORY
                         ]
                     ],
-                ]);*/?>
-      
-                <div class="view-content">
-                    <?php for ($i = 0; $i < 8; $i++) {?>
-                    <div class="view-row" data-key="">
-                        <div class="field-image">
-                            <img src="http://lorealparis.friday.ru/uploads/post/138/ab003f65ac9b777611c24fecfb9d1bfe.jpg" alt="">
-                        </div>
-                        <div class="field-name">Наталья Васильева</div>
-                        <div class="field-points">
-                            Баллы: <span class="score">535</span>
-                        </div>
-                        <div class="field-shape">Название созданного образа 1</div>
-                    </div>
-                    <?php } ?>
-
-                    <div class="ias-trigger" id="" style=""><a class="link">Загрузить ещё</a></div>
-                </div>
-
+                ]);?>
             </div>
             <?php Pjax::end(); ?>
-            
-            <div class="pfs-title">
-                Участники первого этапа
-            </div>
-
-            <?php Pjax::begin(); ?> 
-            <div class="view view-voting">
-                <?/*= ListView::widget([
-                    'dataProvider' => $dataProvider,
-                    'layout' => "{items} {pager}",
-                    'itemOptions' => ['class' => 'view-row'],
-                    'itemView' => '_post',
-                    'options' => ['class' => 'view-content'],
-                    'pager' => [
-                        'class' => ScrollPager::className(), 
-                        'triggerText' => 'Загрузить ещё',
-                        'triggerTemplate' => '<div class="ias-trigger"><a class="link">{text}</a></div>',
-                        //'noneLeftTemplate' => '',
-                        'container' => '.view-content',
-                        'item' => '.view-row',
-                        'negativeMargin' => 1000,
-                        'delay' => 10,
-                        'paginationSelector' => '.view-content .pagination',
-                        'enabledExtensions' => [
-                            ScrollPager::EXTENSION_TRIGGER,
-                            //ScrollPager::EXTENSION_SPINNER,
-                            //ScrollPager::EXTENSION_NONE_LEFT,
-                            //ScrollPager::EXTENSION_PAGING,
-                            //ScrollPager::EXTENSION_HISTORY
-                        ]
-                    ],
-                ]);*/?>
-            
-                <div class="view-content">
-                    <?php for ($i = 0; $i < 8; $i++) {?>
-                    <div class="view-row" data-key="">
-                        <div class="field-image">
-                            <img src="http://lorealparis.friday.ru/uploads/post/138/ab003f65ac9b777611c24fecfb9d1bfe.jpg" alt="">
-                        </div>
-                        <div class="field-name">Наталья Васильева</div>
-                        <div class="field-points">
-                            Баллы: <span class="score">535</span>
-                        </div>
-                        <div class="field-shape">Название созданного образа 1</div>
-                    </div>
-                    <?php } ?>
-
-                    <div class="ias-trigger" id="" style=""><a class="link">Загрузить ещё</a></div>
-                </div>
-
-            </div>
-            <?php Pjax::end(); ?>
-
         </div>
-
-        <!--<div class="gallery-his-turn" id="posts">
-            
-            <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
-            <div class="ght__subtitle">Поддержи их своим голосом</div>
-
-            <?php //Pjax::begin(); ?> 
-            <div class="view view-voting">
-                <div class="view-filter">
-                    <div class="sorting">
-                        <div class="date sort-param <?//=in_array($sort, ['-created_at', 'created_at']) ? 'active' : '';?>">
-                            <a href="<?//=Url::current(['sort' => $sort == '-created_at' ? 'created_at' : '-created_at']);?>">По дате</a>
-                        </div>
-                        <div class="point sort-param <?//=$sort == '-score' ? 'active' : '';?>">
-                            <a href="<?//=Url::current(['sort' => '-score']);?>">По баллам</a>
-                        </div>
-                    </div>
-
-                    <div class="upload-file">
-                        <a href="<?//=Url::toRoute(['site/participate']);?>" class="link">Загрузи свое фото на проект +</a>
-                    </div>
-                </div>
-
-                <?/*= ListView::widget([
-                    'dataProvider' => $dataProvider,
-                    'layout' => "{items} {pager}",
-                    'itemOptions' => ['class' => 'view-row'],
-                    'itemView' => '_post',
-                    'options' => ['class' => 'view-content'],
-                    'pager' => [
-                        'class' => ScrollPager::className(), 
-                        'triggerText' => 'Загрузить ещё',
-                        'triggerTemplate' => '<div class="ias-trigger"><a class="link">{text}</a></div>',
-                        //'noneLeftTemplate' => '',
-                        'container' => '.view-content',
-                        'item' => '.view-row',
-                        'negativeMargin' => 1000,
-                        'delay' => 10,
-                        'paginationSelector' => '.view-content .pagination',
-                        'enabledExtensions' => [
-                            ScrollPager::EXTENSION_TRIGGER,
-                            //ScrollPager::EXTENSION_SPINNER,
-                            //ScrollPager::EXTENSION_NONE_LEFT,
-                            //ScrollPager::EXTENSION_PAGING,
-                            //ScrollPager::EXTENSION_HISTORY
-                        ]
-                    ],
-                ]);*/?>
-            </div>
-            <?php //Pjax::end(); ?>
-
-        </div>-->
-
     </div>
 </div>
 

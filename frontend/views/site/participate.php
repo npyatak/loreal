@@ -134,17 +134,12 @@ $script = "
         return false;
     });
 
-<<<<<<< HEAD
     $(document).on('click', '#info-popup .bp__close', function(e) {
         $('#info-popup').removeClass('active');
     });
 
-    var type1 = 'на хэллоуин';
-    var type2 = 'в стиле комиксов';
-=======
     var type1 = '".$week->description_1."';
     var type2 = '".$week->description_2."';
->>>>>>> 5e7bad3e3401f301814cef945fe7aef7ab420b13
 
     $(document).on('click', '.style-comics a', function(e) {
         if($('#post-type').val() == 1) {
