@@ -168,9 +168,9 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             <div class="ght__subtitle">Поддержи их своим голосом</div>
             
             <?php if(!empty($winnersPosts)):?>
-                <?php foreach ($winnersPosts as $key => $ps):?>
-                    <?php $key++;?>
-                    <div class="wfs-title">Победители <?=$key;?>-го этапа</div>
+                <?php $number = 1;
+                foreach ($winnersPosts as $key => $ps):?>
+                    <div class="wfs-title">Победители <?=$number;?>-го этапа</div>
 
                     <div class="view view-voting view-wfs">
                         <div class="view-content">
@@ -182,7 +182,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                                     </div>
                                     <div class="field-name"><?=$p->user->fullName;?></div>
                                     <div class="field-points">
-                                        Победитель этапа <?=$key;?>
+                                        Победитель этапа <?=$number;?>
                                     </div>
                                     <?php $attr = 'description_'.$i;?>
                                     <div class="field-shape"><?=$completedWeekIds[$p->week_id]->$attr;?></div>
@@ -190,6 +190,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                             <?php endforeach;?>
                         </div>
                     </div>
+                    <?php $number++;?>
                 <?php endforeach;?>
             <?php endif;?>
 
