@@ -443,30 +443,6 @@ class SiteController extends Controller
         return $this->goHome();
     }
 
-    public function actionTest() {
-        $completedWeekIds = Week::find()
-            ->where(['not', ['winner_post_id_1' => null]])
-            ->andWhere(['not', ['winner_post_id_2' => null]])
-            ->andWhere(['<', 'date_end', time()])
-            ->indexBy('id')
-            ->all();
-
-        $postIds = [];
-        foreach ($completedWeekIds as $key => $w) {
-            $postIds[] = $w['winner_post_id_1'];
-            $postIds[] = $w['winner_post_id_2'];
-        }
-        $winnersPosts = [];
-        foreach (Post::find()->where(['in', 'id', $postIds])->all() as $p) {
-            $winnersPosts[$p->week_id][] = $p;
-        }
-
-        return $this->render('test', [
-            'winnersPosts' => $winnersPosts,
-            'completedWeekIds' => $completedWeekIds,
-        ]);
-    }
-
     private function findPost($id) {
         $post = Post::findOne($id);
 

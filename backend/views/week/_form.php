@@ -10,7 +10,7 @@ use common\components\ElfinderInput;
 use common\models\Post;
 
 //$postsIds = ArrayHelper::map(Post::find()->where(['week_id' => $this->id, 'status' => Post::STATUS_ACTIVE])->all(), 'id', 'id');
-$postsIds = Post::find()->select(['id'])->where(['week_id' => $model->id, 'status' => Post::STATUS_ACTIVE])->column();
+$postsIds = Post::find()->select(['id'])->where(['week_id' => $model->id, 'status' => Post::STATUS_ACTIVE])->indexBy('id')->column();
 ?>
 
 <div class="week-form">
