@@ -13,4 +13,5 @@ class ElfinderInput extends InputFile {
     public $buttonOptions = ['class' => 'btn btn-default'];
     public $multiple = false;       // возможность выбора нескольких файлов
 	public $buttonName = 'Обзор';
+	public $path = 'images';
 }

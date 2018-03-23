@@ -185,6 +185,7 @@ class SiteController extends Controller
             'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
             'sort' => $sort,
+            'week' => $this->currentWeek,
         ]);
     }
 
@@ -193,6 +194,8 @@ class SiteController extends Controller
         if(!in_array($type, [1, 2])) {            
             throw new NotFoundHttpException('The requested page does not exist.');
         }
+
+        $activeWeeks = Week::find()->where(['<', 'date_start', time()])->orderBy('id DESC')->all();
 
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         //print_r($videosBottom);exit;
@@ -216,6 +219,8 @@ class SiteController extends Controller
             'productsBottom' => $productsBottom,
             'type' => $type,
             'videosBottom' => $videosBottom,
+            'week' => $this->currentWeek,
+            'activeWeeks' => $activeWeeks,
         ]);
     }
 
@@ -272,7 +277,7 @@ class SiteController extends Controller
         } 
         
         return $this->render('participate', [
-            'currentWeek' => $this->currentWeek,
+            'week' => $this->currentWeek,
             'weeks' => Week::find()->all(),
             'model' => $model,
             'user' => Yii::$app->user->identity,

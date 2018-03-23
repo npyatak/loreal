@@ -83,6 +83,7 @@ class ParserController extends Controller {
             $post->is_from_ig = 1;
             $post->ig_parse_data_id = $data->id;
             $post->week_id = $currentWeek->id;
+            $post->type = 1;
 
             if($post->save()) {
                 $this->saveImage($post, $data->image);
@@ -145,6 +146,7 @@ class ParserController extends Controller {
                     $post->scenario = 'parse';
                     $post->user_id = $user->id;
                     $post->week_id = $currentWeek->id;
+                    $post->type = 1;
                     if($post->save()) {
                         $sizes = ['photo_2560', 'photo_1280', 'photo_807', 'photo_604'];
                         foreach ($sizes as $size) {
@@ -212,6 +214,7 @@ class ParserController extends Controller {
                             $post->scenario = 'parse';
                             $post->user_id = $user->id;
                             $post->week_id = $currentWeek->id;
+                            $post->type = 1;
                             if($post->save()) {
                                 $sizes = ['photo_2560', 'photo_1280', 'photo_807', 'photo_604', 'photo_130'];
                                 foreach ($sizes as $size) {

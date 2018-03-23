@@ -30,7 +30,7 @@ return [
             'root' => [
                 'baseUrl'=>'',
                 'basePath'=>'@frontend/web',
-                'path' => 'images',
+                //'path' => 'images',
                 'name' => 'Images'
             ]
         ]

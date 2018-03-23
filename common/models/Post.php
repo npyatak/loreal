@@ -141,9 +141,14 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public static function getTypeArray() {
+        $week = Week::getCurrent();
+        if($week === null) {
+            return [];
+        }
+        
         return [
-            1 => 'МЭЙКАП ДЛЯ ХЭЛЛОУИНА',
-            2 => 'МЭЙКАП В СТИЛЕ КОМИКСОВ',
+            1 => $week['description_1'],
+            2 => $week['description_2'],
         ];
     }
 
@@ -171,23 +176,5 @@ class Post extends \yii\db\ActiveRecord
         }
 
         return true;
-    }
-
-    public function getCssClass() {
-        if($this->is_from_ig) {
-            switch ($this->image_orientation) {
-                case self::IMAGE_SQUARE:
-                    $class = 'w280-h280';
-                    break;
-                case self::IMAGE_HORIZONTAL:
-                    $class = 'w600-h280';
-                    break;
-                case self::IMAGE_VERTICAL:
-                    $class = 'w280-h600';
-                    break;
-            }
-
-            return $class;
-        }
     }
 }
