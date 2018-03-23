@@ -52,7 +52,7 @@ $this->title = 'Участвовать в конкурсе';
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS
+                        Зови друзей голосовать на сайт и выиграй приз - шопинг с мейкапером в Рив Гош. Главный приз всех этапов - мастер-класс с Милой Клименко.
                     </div>
                 </div>
             </div>
@@ -132,6 +132,10 @@ $script = "
         $('#post-image-form').submit();
 
         return false;
+    });
+
+    $(document).on('click', '#info-popup .bp__close', function(e) {
+        $('#info-popup').removeClass('active');
     });
 
     var type1 = 'на хэллоуин';

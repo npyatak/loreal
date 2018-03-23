@@ -61,6 +61,7 @@ AppAsset::register($this);
                     <div class="h__lp">
                         <a href="http://ads.adfox.ru/240113/goLink?p1=bztph&p2=frfe&p5=ficvq&pr=%random%" target="_blank" data-event="click" data-param="loreal-logo"><img src="/images/h__lp-66abe048e1.svg" alt=""></a>
                     </div>
+                    <div class="h__riv-gosh"><a href="https://shop.rivegauche.ru/newstore/ru/%D0%A0%D0%98%D0%92-%D0%93%D0%9E%D0%A8/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3/c/rg_brand_97/NewNav#rgshare=%3A%3AbrandCode%3Arg_brand_97?utm_campaign=LorealRU&utm_source=CPD_OAP_Makeupers_makeupers&utm_medium=partner"><img src="/images/riv-gosh-logo.png" alt=""></a></div>
                 </div>
 
                 <ul id="main-menu">
@@ -160,7 +161,7 @@ AppAsset::register($this);
             <div id="overlay-rulespopup" class="overlay">&nbsp;</div>
 
             <?php if(!empty(Yii::$app->session->allFlashes)):?>
-            <div id="info-popup">
+            <div id="info-popup" class="active">
                 <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="bp__content">
                     <?php foreach (Yii::$app->session->allFlashes as $class => $message):?>
@@ -168,10 +169,11 @@ AppAsset::register($this);
                     <?php endforeach;?>
                 </div>
             </div>
+            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
 
             <?php if(!empty(Yii::$app->session->allFlashes)):?>
-            <div id="info-popup">
+            <div id="info-popup" class="active">
                 <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="bp__content">
                     <?php foreach (Yii::$app->session->allFlashes as $class => $message):?>
@@ -179,9 +181,9 @@ AppAsset::register($this);
                     <?php endforeach;?>
                 </div>
             </div>
+            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
 
-            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
         </div>
 
     </div>
