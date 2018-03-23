@@ -60,7 +60,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        ЗОВИ ДРУЗЕЙ ГОЛОСОВАТЬ НА САЙТ И ПОЛУЧАЙ ПРИЗЫ ОТ L'ORÉAL PARIS. ГЛАВНЫЙ ПРИЗ - МАСТЕР-КЛАСС С МИЛОЙ КЛИМЕНКО
+                        Зови друзей голосовать на сайт и выиграй приз - шопинг с мейкапером в Рив Гош. Главный приз всех этапов - мастер-класс с Милой Клименко.
                     </div>
                 </div>
             </div>
@@ -74,6 +74,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
     <div class="container st__container">
         <div class="st__title">Этап <?=$week->number;?></div>
         <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
+        <div class="st__extra-price">Дополнительный приз от Рив Гош – шопинг на 20 тыс рублей с участником проекта Мэйкаперы.</div>
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">

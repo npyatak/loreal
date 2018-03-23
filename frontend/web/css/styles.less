@@ -21,6 +21,25 @@
 		letter-spacing: 0.9px;
 	}
 
+	.wfs-title,
+	.pfs-title{
+		color: white;
+		font-family: "Open Sans";
+		font-size: 30px;
+		font-weight: 700;
+		line-height: 40px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	.wfs-title{
+		margin-top: 57px;
+	}
+	
+	.pfs-title{
+
+	}
+
 	.view-voting{
 		margin-top: 42px;
 		margin-bottom: 49px;
@@ -152,6 +171,17 @@
 						border-bottom: 1px dotted #a68b6d;
 						letter-spacing: 0.9px;
 						cursor: pointer;
+					}
+				}
+			}
+		}
+		
+		&.view-wfs{
+			.view-content{
+				justify-content: center;
+				.view-row{
+					&:not(:last-child):not(:nth-child(4n+4)){
+						margin-right: 29px;
 					}
 				}
 			}
@@ -401,6 +431,15 @@ body.page-new-front{
 			text-transform: uppercase;
 			text-align: center;
 			letter-spacing: 1.2px;
+			margin-bottom: 7px;
+		}
+		.st__extra-price{
+			display: block;
+			font-weight: 400;
+			color: #a48c68;
+			font-size: 15px;
+			text-align: center;
+			letter-spacing: 0.8px;
 			margin-bottom: 16px;
 		}
 		.st__full-reg{
@@ -1018,7 +1057,16 @@ body.page-new-video{
 			margin-top: 39px;
 			margin-bottom: 14px;
 			.vg__title{
-				margin-bottom: 17px;
+				margin-bottom: 7px;
+			}
+			.vg__extra-price{
+				display: block;
+			    font-weight: 400;
+			    color: #a48c68;
+			    font-size: 15px;
+			    text-align: center;
+			    letter-spacing: 0.8px;
+			    margin-bottom: 16px;
 			}
 			.vg__union{
 				.vg__big-video{
@@ -1152,12 +1200,13 @@ body.page-new-video{
 				}
 				input[type="checkbox"] + label:after {
 				  position: absolute;
-				  top: 5px;
-				  left: 5px;
-				  width: 30px;
-				  height: 30px;
-				  background-color: black;
+				  top: 6px;
+			      left: 8px;
+			      width: 26px;
+			      height: 26px;
+				  //background-color: black;
 				  border-radius: 3px;
+				  background: url('/frontend/web/images/check-mark.png') center top / 100% 100% no-repeat;
 				}
 
 				input[type="checkbox"]:checked + label:after {
@@ -1595,3 +1644,35 @@ body.page-video{
 
 	} 
 } 
+
+
+#header{
+	.h__riv-gosh{
+		margin-top: 0;
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 57px;
+		@media all and (max-width: 1279px) {
+			right: -28px;
+		}
+	}
+	.h__lp{
+		right: 217px;
+		@media all and (max-width: 1279px) {
+			margin-top: 0px;
+			right: 134px;
+		}
+		img{
+			width: 101px;
+			height: 28px;
+		}
+	}
+	.h__burger{
+		@media all and (max-width: 1279px) {
+			position: relative;
+		    left: -28px;
+		    top: -6px;
+		}
+	}
+}
