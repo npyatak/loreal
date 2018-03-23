@@ -167,7 +167,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>
             
-            <?php if(!empty($winnersPosts)):?>
+            <?php if(!empty($winnersPosts) && false):?>
                 <?php $number = 1;
                 foreach ($winnersPosts as $key => $ps):?>
                     <div class="wfs-title">Победители <?=$number;?>-го этапа</div>
