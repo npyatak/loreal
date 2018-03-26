@@ -22,6 +22,7 @@ use common\models\Share;
 use common\models\Post;
 use common\models\PostAction;
 use common\models\Week;
+use common\models\Page;
 use frontend\models\ContactForm;
 use common\models\search\PostSearch;
 
@@ -92,6 +93,9 @@ class SiteController extends Controller
 
         $view = $this->getView();
         $view->params['share'] = $share;
+
+        $rulesText = Page::find()->select(['text'])->where(['url' => 'rules'])->asArray()->one();
+        $view->params['rulesText'] = $rulesText['text'];
 
         return parent::beforeAction($action);
     }
