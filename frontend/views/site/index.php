@@ -75,7 +75,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         <div class="st__title">Этап <?=$week->number;?></div>
         <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
 
-        <div class="st__extra-price">Дополнительный приз от Рив Гош – шопинг на 20 тыс рублей с участником проекта Мэйкаперы.</div>
+        <div class="st__extra-price">Приз от Рив Гош – шопинг на 20 тыс рублей с участником проекта Мэйкаперы.</div>
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">
