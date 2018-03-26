@@ -135,7 +135,7 @@ $script = "
     });
 
     $(document).on('click', '#info-popup .bp__close', function(e) {
-        $('#info-popup').removeClass('active');
+        $('#info-popup').removeClass('active').removeAttr('style');
     });
 
     var type1 = '".$week->description_1."';

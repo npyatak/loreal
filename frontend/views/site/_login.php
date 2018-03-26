@@ -12,7 +12,6 @@ $this->title = 'Авторизуйся, используя свой акаунт
 </div>
 <div class="site-login__second text-center">
     <span class="alert"></span>
-    <!--<hr class="hr">-->
     <form action="">
         <div class="form-group">
             <div class="left">
@@ -20,7 +19,7 @@ $this->title = 'Авторизуйся, используя свой акаунт
                 <label for="rules" class="form-label checked"></label>
             </div>
             <div class="right">
-                <p>Авторизуясь, я согласен с <a href="<?=Url::to(['page/rules']);?>">полными правилами</a></p>
+                <p>Авторизуясь, я согласен с <a href="<?=Url::to(['site/rules']);?>">полными правилами</a></p>
             </div>
         </div>
     </form>

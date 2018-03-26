@@ -171,19 +171,6 @@ AppAsset::register($this);
             </div>
             <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
-
-            <?php if(!empty(Yii::$app->session->allFlashes)):?>
-            <div id="info-popup" class="active">
-                <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
-                <div class="bp__content">
-                    <?php foreach (Yii::$app->session->allFlashes as $class => $message):?>
-                        <p class="message <?=$class;?>"><?=$message;?></p>
-                    <?php endforeach;?>
-                </div>
-            </div>
-            <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
-            <?php endif;?>
-
         </div>
 
     </div>

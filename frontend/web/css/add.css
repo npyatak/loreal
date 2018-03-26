@@ -368,7 +368,7 @@ body.page-login .ps__makeup {
     text-align: center;
 }
 #info-popup{
-    //display: none;
+    display: none;
     top: 200px;
     width: 70%;
 }
