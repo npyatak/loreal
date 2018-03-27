@@ -184,7 +184,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                                     <div class="field-points">
                                         Победитель этапа <?=$number;?>
                                     </div>
-                                    <?php $attr = 'description_'.$i;?>
+                                    <?php $attr = 'description_'.$p->type;?>
                                     <div class="field-shape"><?=$completedWeekIds[$p->week_id]->$attr;?></div>
                                 </div>
                             <?php endforeach;?>
