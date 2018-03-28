@@ -23,14 +23,13 @@ function videoGallery() {
     $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails .vg__thumbnail[vg="' + $('.video-gallery .vg__union .vg__big-video').attr('vg') + '"]').hide();
 
     //Расчет ширины галерей
-    $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails').each(function () {
-        var countThumbnail = $(this).children().length,
-            widthElem = $(this).find('> .vg__thumbnail:first-child').width(),
-            marginElem = $(this).find('> .vg__thumbnail:first-child').outerWidth(true) - $(this).find('> .vg__thumbnail:first-child').width();
+    // $('.video-gallery .vg__union .vg__thumbnail-union .vg__thumbnails').each(function () {
+    //     var countThumbnail = $(this).children().length,
+    //         widthElem = $(this).find('> .vg__thumbnail:first-child').width(),
+    //         marginElem = $(this).find('> .vg__thumbnail:first-child').outerWidth(true) - $(this).find('> .vg__thumbnail:first-child').width();
 
-        $(this).width( (countThumbnail * widthElem) + (marginElem * (countThumbnail - 1) ) );
-        
-    });
+    //     $(this).width( (countThumbnail * widthElem) + (marginElem * (countThumbnail - 1) ) );       
+    // });
     //Галерейка с ютубом
     $('.video-gallery.youtube .vg__union .vg__big-video .play-btn').on('click', function (e) {
         e.preventDefault();

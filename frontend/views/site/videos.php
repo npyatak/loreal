@@ -40,9 +40,8 @@ foreach ($activeWeeks as $w) {
 	            <div class="step step-2">
 	                <div class="s-number">2</div>
 	                <div class="s-body">
-	                    ВЫПОЛНЯЙ ЗАДАНИЕ <br/> 
-                        И РАЗМЕЩАЙ ФОТО В <i class="vk">&nbsp;</i> И <i class="insta">&nbsp;</i> <br/>
-                        ПОД #LOREALPARIS_МЕЙКАПЕРЫ<br/>
+	                    ВЫПОЛНЯЙ ЗАДАНИЕ И РАЗМЕЩАЙ ФОТО В <i class="vk">&nbsp;</i> И <i class="insta">&nbsp;</i> 
+	                    ПОД #LOREALPARIS_МЕЙКАПЕРЫ
                         ИЛИ <a href="<?=Url::toRoute(['site/participate']);?>">ЗАГРУЖАЙ НА САЙТ</a>
 	                </div>
 	            </div>
