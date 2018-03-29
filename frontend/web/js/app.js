@@ -51,8 +51,8 @@ function videoGallery() {
         $(this).closest('.vg__union').find('.vg__big-video img').show().attr('src',$(this).find('img').attr('src'));
         $(this).closest('.vg__union').find('.vg__big-video iframe').remove();
         $(this).closest('.vg__union').find('.vg__big-video .play-btn').show().attr('href',$(this).attr('video-id'));
-        $('.after-video .av__title').text($(this).data('title'));
-        $('.after-video .av__body').text($(this).data('text'));
+        $(this).closest('.video').find('.after-video .av__title').text($(this).data('title'));
+        $(this).closest('.video').find('.after-video .av__body').text($(this).data('text'));
 
         $(this).closest('.vg__thumbnails').find('.vg__thumbnail').show();
         $(this).closest('.vg__thumbnail').hide();

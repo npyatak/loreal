@@ -220,6 +220,7 @@ class SiteController extends Controller
 
         $activeWeeks = Week::find()->where(['<', 'date_start', time()])->orderBy('id DESC')->all();
 
+        $videosTop = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 2])->all();
         $videosBottom = Video::find()->where(['status' => Video::STATUS_ACTIVE, 'gallery' => 1])->all();
         //print_r($videosBottom);exit;
 
@@ -244,6 +245,7 @@ class SiteController extends Controller
             'videosBottom' => $videosBottom,
             'week' => $this->currentWeek,
             'activeWeeks' => $activeWeeks,
+            'videosTop' => $videosTop,
         ]);
     }
 

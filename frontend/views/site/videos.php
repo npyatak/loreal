@@ -154,6 +154,45 @@ foreach ($activeWeeks as $w) {
 	            <?php endif;?>
 			</div>
 		</div>
+
+		<div class="screen-3">
+			<div class="video">
+			    <div class="v__title">Смотри видео с бекстейджей от</div>
+			    <div class="v__lp">
+			        <a href="#"><img src="/images/s3__v__lp-502e83f397.svg" alt=""></a>
+			    </div>
+
+				<?php if(isset($videosTop[0])):?>
+			    <div class="after-video">
+			        <div class="av__title"><?=$videosTop[0]->title;?></div>
+			        <div class="av__body"><?=$videosTop[0]->text;?></div>
+			    </div>
+
+				<div class="video-gallery youtube video-gallery-2" id="videosTop">
+					<div class="vg__union vg1__union">
+						<div class="vg__big-video vg1__big-video" video-id="<?=$videosTop[0]->key;?>">
+							<div class="close">X</div>
+							<img src="<?=$videosTop[0]->imageUrl;?>" alt="">
+							<a class="play-btn" href="<?=$videosTop[0]->key;?>"><img src="<?=$videosTop[0]->imageUrl;?>" alt=""></a>
+							<video id="video-main" controls>
+							    <source src="http://www.youtube-nocookie.com/embed/<?=$videosTop[0]->key;?>?rel=0&amp;iframe=true" type="video/mp4">
+							    Your browser does not support the video tag.
+							</video>
+						</div>
+						<div class="vg__thumbnail-union vg2__thumbnail-union">
+							<div class="vg__thumbnails vg2__thumbnails">
+							<?php foreach ($videosTop as $key => $video):?>
+								<div style="<?=$key == 0 ? 'display: none;' : '';?>" class="vg__thumbnail vg__thumbnail-2" video-id="<?=$video->key;?>" data-title="<?=$video->title;?>" data-text="<?=$video->text;?>">
+									<img src="<?=$video->imageUrl;?>" alt="">
+								</div>
+							<?php endforeach;?>
+							</div>
+						</div>
+					</div>
+				</div>
+				<?php endif;?>
+			</div>
+		</div>
 		
 		<div class="screen-3">
 			<div class="video">
@@ -193,7 +232,6 @@ foreach ($activeWeeks as $w) {
 				<?php endif;?>
 			</div>
 		</div>
-
 
 		<div class="strobing-maning">
 			<div class="sm sm-1">
