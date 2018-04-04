@@ -424,8 +424,8 @@ body.page-video .video-screen .video-gallery .vg__union .vg__big-video .play-btn
 .copy-link {
     float: right;
     display: block;
-    width: 24px;
-    height: 24px;
+    width: 16px;
+    height: 16px;
     background: url(/images/icons/copy-link.png) top no-repeat;
 }
 .link-copied {
