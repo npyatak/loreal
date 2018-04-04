@@ -225,7 +225,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                         'item' => '.view-row',
                         'negativeMargin' => 1000,
                         'delay' => 10,
-                        'paginationSelector' => '.view-content .pagination',
+                        'paginationSelector' => '#posts .pagination',
                         'enabledExtensions' => [
                             ScrollPager::EXTENSION_TRIGGER,
                         ]
@@ -236,6 +236,40 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         </div>
     </div>
 </div>
+
+<?php if($activePost):?>
+    <div id="info-popup" class="popup active gallery-his-turn">
+        <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
+        <div class="bp__content view-voting">
+            <div class="view-content">
+                <div class="view-row" data-key="<?=$activePost->id;?>">
+                    <div class="field-points-label score"><?=$activePost->score;?></div>
+                    <div class="field-image">
+                        <img src="<?=$activePost->imageUrl;?>" alt="">
+                    </div>
+                    <?php if($activePost->user->name):?>
+                    <div class="field-name">
+                        <?=$activePost->user->fullName;?>
+                    </div>
+                    <?php endif;?>
+                    <div class="field-points">
+                        Баллы: <span class="score"><?=$activePost->score;?></span>
+                    </div>
+                    <?php if($activePost->type):?>
+                    <div class="field-shape">
+                        <?=$activePost->typeLabel;?>
+                    </div>
+                    <?php endif;?>
+
+                    <div class="field-vote">
+                        <?=$this->render('_like_button', ['model' => $activePost]);?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
+<?php endif;?>
 
 <?php
 

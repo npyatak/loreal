@@ -1,6 +1,14 @@
+<?php
+use yii\helpers\Url;
+?>
+
 <div class="field-points-label score"><?=$model->score;?></div>
 <div class="field-image">
     <img src="<?=$model->imageUrl;?>" alt="">
+</div>
+<div class="copy-wrap">
+	<a href="<?=Url::toRoute(['site/index', 'id' => $model->id], true);?>" class="copy-link" title="Скопировать ссылку на работу"></a>
+	<div class="link-copied">Ссылка скопирована</div>
 </div>
 <?php if($model->user->name):?>
 <div class="field-name">

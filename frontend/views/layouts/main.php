@@ -142,7 +142,7 @@ AppAsset::register($this);
             <div id="overlay" class="overlay">&nbsp;</div>
 
             <?php if(Yii::$app->user->isGuest):?>
-            <div id="login-popup">
+            <div id="login-popup" class="popup">
                 <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="bp__content">
                     <?=$this->render('../site/_login');?>
@@ -151,7 +151,7 @@ AppAsset::register($this);
             <div id="overlay-loginpopup" class="overlay">&nbsp;</div>
             <?php endif;?>
 
-            <div id="rules-popup">
+            <div id="rules-popup" class="popup">
                 <div class="rp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="rp__content">
                     <?=$this->render('../site/_rules');?>
@@ -161,7 +161,7 @@ AppAsset::register($this);
             <div id="overlay-rulespopup" class="overlay">&nbsp;</div>
 
             <?php if(!empty(Yii::$app->session->allFlashes)):?>
-            <div id="info-popup" class="active">
+            <div id="info-popup" class="popup active">
                 <div class="bp__close"><img src="/images/test__close-010fb6bdbf.png" alt=""></div>
                 <div class="bp__content">
                     <?php foreach (Yii::$app->session->allFlashes as $class => $message):?>

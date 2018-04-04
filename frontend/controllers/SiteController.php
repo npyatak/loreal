@@ -100,7 +100,7 @@ class SiteController extends Controller
         return parent::beforeAction($action);
     }
 
-    public function actionIndex($res = 1)
+    public function actionIndex($res = 1, $id = null)
     {
         if (Yii::$app->request->isAjax && isset($_GET['res'])) {
             $uri = Url::to(['site/index', 'res' => $_GET['res']]);
@@ -120,8 +120,7 @@ class SiteController extends Controller
 
         $dataProvider = $searchModel->search($params);
         $dataProvider->sort = [
-            'defaultOrder' => ['score'=>SORT_DESC],
-            //'defaultOrder' => ['created_at'=>SORT_DESC],
+            'defaultOrder' => ['score' => SORT_DESC, 'created_at' => SORT_DESC],
             'attributes' => ['created_at', 'score'],
         ];
         $dataProvider->pagination = [
@@ -195,6 +194,11 @@ class SiteController extends Controller
             $winnersPosts[$p->week_id][] = $p;
         }
 
+        $activePost = null;
+        if($id) {
+            $activePost = Post::findOne($id);
+        }
+
         return $this->render('index', [
             'products' => $products,
             'results' => $results,
@@ -209,6 +213,7 @@ class SiteController extends Controller
             'week' => $this->currentWeek,
             'winnersPosts' => $winnersPosts,
             'completedWeekIds' => $completedWeekIds,
+            'activePost' => $activePost,
         ]);
     }
 
@@ -426,17 +431,6 @@ class SiteController extends Controller
                 return ['status' => 'error'];
             }
         }
-    }
-
-    public function actionPost($id) {
-        $userPost = $this->findPost($id);
-
-        $posts = Post::find()->where(['week_id' => $this->currentWeek->id, 'status' => Post::STATUS_ACTIVE])->limit(12)->orderBy(new \yii\db\Expression('rand()'))->all();
-
-        return $this->render('post', [
-            'userPost' => $userPost,
-            'posts' => $posts,
-        ]);
     }
 
     public function actionRules() {

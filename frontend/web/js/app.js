@@ -331,25 +331,24 @@ $(document).on('click', '.login-modal-btn', function(e) {
     $('#login-popup').css('top', 0);
 });
 
-$('#login-popup .bp__close').on('click',function () {
-    $('#login-popup').removeClass('active');
-    $('#login-popup').removeAttr('style');
+$('.popup .bp__close').on('click',function () {
+    $('.popup').removeClass('active');
+    $('.popup').removeAttr('style');
 });
 
 
 $(document).on('click', '.vote-btn', function (e) {
     e.preventDefault();
 
-    var obj = $(this).closest('.view-row');
-    var link = $(this);
+    var id = $(this).closest('.view-row').attr('data-key');
 
     $.ajax({
         type: 'GET',
         url: '/site/user-action',
-        data: 'id='+obj.attr('data-key'),
+        data: 'id='+id,
         success: function (data) {
-            obj.find('.score').html(data.score);
-            link.remove();
+            $('.view-row[data-key="'+id+'"]').find('.score').html(data.score);
+            $('.view-row[data-key="'+id+'"]').find('.vote-btn').remove();
         }
     });
 });
@@ -362,3 +361,19 @@ $('.eauth-service-link').on('click', function (e) {
         $('.site-login__second span.alert').html('');
     }
 });
+
+$(document).on('click', '.copy-link', function(e) {
+    var $temp = $("<input>");
+    $("body").append($temp);
+    $temp.val($(this).attr('href')).select();
+    document.execCommand("copy");
+    $temp.remove();
+
+    var div = $(this).parent().find('.link-copied');
+    div.show();
+    setTimeout(function() {
+        div.fadeOut(500);
+    }, 3000);
+
+    return false;
+})
