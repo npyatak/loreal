@@ -376,4 +376,11 @@ $(document).on('click', '.copy-link', function(e) {
     }, 3000);
 
     return false;
-})
+});
+
+$('video').on('play', function (e) {
+    ga('send', 'event', 'play', e.target.currentSrc);
+});
+$('video').on('pause', function (e) {
+    ga('send', 'event', 'pause', e.target.currentSrc, e.target.currentTime);
+});
