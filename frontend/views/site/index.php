@@ -1,4 +1,4 @@
-<?php
+ри<?php
 use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ListView;
@@ -75,7 +75,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
         <div class="st__title">Этап <?=$week->number;?></div>
         <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
 
-        <div class="st__extra-price">Приз второго этапа  – шопинг на 20 тыс. руб в РИВ ГОШ с участником проекта мейкаперы.</div>
+        <div class="st__extra-price">Выиграй приз от L’Oreal Paris и Рив Гош – годовой набор косметики.</div>
         <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
         <div class="st__blocks">
