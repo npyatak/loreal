@@ -48,7 +48,7 @@ foreach ($activeWeeks as $w) {
 	            <div class="step step-3">
 	                <div class="s-number">3</div>
 	                <div class="s-body">
-	                     Зови друзей голосовать на сайт и выиграй приз - шопинг с мейкапером в Рив Гош. Главный приз всех этапов - мастер-класс с Милой Клименко.
+	                     Зови друзей голосовать на сайт и выиграй призы. Главный приз всех этапов - мастер-класс с Милой Клименко.
 	                </div>
 	            </div>
 	        </div>
@@ -57,7 +57,7 @@ foreach ($activeWeeks as $w) {
 
 		<div class="video-gallery video-gallery-1 no-youtube" id="tutorial">
 			<div class="vg__title vg1__title"><?=$typeArr[$type]['title'];?></div>
-			<div class="vg__extra-price">Выиграй приз от L’Oreal Paris и Рив Гош – годовой набор косметики.</div>
+			<div class="vg__extra-price">Выиграй приз от L’Oreal Paris  – годовой набор косметики.</div>
 			<div class="vg__union vg1__union">
 				<div class="vg__big-video vg1__big-video" video-id="<?=$typeArr[$type]['video'];?>" vg="prod-<?=$type;?>">
 					<div class="close">X</div>

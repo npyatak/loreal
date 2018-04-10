@@ -60,7 +60,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <div class="step step-3">
                     <div class="s-number">3</div>
                     <div class="s-body">
-                        Зови друзей голосовать на сайт и выиграй приз - шопинг с мейкапером в Рив Гош. Главный приз всех этапов - мастер-класс с Милой Клименко.
+                        Зови друзей голосовать на сайт и выиграй призы. Главный приз всех этапов - мастер-класс с Милой Клименко.
                     </div>
                 </div>
             </div>
@@ -72,30 +72,32 @@ $this->params['bodyClass'] = 'page-front page-new-front';
 
 <div class="stage">
     <div class="container st__container">
-        <div class="st__title">Этап <?=$week->number;?></div>
-        <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
+        <?php if($week):?>
+            <div class="st__title">Этап <?=$week->number;?></div>
+            <div class="st__subtitle"><?=$week->startDate;?> - <?=$week->endDate;?></div>
 
-        <div class="st__extra-price">Выиграй приз от L’Oreal Paris и Рив Гош – годовой набор косметики.</div>
-        <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
+            <div class="st__extra-price">Выиграй приз от L’Oreal Paris  – годовой набор косметики.</div>
+            <div class="st__full-reg"><a href="<?=Url::toRoute(['site/rules']);?>" class="popup-rules">Полные правила</a></div>
 
-        <div class="st__blocks">
-            <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
-                <div class="stb-img" style="background-image: url('<?=$week->preview_main_1;?>');"><img src="<?=$week->preview_main_1;?>" alt=""></div>
-                <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
-                <div class="stb-tit-wrap">
-                    <div class="stb-title">С <?=$week->startDate;?> по <?=$week->endDate;?></div>
-                    <div class="stb-subtitle"><?=$week->description_1;?></div>
-                </div>
-            </a>
-            <a class="st__block st__block-2" href="<?=Url::toRoute(['site/videos', 'type'=>2]);?>">
-                <div class="stb-img" style="background-image: url('<?=$week->preview_main_2;?>');"><img src="<?=$week->preview_main_2;?>" alt=""></div>
-                <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
-                <div class="stb-tit-wrap">
-                    <div class="stb-title">С <?=$week->startDate;?> по <?=$week->endDate;?></div>
-                    <div class="stb-subtitle"><?=$week->description_2;?></div>
-                </div>
-            </a>
-        </div>
+            <div class="st__blocks">
+                <a class="st__block st__block-1" href="<?=Url::toRoute(['site/videos', 'type'=>1]);?>">
+                    <div class="stb-img" style="background-image: url('<?=$week->preview_main_1;?>');"><img src="<?=$week->preview_main_1;?>" alt=""></div>
+                    <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
+                    <div class="stb-tit-wrap">
+                        <div class="stb-title">С <?=$week->startDate;?> по <?=$week->endDate;?></div>
+                        <div class="stb-subtitle"><?=$week->description_1;?></div>
+                    </div>
+                </a>
+                <a class="st__block st__block-2" href="<?=Url::toRoute(['site/videos', 'type'=>2]);?>">
+                    <div class="stb-img" style="background-image: url('<?=$week->preview_main_2;?>');"><img src="<?=$week->preview_main_2;?>" alt=""></div>
+                    <div class="stb-play"><img src="/images/new-index/st__play.png" alt=""></div>
+                    <div class="stb-tit-wrap">
+                        <div class="stb-title">С <?=$week->startDate;?> по <?=$week->endDate;?></div>
+                        <div class="stb-subtitle"><?=$week->description_2;?></div>
+                    </div>
+                </a>
+            </div>
+        <?php endif;?>
 
         <div class="st__see-all-tutor">
             <a href="<?=Url::toRoute(['site/videos']);?>">Смотри все тьюториалы от L'Oréal Paris</a>

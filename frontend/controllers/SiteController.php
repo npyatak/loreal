@@ -116,7 +116,7 @@ class SiteController extends Controller
         $searchModel = new PostSearch();
         $params = Yii::$app->request->queryParams;
         $params['PostSearch']['status'] = Post::STATUS_ACTIVE;
-        $params['PostSearch']['week_id'] = $this->currentWeek->id;
+        $params['PostSearch']['week_id'] = $this->currentWeek !== null ? $this->currentWeek->id : 0;
 
         $dataProvider = $searchModel->search($params);
         $dataProvider->sort = [
