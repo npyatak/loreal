@@ -203,8 +203,8 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                         <div class="date sort-param <?=in_array($sort, ['-created_at', 'created_at']) ? 'active' : '';?>">
                             <a href="<?=Url::current(['sort' => $sort == '-created_at' ? 'created_at' : '-created_at']);?>">По дате</a>
                         </div>
-                        <div class="point sort-param <?=$sort == '-score' ? 'active' : '';?>">
-                            <a href="<?=Url::current(['sort' => '-score']);?>">По баллам</a>
+                        <div class="point sort-param <?=in_array($sort, ['score', '-score']) ? 'active' : '';?>">
+                            <a href="<?=Url::current(['sort' => $sort == '-score' ? 'score' : '-score']);?>">По баллам</a>
                         </div>
                     </div>
 

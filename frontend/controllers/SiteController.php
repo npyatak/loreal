@@ -111,7 +111,7 @@ class SiteController extends Controller
             return $share;
         }
 
-        $sort = Yii::$app->getRequest()->getQueryParam('sort', '-created_at');
+        $sort = Yii::$app->getRequest()->getQueryParam('sort', '-score');
 
         $searchModel = new PostSearch();
         $params = Yii::$app->request->queryParams;
