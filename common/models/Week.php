@@ -63,6 +63,7 @@ class Week extends \yii\db\ActiveRecord
             'number' => 'Порядковый номер',
             'name' => 'Имя',
             'image' => 'Изображение',
+            'imageFile' => 'Изображение',
             'description_1' => 'Описание 1',
             'description_2' => 'Описание 2',
             'status' => 'Статус',
@@ -76,6 +77,8 @@ class Week extends \yii\db\ActiveRecord
             'preview_main_2' => 'Превью на главную 2',
             'winner_post_id_1' => 'Id поста победителя 1',
             'winner_post_id_2' => 'Id поста победителя 2',
+            'dateStartFormatted' => 'Дата начала этапа',
+            'dateEndFormatted' => 'Дата окончания этапа',
         ];
     }
 
@@ -95,8 +98,8 @@ class Week extends \yii\db\ActiveRecord
     }
 
     public function afterFind() {
-        $this->dateStartFormatted = date('d.m.Y', $this->date_start);
-        $this->dateEndFormatted = date('d.m.Y', $this->date_end);
+        $this->dateStartFormatted = date('d.m.Y H:i', $this->date_start);
+        $this->dateEndFormatted = date('d.m.Y H:i', $this->date_end);
 
         return parent::afterFind();
     }

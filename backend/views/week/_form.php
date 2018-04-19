@@ -4,7 +4,7 @@ use yii\helpers\Url;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 use common\components\CustomCKEditor;
-use kartik\date\DatePicker;
+use kartik\datetime\DateTimePicker;
 use common\components\ElfinderInput;
 
 use common\models\Post;
@@ -26,18 +26,34 @@ $postsIds = Post::find()->select(['id'])->where(['week_id' => $model->id, 'statu
         </div>
     </div>
 
+    <?php $startDate = date('d.m.Y H:i', time());?>
+
     <div class="row">
         <div class="col-md-6">
             <?= $form->field($model, 'imageFile')->fileInput() ?>
         </div>
         <div class="col-md-3">
             <?= $form->field($model, 'dateStartFormatted')->widget(
-                DatePicker::className()
+                DateTimePicker::className(), [
+                    'removeButton' => false,
+                    'pluginOptions' => [
+                        'format' => 'dd.mm.yyyy hh.ii',
+                        'todayHighlight' => true,
+                        'autoclose' => true,
+                    ]
+                ]
             );?>
         </div>
         <div class="col-md-3">
             <?= $form->field($model, 'dateEndFormatted')->widget(
-                DatePicker::className()
+                DateTimePicker::className(), [
+                    'removeButton' => false,
+                    'pluginOptions' => [
+                        'format' => 'dd.mm.yyyy hh.ii',
+                        'todayHighlight' => true,
+                        'autoclose' => true,
+                    ]
+                ]
             );?>
         </div>
     </div>
