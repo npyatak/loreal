@@ -24,7 +24,10 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                     <a href="#">Вдохновляйся и<br/> покажи, на что<br/> ты способен!</a>
                 </div>
                 <div class="tc1-block2">
-                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorial']);?>">Тьюториалы</a>
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'tutorials']);?>">Тьюториалы</a>
+                </div>
+                <div class="tc1-block33">
+                    <a href="<?=Url::toRoute(['site/videos', '#' => 'backstage']);?>">Бекстейджей</a>
                 </div>
             </div>
             <div class="s1__tc-2">

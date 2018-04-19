@@ -155,7 +155,7 @@ foreach ($activeWeeks as $w) {
 			</div>
 		</div>
 
-		<div class="screen-3">
+		<div class="screen-3" id="backstage">
 			<div class="video">
 			    <div class="v__title">Смотри видео с бекстейджей от</div>
 			    <div class="v__lp">
@@ -194,7 +194,7 @@ foreach ($activeWeeks as $w) {
 			</div>
 		</div>
 		
-		<div class="screen-3">
+		<div class="screen-3" id="tutorials">
 			<div class="video">
 			    <div class="v__title">Смотри видео-уроки мейкапа от</div>
 			    <div class="v__lp">
