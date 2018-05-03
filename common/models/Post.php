@@ -141,7 +141,11 @@ class Post extends \yii\db\ActiveRecord
     }
 
     public static function getTypeArray() {
-        $week = Week::getCurrent();
+        return [
+            1 => 1,
+            2 => 2,
+        ];
+        /*$week = Week::getCurrent();
         if($week === null) {
             return [];
         }
@@ -149,7 +153,7 @@ class Post extends \yii\db\ActiveRecord
         return [
             1 => $week['description_1'],
             2 => $week['description_2'],
-        ];
+        ];*/
     }
 
     public function getTypeLabel() {

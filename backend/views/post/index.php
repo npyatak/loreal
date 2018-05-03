@@ -79,6 +79,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 [
                     'class' => 'kartik\grid\EditableColumn',
                     'attribute' => 'type',
+                    'header' => 'Задание',
                     'headerOptions'=>['class'=>'kv-sticky-column'],
                     'contentOptions'=>['class'=>'kv-sticky-column'],
                     'value' => function($data) {
