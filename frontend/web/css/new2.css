@@ -1849,3 +1849,7 @@ body.page-video .video-screen .go-participate a {
       margin-right: 1px!important;
   }
 }
+
+.jspContainer {
+  min-height: 534px;
+}

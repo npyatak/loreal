@@ -12,9 +12,9 @@ class AppAsset extends AssetBundle
     public $basePath = '@webroot';
     public $baseUrl = '@web';
     public $css = [
-        'css/app.css?v=13032018_2',
+        'css/app.css?v=10042018_2',
         'css/add.css?v=04042018_2',
-        'css/new2.css?v=23032018_3',
+        'css/new2.css?v=10042018_3',
         'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i',
     ];
     public $js = [
