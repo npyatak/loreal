@@ -169,8 +169,10 @@ $this->params['bodyClass'] = 'page-front page-new-front';
 
         <div class="gallery-his-turn">
             
+            <?php if(false):?>
             <div class="ght__title">Эти мейкаперы уже сделали свой ход</div>
             <div class="ght__subtitle">Поддержи их своим голосом</div>
+            <?php endif;?>
             
             <?php if(!empty($winnersPosts)):?>
                 <?php $number = 1;
@@ -199,6 +201,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <?php endforeach;?>
             <?php endif;?>
 
+            <?php if(false):?>
             <?php Pjax::begin(); ?> 
             <div class="view view-voting">
                 <div class="view-filter">
@@ -238,6 +241,7 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 ]);?>
             </div>
             <?php Pjax::end(); ?>
+            <?php endif;?>
         </div>
     </div>
 </div>
