@@ -201,6 +201,20 @@ $this->params['bodyClass'] = 'page-front page-new-front';
                 <?php endforeach;?>
             <?php endif;?>
 
+            <div class="wfs-title">Победитель финального этапа конкурса</div>
+
+            <div class="view view-voting view-wfs">
+                <div class="view-content">
+                    <div class="view-row" data-key="">
+                        <div class="field-image">
+                            <img src="http://lorealparis.friday.ru/uploads/post/113/c12129cfd89af546cbf8fce8198ffb44.jpg" alt="">
+                        </div>
+                        <div class="field-name">Яна Бубенчикова</div>
+                        <div class="field-shape">МЕЙКАП В СТИЛЕ КОМИКСОВ</div>
+                    </div>
+                </div>
+            </div>
+
             <?php if(false):?>
             <?php Pjax::begin(); ?> 
             <div class="view view-voting">
